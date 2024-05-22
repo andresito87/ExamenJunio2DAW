@@ -1,0 +1,209 @@
+
+/* Inicializacion */
+* { box-sizing: border-box;
+    margin: 0px;  
+}
+
+body{
+     /* Definimos el contenedor principal como un grid */ 
+     display: grid;
+     /* Definimos la separación entre cada una de las zonas */
+     grid-gap: 5px;
+     /* Definimos el número de filas y columnas que conforman nuestra maqueta*/
+     grid-template-columns: 50% 50%;
+     grid-template-rows: 200px auto auto 100px;
+     
+     /* Definimos mediante areas nuestra maqueta*/
+     grid-template-areas:
+         "header nav"
+         "imagen imagen"
+         "texto texto"
+         "footer footer"; 
+      justify-content: center;
+   
+    }
+
+/* Asignamos cada una de las areas definidas en el grid a un elemento del HTML */   
+header{grid-area:header;}
+.contenedor_imagen{grid-area:imagen;}
+.contenedor_texto{grid-area:texto;}
+footer{grid-area:footer;}
+
+
+
+/*Definiemos el borde de la cabecera, navegación y pie, y centramos todos los elementos tanto vertical como horizontalmente*/
+ header,nav,footer { 
+     border: 2px solid black;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+
+ /* Estilos de la zona de navegación */
+
+ 
+ li{
+    display: inline-block;
+    margin: 0px 30px;
+    position: relative;
+ }
+
+li a{
+    text-decoration: none;
+}
+
+li:before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom:0px;
+    left:0px;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 1s linear;
+}
+
+li:hover:before{
+    transform:scaleX(1);
+    transform-origin: bottom left;
+}
+
+#mini1{
+    transform:rotateX(130deg) rotateY(150deg);
+    
+}
+
+.triangulos{
+    position:relative;
+
+}
+.triangulo4{
+    width:50px;
+    height:50px;
+
+    background-color: green;
+    border: solid 50px black;
+    border-right-color: blue;
+/*    border-right-color: red;
+    border-top-color: aqua;
+    border-bottom-color: pink;*/
+
+    border-right: 50px solid transparent;
+    
+    border-top-color: aqua;
+    border-bottom-color: pink;
+
+}
+
+.triangulo1{
+    position:relative;
+    width:0px;
+    height:0px;
+    border-right: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid green;
+    animation:desplazamiento 5s ease-out 3;
+}
+
+@keyframes desplazamiento {
+    0%   {left: 0px; border-left: 50px solid green; transform: scale(1) rotate(0deg);}
+    15%  {left: 10%;; border-left: 50px solid aqua;; transform: scale(1.25) rotate(45deg);}
+    25%  {left: 15%; border-left: 50px solid blue;; transform: scale(1.5) rotate(280deg);}
+    75%  {left: 25%; border-left: 50px solid blue;; transform: scale(.5) rotate(360deg);}
+    100%  {left: 90%; border-left: 50px solid red; transform: scale(1) rotate(360deg);}
+    
+  }
+/* Definimos dos secciones para la zona de texto y la zona de image */
+section{
+    border: 2px solid black;
+    justify-content:center; 
+    margin: 5px;
+   
+} 
+/* Definimos una estructura de grid para la parte de de las imágenes */
+
+/* Ponemos borde redondeado a todos los div */
+div{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin:10px;
+}
+
+
+
+
+
+.logo_cabecera{ 
+    width:4rem;
+    border-radius: 50%;
+    border:blue double;
+    padding:5px;
+}
+
+.contenedor_imagen{
+/* Definimos el contenedor como un grid */ 
+    display: grid;
+/* Definimos la separación entre cada una de las zonas */
+    grid-gap: 5px;
+/* Definimos el número de filas y columnas que conforman la zona*/
+grid-template-columns: 50% 50%;
+grid-template-rows: auto auto;
+     
+/* Definimos mediante areas nuestra zona*/
+grid-template-areas:
+    "visual mini"
+    "visual triangulos";  
+    align-content: center;
+}
+
+.contenedor_imagen>div{
+    margin:5px;
+}
+/* Asignamos cada una de las areas definidas en el grid a un elemento del HTML */   
+.visual_img{grid-area:visual;}
+.miniaturas{grid-area:mini;}
+.triangulos{grid-area:triangulos;}
+
+
+/*Definimos la zona de visualización de las imágenes grandes (3)*/
+.visual_img{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: gray;
+}
+
+
+
+/*Definimos la zona de imágenes en miniatura*/
+.miniaturas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Definimos las imágenes de las miniaturas */
+.img_miniaturas{
+    border:2px solid black;
+    height: auto;
+    width: 4rem;
+    border-radius: 10px;
+    margin:10px;
+    padding: 5px;
+}
+
+
+
+
+
+.separador{
+    font-size:20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color:blue;
+}

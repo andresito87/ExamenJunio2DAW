@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG etiqueta text</title>
+</head>
+    <body>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="400">
+            <text x=10 y=10 >Hola mundo</text>
+            <text x=10 y=50 font-size="20">Hola <tspan font-size="40">mundo</tspan></text>
+            <text x=10 y=100 font-size="20" font-family="Monospace">Hola <tspan font-size="40" font-family="Verdana">mundo</tspan></text>
+            <text x=10 y=150 font-size="20" font-family="Monospace" fill="blue" style="letter-spacing:4; word-spacing:20;" >Hola <tspan font-size="40" font-family="Verdana" fill="red" style="letter-spacing:30";>mundo</tspan></text>
+        </svg>
+    </body>
+</html>

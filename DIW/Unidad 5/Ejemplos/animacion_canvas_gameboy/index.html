@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Animación canvas</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    
+    <div id="gameboy">
+        <div id="borde_pantalla">
+            <div id="pantalla">
+                <div id="pelota"></div>
+            </div>
+        </div>
+        <div id="texto">Nintendo <spam class="resaltado"> GAME BOY </spam> <spam class="disminuir">TM</spam></div>
+
+        <div id="consola">
+            <div id="fondo_flechas">
+                <canvas id="flechas" width="200" height="200" ></canvas>          
+            </div>
+
+            <div id="fondo_botones">
+                <canvas id="botones" width="300" height="150"  ></canvas>          
+            </div>
+
+            <div id="fondo_select">
+                <div id="sel">SELECT</div> 
+                <canvas id="select" width="300" height="200" ></canvas> 
+            </div>
+            
+            <div id="fondo_start">
+                <div id="sta">START</div>
+                <canvas id="start" width="200" height="200" ></canvas>
+            </div>  
+        </div>
+
+        </div>
+
+        
+
+
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/canvas.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>index demo</title>
+  <style>
+
+    .borde{
+            border: solid black 2px;
+            width:9vw;
+            height: 15vh;
+            margin:1vw;
+          
+      }
+      .enlinea{
+        display: inline-block;
+      }
+
+
+        #bloque_1>div{
+            background-color: aqua;
+            margin: 5px;
+        }
+
+        #bloque_2>div{
+            background-color: pink;
+            margin: 5px;
+        }
+
+        span {
+            color: red;
+        }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+ <!-- Ejemplo extraido de la documentación oficial de jquery -->
+ 
+<div id="bloque_1">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+<div id="bloque_2">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+
+</div>
+<script>
+
+    /* Le asignamos a los div dentro del bloque bloque_1 las clases borde y enlinea */
+    $("#bloque_1>div").addClass("borde enlinea");
+    $("#bloque_2>div").addClass("borde");
+
+
+    // El siguiente ejemplo se dispara al hacer click en uno de los cuadros superiores
+    // Detecta el orden que ocupa dentro de todos los div contenidos en bloque_1
+    // Y posteriormente en el div correspondiente de bloque 2, inserta el orden y cambia el color y el borde del elemento correspodiente.
+    $("#bloque_1>div" ).on("click", function() {
+      // `this` is the DOM element that was clicked
+      
+      // Seleccionamos el objeto clicado y le cambiamos el borde
+      $(this).css("border","5px solid black");
+      var index = $( "#bloque_1>div").index(this);
+      
+      
+      
+      //$("#bloque_2>div").eq(index).css("background-color","red").css("border-radius","50%");
+      //$("#bloque_2>div").eq(index).append("<p>"+index+"</p>").css("text-align","center").css("font-size","20px");
+      
+      // Podemos mejorar el código para que solo se haga una vez, así ponemos una condición if y si el borde es redondeado no se modifica
+      // en caso de utilizar color tener en cuenta que lo dará en modelo RGB
+      var borde=$("#bloque_2>div").eq(index).css("border-radius");
+      if (borde!="50%"){
+        $("#bloque_2>div").eq(index).css("background-color","red").css("border-radius","50%");
+        $("#bloque_2>div").eq(index).append("<p>"+index+"</p>").css("text-align","center").css("font-size","20px");
+      }
+    });
+</script>
+ 
+</body>
+</html>

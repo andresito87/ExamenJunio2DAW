@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--<link rel="stylesheet" type="text/css" href="css\estilos.css" media="screen">-->
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>src="script\tarea06.js"</script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Ejemplo 2- U.T. 06 - jQuery</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+       .borde{
+            border: solid black 2px;
+            width:9vw;
+            height: 15vh;
+            margin:1vw;
+          
+        }
+   
+       .enlinea{
+            display: inline-block;
+       }
+      
+       .contenedor{
+            border: solid blue 2px;
+            width:57vw;
+            height: 20vh;
+            margin:5px;
+       }
+       
+       .informacion{
+           border:3px purple solid;
+       }
+    </style>
+<script>
+          $(document).ready(function(){
+                var txt="";
+                var origen="";
+                var i=1;
+
+                var ancho=150;
+                var alto=75;
+                var descripcion="",txt="";
+               /* Asignamos diferentes funciones al boton primro #btn */
+               $(".miniaturas").on({
+                    click: function(){
+                        txt="";
+                        informacion=$(this).attr("alt");
+                        txt=$(this).attr("data-posicion")+". ";
+                        txt=txt+"Se ha clicado la imagen con la descripción alternativa: "+informacion+"   </br>";
+                        $(".informacion").append("<p>"+txt+"</p>");
+                    }    
+                })
+
+                // Definimos el evento dblclick para la etiqueta p.     
+                $(".informacion").on("dblclick", "p", function() {
+                    var cadena=$(this).text();                   
+                    var valor;
+                    posicion=cadena.indexOf("."); 
+                    valor=cadena.substring(posicion-1,1);    
+                    $($(".imagenes").find("img")[valor-1]).css("border","red 10px solid");
+                    $(this).remove();
+                });
+
+                // Aumentamos en 10 el tamaño de las imágenes
+                $("#btn").on({
+                   click: function(){
+                        ancho=ancho+10;
+                        alto=alto+10;
+                       /* Asignamos un ancho y alto a todas las imágenes */
+                       $(".miniaturas").attr("width",ancho+"px");
+                       $(".miniaturas").attr("height",alto+"px");    
+                    }
+               });
+
+               
+
+               /* Recogemos la información del atributo src de cada imagen y lo vamos almacenando en la variable txt*/
+                $(".miniaturas").each(function(index){
+                    txt=txt+"Imagen: "+parseInt(index+1)+" tiene como origen: "+$(this).attr("src")+"   "+"</br>";
+                });
+
+                /*Creamos una nueva etiqueta al final de nuestro documento e insertamos en ella los orígenes de las imágenes*/
+                $("body").append("<p>"+txt+"</p>");
+               
+               
+        
+               
+               /*Creamos 5 div dentro del bloque contenedor bloque_1*/
+               var x=0; 
+               for (x=0;x<5;x++){
+                    $("#bloque_1").append("<div></div>");
+                }
+
+                $("#bloque_1 div").each(function(index){
+                    $(this).append("<p>"+index+"</p>");
+                });
+
+                /* Le asignamos a los div dentro del bloque bloque_1 las clases borde y enlinea */
+                $("#bloque_1>div").addClass("borde enlinea");
+
+
+                $("#bloque_1 div").click(function(){
+                    //seleccionamos el valor de la etiqueta p dentro del div
+                    var valor=$($(this).find("p")[0]).text();
+                
+                    txt="<tr><td>Valor</td><td>"+valor+"</td></tr>"
+                    $("table tbody").append(txt);
+                    
+                
+               });
+
+                /* Le asignamos a los div dentro del bloque bloque_1 las clases borde y enlinea */
+                $("#bloque_1>div").addClass("borde enlinea");
+
+                
+              // ejecutamos el evento click del botón #btn
+              $("#btn").trigger("click");
+              
+              $(".miniaturas").eq(2).css("border","30px solid blue" );
+              $(".miniaturas").slice(2,4).css("border","3px solid blue" );
+
+          });
+
+          
+     </script>
+
+</head>
+
+<body>
+
+    <h1>Ejemplos con jQuery</h1>
+    <h2> Imágenes</h2>
+     <div class="imagenes">
+        <img class="miniaturas" src="puesta01.jpg" alt="Puesta de sol primera" data-posicion="1">    
+        <img class="miniaturas" src="puesta02.jpg" alt="Puesta de sol segunda" data-posicion="2">    
+        <img class="miniaturas" src="puesta03.jpg" alt="Puesta de sol tercera" data-posicion="3">    
+        <img class="miniaturas" src="puesta01.jpg" alt="Puesta de sol primera" data-posicion="1">    
+        <img class="miniaturas" src="puesta02.jpg" alt="Puesta de sol segunda" data-posicion="2">    
+        <img class="miniaturas" src="puesta03.jpg" alt="Puesta de sol tercera" data-posicion="3">    
+    </div>
+    <div class="informacion"> 
+        <h2>Información sobre las imágenes</h2>
+        <h4>* Al hacer doble click sobre la línea de la imagen relacionada se le asignará un borde rojo</h4>
+    </div>
+
+    <br>
+     <button id="btn">Aumentar en 10 px ancho y alto de las imágenes</button>
+    </br>
+    <h2> DIV</h2>
+    
+    <div id="bloque_1"></div>
+    <p>Al hacer click en un div se insertará el valor del div en la tabla</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Div </th>
+                <th>Pulsacion </th>
+
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot class="pie_tabla">
+        </tfoot>
+
+
+    </table>
+    
+    
+
+</body>
+
+</html>
+

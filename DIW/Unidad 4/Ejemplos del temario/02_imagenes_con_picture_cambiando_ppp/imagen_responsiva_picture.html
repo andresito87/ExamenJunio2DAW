@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="96x96" href="./imagenes/favicon/favicon-96x96.png">
+    <title>Imagen responsiva con etiqueta IMG</title>
+
+    <style>
+        .imagenes{
+            display:flex;
+            flex-direction: column;
+        }
+/*        <source media="(max-width: 2000px)" sizes="50vw" srcset="./imagenes/imagen_1000.jpg 1000w ./imagenes/imagen_2000.jpg 2000w">*/
+
+    </style>
+</head>
+<body>
+    <div class="imagenes">
+       <!-- Cuando la resolución mínima sea de 800px se cargará la imagen imagen_500.jpg 
+        y en el resto de casos se cargará la imagen imagen_00.jpg
+        -->
+        <h1> Etiqueta picture con media query</h1> 
+        <picture>
+            <source media="(min-width: 800px)" srcset="./imagenes/imagen_500.jpg">
+            <img src="./imagenes/imagen_00.jpg">
+       </picture>
+
+       <h1> Etiqueta picture con varias media query</h1> 
+       <picture>
+            <source media="(max-width: 800px)" srcset="./imagenes/imagen_500.jpg">
+            <source media="(max-width: 1200px)" srcset="./imagenes/imagen_1000.jpg">
+            <source media="(max-width: 1600px)" srcset="./imagenes/imagen_1500.jpg">
+            <img src="./imagenes/imagen_00.jpg">
+       </picture>
+
+       <h1> Etiqueta picture con media query para el tipo</h1> 
+       <picture>
+            <source srcset="./imagenes/imagen_500.psd" type="image">
+            <img src="./imagenes/imagen_00.jpg">
+       </picture>
+
+       <h1> Etiqueta picture con una media query con sizes y varios valores srcset</h1> 
+       <picture>
+            <source media="(max-width: 1000px)" sizes="80vw" srcset="./imagenes/imagen_500.jpg 500w, ./imagenes/imagen_1000.jpg 1000w">
+            <img src="./imagenes/imagen_00.jpg">
+        </picture>
+        <h1> Etiqueta picture con  media query y sizes en la etiqueta img</h1> 
+        <picture>
+             <source media="(max-width: 1000px)" sizes="80vw" srcset="./imagenes/imagen_500.jpg 500w, ./imagenes/imagen_1000.jpg 1000w">
+             <img src="./imagenes/imagen_00.jpg" sizes="30vw">
+         </picture>
+         <h1> Etiqueta picture con  media query relacionado con densidad de pixeles</h1> 
+         <picture>
+              <source media="(max-width: 1500px)" sizes="50vw" srcset="./imagenes/imagen_500.jpg, ./imagenes/imagen_1000.jpg 2x, ./imagenes/imagen_2000.jpg 3x">
+              <img src="./imagenes/imagen_00.jpg" sizes="30vw">
+          </picture>
+
+    </div>       
+</body>
+</html>

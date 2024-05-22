@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>on demo</title>
+  <style>
+  p {
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  p.over {
+    background: #ccc;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+ 
+  <!-- Ejemplo extraido de la documentación oficial-->
+<p>Click me!</p>
+<span></span>
+ 
+<script>
+    var count = 0;
+    // Añade un elemento p después del elemento p al que sele hace click. Se cuenta el número de párrafos añadidos.
+    $( "body" ).on( "click", "p", function() {
+      $( this ).after( "<p>Another paragraph! " + (++count) + "</p>" );
+    });
+</script>
+ 
+</body>
+</html>

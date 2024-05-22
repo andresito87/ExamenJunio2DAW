@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con SVG</title>
+</head>
+<body>
+
+<svg viewBox="-10 -10 610 510" width="600" height="500">
+   
+        <!-- Ejemplo de animación con animateMotion con path-->
+        <!-- En este caso dibujos un trazado con la etiqueta path-->
+        <path d="m150 150 v50 h50 v50 h50 v50 h50 v-50 h50 v-50 h50 v-50 h50 v-50 h-50 v-50 h-50 v-50 h-50 v50 h-50 v50 h-50 v50 z" style="stroke:green; stroke-width:3; fill:none;"></path>
+        
+        <!-- Dibujamos una pelota-->
+        <circle id="pelota" cx=0 cy=0 r=5 stroke="black" stroke-width=2 fill="aqua">
+        
+        <!-- Creamos la animación de tal forma que la pelota seguira la ruta path que hemos definido en animateMotion y que es igual a la que hemos pintado anteriormente -->
+        <!-- Hemos definido un identificador pelota en la figura creada con la etiqueta circle -->    
+        <!-- La animación comenzará cuando hagamos click en la pelota id="pelota"-->
+            <animateMotion id="animacion_1" begin="pelota.click"  path="m150 150 v50 h50 v50 h50 v50 h50 v-50 h50 v-50 h50 v-50 h50 v-50 h-50 v-50 h-50 v-50 h-50 v50 h-50 v50 h-50 v50 z";  dur="3s"  repeatCount="2"></animateMotion> 
+        <!-- Le hemos asignado un identificado a la animación que nos servira para indicarle a la siguiente animación que empiece cuando termine esta-->
+        </circle>
+    
+    
+        <!-- Ejemplo de animación con animateMotion con mpath-->
+        <!-- Definimos una transformación para desplazar nuestro origen, no es necesario realizar esto -->
+        <g transform="translate(0,20)">
+            <!-- Definimos una ruta para ver como se desplaza nuestro objeto -->
+            <path id="ruta" d="M150 350 v25 h25 v25 h25 v25 h25 v-25 h25 v-25 h25 v-25 h25 v-25 h-25 v-25 h-25 v-25 h-25 v25 h-25 v25 h-25 v25 z" style="stroke:red; stroke-width:3; fill:none;"></path>
+            <!-- Definimos un rectángulo que animaremos y le asignamos un identificador -->
+            <rect id="rectangulo" cx=0 cy=0 width="10" height="10" stroke="green" stroke-width=2 fill="gold">
+                <!-- Definimos nuestra animación e indicamos que empiece cuando termine animacion_1, además indicamos que el objeto se quede en el punto que finalice la animación -->
+                <animateMotion begin="animacion_1.end"  dur="3s"  repeatCount="2" rotate="auto" fill="freeze">
+            <!-- Asignamos a la animación la ruta que va a aseguir-->
+            <mpath xlink:href="#ruta"/>
+            </animateMotion>
+        </g>
+</svg>
+</body>
+</html>

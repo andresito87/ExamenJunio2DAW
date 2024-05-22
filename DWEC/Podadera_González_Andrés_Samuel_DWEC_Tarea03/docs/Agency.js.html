@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Agency.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Agency.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Spy from './Spy.js';
+
+/**
+ * Class that represents an agency.
+ * @property {string} nameAgency Name of the agency.
+ * @property {string} country Country of the agency.
+ * @property {Array} agents Array of agents.
+ * @throws {Error} If the name is not a string.
+ * @throws {Error} If the country is not valid.
+ * @version 1.0
+ * @author Andrés Samuel Podadera González
+ */
+class Agency {
+
+    //Private properties
+    /**
+     * Name of the agency.
+     * @property {string} _name
+     */
+    #_name;
+
+    /**
+     * Country of the agency.
+     * @property {string} _country
+     */
+    #_country;
+
+    /**
+     * Array of objects of type Spy.
+     * @property {Array} _agents
+     */
+    #_agents;
+
+    /**
+     * Creates an Agency.
+     * @param {string} name Name of the agency.
+     * @param {string} country Country of the agency.
+     * @throws {Error} If the name is not URSS, USA or Reino Unido.
+     */
+    constructor(name, country) {
+        this.name = name;
+        this.country = country;
+        this.#_agents = [];
+    }
+
+    /**
+     * GETTER: Gets name of the agency.
+     * @returns {string} Name of the agency.
+     */
+    get name() {
+        return this.#_name;
+    }
+
+    /**
+     * SETTER: Sets name of the agency.
+     * @returns {void}
+     * @param {string} name Name of the agency.
+     * @throws {Error} If the name is not URSS, USA or Reino Unido.
+     */
+    set name(name) {
+        this.#_name = name;
+    }
+
+    /**
+     * GETTER: Gets country of the agency.
+     * @returns {string} Country of the agency.
+     */
+    get country() {
+        return this.#_country;
+    }
+
+    /**
+     * SETTER: Sets country of the agency.
+     * @param {string} country Country of the agency.
+     * @throws {Error} If the country is not URSS, USA or Reino Unido.
+     * @returns {void}
+     */
+    set country(country) {
+        switch (country) {
+            case "USA":
+                this.#_country = country;
+                break;
+            case "Reino Unido":
+                this.#_country = country;
+                break;
+            case "URSS":
+                this.#_country = country;
+                break;
+            default:
+                throw new Error("Nombre de agencia no válido.");
+        }
+    }
+
+    /**
+     * GETTER: Gets array of agents.
+     * @returns {Array} Array of agents.
+     * @info To protect the array, sending a copy
+     */
+    get agents() {
+        let copyAgents = [...this.#_agents];
+        return copyAgents;
+    }
+
+    /**
+     * Adds a spy to the agency.
+     * @param {Spy} wantedAgent Spy to add.
+     * @returns {boolean} True if the spy has been added, false if not.
+     * @info If the spy is already in the agency, it will not be added.
+     */
+    toRecruitAgent(wantedAgent) {
+        let initialSize = this.#_agents.length;
+        let agentFound = false;
+        for (let agent of this.#_agents) {
+            if (wantedAgent.name === agent.name) {
+                agentFound = true;
+            }
+        }
+        let finalSize;
+        if (!agentFound) {
+            finalSize = this.#_agents.push(wantedAgent);
+        }
+        return initialSize &lt; finalSize;
+    }
+
+    /**
+     * Removes a spy from the agency.
+     * @param {string} name Name of the spy to remove.
+     * @returns {boolean} True if the spy has been removed, false if not.
+     * @info If the spy is not in the agency, it will not be removed.
+     */
+    toFireAgent(name) {
+        let initialSize = this.#_agents.length;
+        for (let agent of this.#_agents) {
+            if (name === agent.name) {
+                this.#_agents.splice(this.#_agents.indexOf(agent), 1);
+            }
+        }
+        return initialSize !== this.#_agents.length;
+    }
+
+    /**
+     * Lists the agents of a type.
+     * @param {string} type Type of the agents to list.
+     * @returns {string} String with the agents of the type.
+     * @info If there are no agents of the type, it will return a message.
+     */
+    toListAgents(type) {
+        let agentsOfWantedType = [];
+        for (let agent of this.#_agents) {
+            if (agent.type === type) {
+                agentsOfWantedType.push(agent);
+            }
+        }
+        let result = "";
+        if (agentsOfWantedType.length === 0) {
+            result = `No hay agentes de tipo "${type}" en la ${this.name}.`;
+        } else {
+            for (let agent of agentsOfWantedType) {
+                result += agent.toString() + "&lt;br>";
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Lists the agents ordered by a parameter.
+     * @param {string} orderingElement @values "nombre" or "edad". Element to order the agents.
+     * @returns {string} String with the agents ordered.
+     * @info If the element is not "nombre" or "edad", it will return a message.
+     */
+    toOrderedAgentList(orderingElement) {
+        let orderedList = [...this.#_agents];
+
+        // Ordering
+        orderedList.sort((a, b) => {
+            // By name
+            if (orderingElement === "nombre") {
+                if (a.name &lt; b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+            // By age
+            if (orderingElement === "edad") {
+                if (a.age &lt; b.age) {
+                    return -1;
+                }
+                if (a.age > b.age) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+
+        if (orderingElement !== "nombre" &amp;&amp; orderingElement !== "edad") {
+            console.warn(`No se realizado ningún ordenamiento. El elemento "${orderingElement}" no es válido.`);
+        }
+
+        let orderedListToString = "";
+        for (let agent of orderedList) {
+            orderedListToString += agent.toString() + "&lt;br>";
+        }
+
+        return orderedListToString;
+    }
+
+    /**
+     * Gives format to the information of the agents.
+     * @returns {string} String with the information of the agents ordered by country.
+     */
+    #_giveFormatToInfo() {
+        // Ordering by country
+        let orderedList = [...this.#_agents];
+        orderedList.sort((a, b) => {
+            if (a.country &lt; b.country) {
+                return -1;
+            }
+            if (a.country > b.country) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+
+        // Adding agents(rows) to the table
+        let contentTable = "";
+        orderedList.forEach(element => {
+            // Splitting the string to get the info of the agent
+            contentTable += element.toString().split(" | ")
+                .reduce((acc, curr) => acc + "&lt;td>" + curr
+                    .replace(/Nombre: |País: |Edad: |Tipo: /g, "") + "&lt;/td>", "&lt;tr>") + "&lt;/tr>";
+        });
+
+        return contentTable;
+    }
+
+    /**
+     * Method that returns a representation of the object agency as a string in a table.
+     * @returns {string} String with the information of the agency.
+     * @info Info displayed in a table with standard format HTML5.
+     */
+    toString() {
+        const agencyTitleTable = `&lt;tr>&lt;td id="titleTable" colspan="4" style="text-align: center;">Agencia: ${this.name} - País: ${this.country}&lt;/td>&lt;/tr>`;
+        const header = "&lt;tr>&lt;th>Nombre&lt;/th>&lt;th>País&lt;/th>&lt;th>Edad&lt;/th>&lt;th>Tipo&lt;/th>&lt;/tr>";
+        let result = "&lt;table border='1'>";
+
+        //adding the title and the header
+        result += agencyTitleTable;
+        result += header;
+
+        //adding the content of the table
+        result += this.#_giveFormatToInfo();
+
+        result += "&lt;/table>";
+        return result;
+    }
+
+}
+
+export default Agency;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Agency.html">Agency</a></li><li><a href="Citizen.html">Citizen</a></li><li><a href="Spy.html">Spy</a></li></ul><h3>Global</h3><ul><li><a href="global.html#searchMole">searchMole</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jan 12 2024 21:54:04 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

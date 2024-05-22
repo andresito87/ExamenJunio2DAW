@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de Transformaciones</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        .objeto_contenedor {
+            width: 90vw;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .objeto {
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+            background: aquamarine;
+            margin: 10px;
+            margin-left: 100px;
+            overflow-wrap: break-word;
+        }
+
+
+        /* Objeto normal sin ninguna trasformación */
+        #normal {
+            background: white;
+        }
+
+        /* Objeto al cual se le aplica una traslación en el eje X de 200px y 20px en eje Y*/
+        #traslacion {
+            transform: translate(200px, 20px);
+        }
+
+        #traslacion:active::before {
+            content: "Realizamos una traslación en el eje x de 200px y 20px en el eje y";
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Objeto al cual se le aplica una rotación de 45% */
+        #rotado {
+            background: aquamarine;
+            transform: rotate(30deg);
+        }
+
+        /* Objeto al cual se le aplica un escalado de 1,5 en el eje y 3 en el eje x */
+        #escalado {
+            position: relative;
+            left: 500px;
+            background: aquamarine;
+            transform: scale(3, 1.2);
+        }
+
+        /* Objeto al cual se le aplica una deformación de 45º en el eje X y 10 grados en el eje Y */
+        #deformacion {
+            background: aquamarine;
+            transform: skew(45deg, 10deg);
+        }
+
+        #varios {
+            background: purple;
+            transform: rotate(30deg) scale(2, 0.8) translate(100px, -150px);
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Ejemplo de transformaciones</h1>
+    <div class="objeto_contenedor">
+        <div id="normal" class="objeto">
+            <h3>Normal</h3>
+        </div>
+
+        <div id="traslacion" class="objeto">
+            <h3>Traslacion (X=200px,Y=20px)</h3>
+        </div>
+
+        <div id="rotado" class="objeto">
+            <h3>Rotado 45º</h3>
+        </div>
+
+        <div id="escalado" class="objeto">
+            <h3>Escalado 3 x1.5</h3>
+        </div>
+
+        <div id="deformacion" class="objeto">
+            <h3>Deformacion 45º,10º</h3>
+        </div>
+
+        <div id="varios" class="objeto">
+            <h3>Transformaciones varias</h3>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

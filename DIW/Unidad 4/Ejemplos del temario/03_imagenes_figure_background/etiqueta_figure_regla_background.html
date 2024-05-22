@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="96x96" href="./imagenes/favicon/favicon-96x96.png">
+    <title>Etiqueta figure y regla Background-image</title>
+    <style>
+            
+            
+            .ejemplo{
+                display:flex;
+                flex-direction: row;
+            }
+
+            h1{
+                text-align:center;
+                color:red;
+                }    
+         
+            img{
+                width:400px;
+                height:400px;
+            }
+            figcaption{
+                text-align: center;
+            }
+
+            .fondo{
+                border: 2px solid black;
+                width:300px;
+                height:300px;
+                background: url("./imagenes/imagen_500.jpg") top right/150px 150px no-repeat ,
+                            url("./imagenes/imagen_1500.jpg") top left/150px 150px no-repeat ,
+                            url("./imagenes/imagen_1000.jpg") bottom right/150px 150px no-repeat ,
+                            url("./imagenes/imagen_2000.jpg") bottom left/150px 150px no-repeat ;
+            
+            }
+
+    </style>
+</head>
+<body>
+    <div class="ejemplo">
+        <div class="imagenes">
+            <h1>ETIQUETA FIGURE</h1>
+            <figure>
+                <img src="./imagenes/imagen_1000.jpg"  alt="Panorámica de Playa"/>
+                <figcaption>Panorámica de Playa.</figcaption>
+            </figure>
+        </div>       
+
+        <div class="fondo">
+            <h1>REGLA BACKGROUND</h1>
+        </div>       
+    </div>
+</body>
+</html>

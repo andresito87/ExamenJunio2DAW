@@ -1,0 +1,282 @@
+/*Reinicio de cajas, márgenes y rellenos*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+/*Generales*/
+body
+{
+    padding:0.5%;
+    background-color:goldenrod;
+}
+
+section
+{
+    margin-top:5%;
+}
+
+#campo
+{
+    border:5px solid white;
+    display:grid;
+    grid-template-columns: 10% 80% 10%;
+    height:30vw;
+    padding:1%;
+    background-color:black;
+    margin-bottom:0.5%;
+}
+
+.titulo
+{
+    font-size:2vw;
+    text-align: center;
+    background-color: black;
+    padding:1%;
+    color:white;
+}
+
+#cajBtn
+{
+    display:flex;
+    justify-content: center;
+}
+
+#btn
+{
+    background-color: black;
+    color:white;
+    font-size: 1.2vw;
+    padding: 1% 3%;
+}
+
+#btn:hover{
+    background-color:white;
+    color:black;
+}
+
+/**********************************************/
+/***************ANIMACIONES********************/
+/**********************************************/
+#pong1, #pong2
+{
+    background-color: white;
+    width:2vw;
+    height:10vw;
+}
+
+#pong2
+{
+    justify-self: right;
+    align-self: end;
+}
+
+#pelota
+{
+    width: 2vw;
+    height:2vw;
+    background-color:white;
+    border-radius: 50px;
+    justify-self: center;
+    align-self: center;    
+    position:absolute;
+}
+
+#campeon
+{
+    padding:1%;
+    font-size: 0vw;
+    display:inline-block;
+    transform: translateY(3vw);
+}
+
+#ganador
+{
+    width:50%;
+    height: 50%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    color: yellow;
+    box-shadow:  0 0 0 0 yellow;
+
+}
+
+/*Animaciones de los pong laterales*/
+@keyframes animPong1
+{
+    0%
+    {
+        transform: translateY(0vw);
+    }
+
+    25%
+    {
+        transform: translateY(10vw);
+    }
+
+    50%
+    {
+        transform: translateY(18vw);
+    }
+
+    75%
+    {
+        transform: translateY(10vw);
+    }
+
+    100%
+    {
+        transform: translateY(0vw);
+    }
+}
+
+@keyframes animPong2
+{
+    0%
+    {
+        transform: translateY(0vw);
+    }
+
+    25%
+    {
+        transform: translateY(-10vw);
+    }
+
+    50%
+    {
+        transform: translateY(-18vw);
+    }
+
+    75%
+    {
+        transform: translateY(-10vw);
+    }
+
+    100%
+    {
+        transform: translateY(0vw);
+    }
+}
+
+/*Animación de la pelota*/
+@keyframes movPelota
+{
+    
+
+    25%
+    {
+        transform: translate(-47vw, 5vw);
+    }
+
+    50%
+    {
+        transform: translate(46vw, -5vw);
+    }
+
+    75%
+    {
+        transform: translate(-48vw, 11vw);
+    }
+
+    100%
+    {
+        transform: translate(-48vw, 11vw);
+    }
+}
+
+/*Animación del texto*/
+@keyframes animCampeon
+{
+    0%
+    {
+        font-size: 0.5;
+        transform: translateY(3vw) rotate(90deg) ;
+
+    }
+
+    25%
+    {
+        font-size: 2vw;
+        transform: translateY(3vw) rotate(180deg) ;
+
+
+    }
+
+    50%
+    {
+        font-size: 3.5vw;
+        transform: translateY(3vw) rotate(270deg);
+    }
+
+    100%
+    {
+        font-size: 5vw;
+        transform: translateY(3vw) rotate(360deg) ;
+    }
+}
+
+/*Animación de pulsación*/
+@keyframes animCaja
+{
+    0%
+    {
+        transform: scale(0.90);
+    }
+
+    50%
+    {
+        transform:scale(0.80);
+    }
+
+    100%
+    {
+        transform: scale(0.80);
+    }
+}
+
+/*Asignación de animaciones*/
+#pong1
+{
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function:linear;
+}
+
+#pong2
+{
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function:linear;
+}
+
+#pelota
+{
+    animation-fill-mode:forwards;
+    animation-duration: 8s;
+    animation-iteration-count:1;
+    animation-timing-function:linear;
+}
+
+#campeon
+{
+    animation-duration: 2s;
+    animation-delay:6s;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+#ganador
+{
+    animation-delay: 10s;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+

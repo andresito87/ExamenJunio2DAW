@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Imagen responsiva</title>
+	<style>
+		*{
+			box-sizing: border-box;}
+		.z_imagen{
+			text-align:center;
+			border: 2px solid red;}
+		
+	</style>
+	
+</head>
+<body>
+    <div class="zona z_imagen">
+        <h1>IMAGEN RESPONSIVA</h1>
+     
+        <img class="imagen_responsiva"
+        sizes="(max-width: 500px) 50vw, 95vw"
+        srcset=
+            "./img_andalucia/img_composicion_300.png 400w,
+            ./img_andalucia/img_composicion_600_s_esc.png 600w"
+            src="./imagenes/img_composicion_600_s_esc.png"  alt="Bandera de Andalucía"/>
+            
+    </div>
+</body>
+
+</html>

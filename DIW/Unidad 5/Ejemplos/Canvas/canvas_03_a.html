@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documento HTML5</title>
+		<style>
+			#ele_canvas{
+				border: solid 3px #4682B4;
+				background-color: #FFFFE0;
+			}
+			#ele_canvas_2{
+				border: solid 3px black;
+				background-color: #FF0000;
+			}
+
+		</style>
+		<script>
+			/* Función definida para crear un rectángulo en el canvas con id="ele_canvas"*/
+			function dibujarTriangulos(){
+
+			var elemento=document.getElementById('ele_canvas');
+			var dibujo;
+
+				// Crea el contexto del canvas.
+				dibujo=elemento.getContext('2d');
+				 
+				// Indica al contexto que se va a comenzar un trazado
+				dibujo.beginPath();
+				 
+				//Define las coordenadas de inicio.
+				dibujo.moveTo(150,50);
+				 
+				//Crea una línea desde el punto anterior hasta las coordenadas 200, 120
+				dibujo.lineTo(200,120);
+				 
+				//Crea una línea hasta las nuevas coordenadas
+				dibujo.lineTo(90,120);
+
+				//Cierra el camino creado anteriormente.
+				dibujo.closePath();
+				dibujo.stroke();
+
+			var elemento_2=document.getElementById('ele_canvas_2');
+			var dibujo_2;
+				// creamos el contexto
+				dibujo_2=elemento_2.getContext('2d');
+				 
+				// inicializamos el dibujo
+				dibujo_2.beginPath();
+
+				//definimos punto de inicio.
+				dibujo_2.moveTo(150,50);
+				 
+				//línea hasta las coordenadas 200, 120
+				dibujo_2.lineTo(200,120);
+				 
+				//línea hasta las coordenadas 90,120
+				dibujo_2.lineTo(90,120);
+				 
+				// cierra el trazado definido y rellena la figura.
+				dibujo_2.fill();
+
+
+			 
+			
+			}
+			
+			/* Escucha que llama a la función dibujarRectangulo cuando se cargue la página*/
+			window.addEventListener('load',dibujarTriangulos);
+		</script>
+	</head>
+	<body>
+		<canvas id="ele_canvas" width="300" height="150">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+		<canvas id="ele_canvas_2" width="300" height="150">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+
+	</body>
+</html>

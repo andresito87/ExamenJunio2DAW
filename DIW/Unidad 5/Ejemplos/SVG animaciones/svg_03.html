@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG etiqueta path</title>
+</head>
+
+<body>
+    <svg width="600" height="400">
+        <path d="m25 25 v225 " style="stroke:#CC3366; stroke-width:3; fill:none;" stroke-dasharray="6,3,3,3"></path>
+        <path d="m25 250 h100 v50 l100 100 L50 50 h200 C100 100 150 150 200 300"
+            style="stroke:blue; stroke-width:10; fill:none;" stroke-dasharray="10,2"></path>
+        <path d="m25 250 h100 v50 l100 100 L50 50 h200 " style="stroke:blue; stroke-width:10; fill:none;"
+            stroke-dasharray="10,2"></path>
+        <path d="M225 250 C350 100 350 150 500 300 " style="stroke:red; stroke-width:10; fill:none;"
+            stroke-dasharray="10,2"></path>
+        <path d="M225 250 C350 400 350 350 500 300 " style="stroke:red; stroke-width:10; fill:none;"
+            stroke-dasharray="10,2"></path>
+    </svg>
+
+    <svg viewBox="0 0 600 400" width="600" height="400">
+        <path d="m25 25 v50 h50 v50 h50 v50 h50 v-50 h50 v-50 h50 v-50 z"
+            style="stroke:green; stroke-width:3; fill:none;" xº></path>
+    </svg>
+
+
+    <svg viewBox="0 0 600 400" width="600" height="400">
+        <path fill="none" stroke="red" d="M5 270 l40 -30 l215 75 v-110 h40 v-140 h240 v100 h90 v100 h60" />
+    </svg>
+
+    <svg viewBox="0 0 600 400" width="600" height="400">
+        <!-- Vamos a dibujar una curva, nos posicionamos con M, definimos el primer punto de la curva con la letra C los dos primeros números representa
+        el primer número 100 100 el segundo punto representa el segundo par 200 0 y el tercer punto viene representado por el tercer par 300 100 -->
+        <path fill="none" stroke="blue" d="M100 200 C100 200 200 0 300 200" style="stroke-width:3;""   />
+    </svg>
+      
+</body>
+</html>

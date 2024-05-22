@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="96x96" href="./imagenes/favicon/favicon-96x96.png">
+    <title>Imagen responsiva con etiqueta IMG</title>
+</head>
+<body>
+    <div class="imagenes">
+       <!-- Cuando la resolución mínima sea 780x se definirá un ancho para la imagen de un 30% de ancho del dispositivo.
+            En el caso contrario se cogerá todo el ancho del dispositivo.
+            Una vez definida la ranura o espacio donde se deberá inscrustar la imagen, el atributo srcset 
+            seleccionaría la imagen que mejor se adapte a ese "hueco".
+            Así dispondríamos de una imagen para un hueco de 600px otra para 1000px, etc.
+            Se muestran imágenes diferentes para que se vean los cambios, pero lo que habría que 
+            hacer es convertir imágenes con diferentes resoluciones de la misma imagen.
+        -->
+        <img
+            sizes="(min-width: 780px) 30vw, 100vw"
+            srcset=
+                "./imagenes/imagen_500.jpg 500w,
+                ./imagenes/imagen_1000.jpg 1000w,
+                ./imagenes/imagen_1500.jpg 1500w,
+                ./imagenes/imagen_2000.jpg 2000w"
+                src="./imagenes/imagen_1000.jpg"  alt="texto alternativo"/>
+    </div>       
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotfNetworks - Página Principal</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./estilos/estilos.css" media="screen">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <img src="../ut_04_01_img/07_logo.svg" alt="Logo de la empresa SotfNetworks">
+        <h1>SotfNetworks - Desarrollo Web</h1>
+        <img src="../ut_04_01_img/logo_ies_aguadulce.png" alt="Logo del centro educativo I.E.S. Aguadulce">
+    </header>
+    <!-- Zona de navegación -->
+    <nav id="menu">
+        <ul>
+            <li><a href="#imagen" title="Navegar a la sección imagen" accesskey="i"><span>I</span>magen</a></li>
+            <li><a href="#audio" title="Navegar a la sección audio" accesskey="a"><span>A</span>udio</a></li>
+            <li><a href="#video" title="Navegar a la sección vídeo" accesskey="v"><span>V</span>ídeo</a></li>
+            <li><a href="#pieDePagina" title="Navegar al pie de página" accesskey="p"><span>P</span>ie de Página</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Zona de contenido principal -->
+    <main>
+        <section id="imagen">
+            <div id="imagenes">
+                <h2>Imágenes</h2>
+                <a class="iconoMenuNav" href="#menu"><img src="iconoNavegacion.svg" alt="icono de un mapa de navegación"
+                        title="Navegar al menú de navagación" accesskey="n"></a>
+            </div>
+            <div class="imagenes">
+                <!-- Imágenes Fuentes -->
+                <img src="../ut_04_01_img/01_imagen.png"
+                    alt="Imagen de las manos de una chica sujetando un teléfono móvil">
+                <img src="../ut_04_01_img/02_imagen.jpg"
+                    alt="Imagen de la pantalla de un ordenador con código JavaScript">
+
+                <!-- Composicion -->
+                <img src="../ut_04_01_img/04_composicion.png" alt="Imagen de promoción de nuestra app móvil">
+
+                <!-- Imagen responsiva -->
+                <picture>
+                    <!-- Para resoluciones mayores a 1100px -->
+                    <source media="(min-width: 1100px)" sizes="30vw"
+                        srcset="../ut_04_01_img/05_composicion_mejorada_dim_1100.jpg 1100w">
+                    <!-- Para resoluciones menores o iguales a 1100px -->
+                    <source media="(max-width: 650px)" sizes="90vw"
+                        srcset="../ut_04_01_img/06_composicion_mejorada_dim_650.jpg 650w">
+                    <!-- Imagen por defecto -->
+                    <img src="../ut_04_01_img/06_composicion_mejorada_dim_650.jpg" sizes="30vw">
+                </picture>
+            </div>
+            <p>Los cambios de imagen se producen a partir de 1100px de ancho</p>
+        </section>
+
+        <section id="audio">
+            <div class="audio">
+                <h2>Audio</h2>
+                <a class="iconoMenuNav" href="#menu"><img src="iconoNavegacion.svg" alt="icono de un mapa de navegación"
+                        title="Navegar al menú de navagación"></a>
+            </div>
+            <div class="audio">
+                <audio controls>
+                    <source src="../ut_04_02_audio/01_audio.mp3" type="audio/mp3">
+                    <source src="../ut_04_02_audio/02_audio.ogg" type="audio/ogg">
+                    Tu navegador no soporta el elemento audio.
+                </audio>
+            </div>
+        </section>
+
+        <section id="video">
+            <div class="video">
+                <h2>Vídeo</h2>
+                <a class="iconoMenuNav" href="#menu"><img src="iconoNavegacion.svg" alt="icono de un mapa de navegación"
+                        title="Navegar al menú de navagación"></a>
+            </div>
+            <div class="video">
+                <video id="videoPlugin" controls poster="../ut_04_01_img/04_composicion.png">
+                    <source src="../ut_04_03_video/01_video.mp4" type="video/mp4">
+                    <source src="../ut_04_03_video/02_video.webm" type="video/webm">
+                    Tu navegador no soporta el elemento vídeo.
+                </video>
+                <div class="botonesVideo">
+                    <button onclick="iniciar()" type="button" title="Reproducir vídeo">Play Video</button>
+                    <button onclick="pausar()" type="button" title="Pausar vídeo">Pause Video</button>
+                    <button onclick="parar()" type="button" title="Detener vídeo">Stop Video</button>
+                    <button onclick="SubirVolumen()" type="button" title="Subir Volumen del vídeo">Subir un punto el
+                        volumen</button>
+                    <button onclick="BajarVolumen()" type="button" title="Bajar volumen del vídeo">Bajar un punto el
+                        volumen</button>
+                    <button onclick="MostrarDuracion()" type="button" title="Mostrar duración del vídeo">Mostrar
+                        Duración</button>
+                    <button onclick="MostrarVolumen()" type="button" title="Mostrar volumen del vídeo">Mostrar
+                        Volumen</button>
+                    <button onclick="ControlesActivos()" type="button"
+                        title="Activar/Desactivar controles del vídeo">Controles activos</button>
+                </div>
+            </div>
+
+            <div id="descripcion">
+                <ul>
+                    <li><strong>Nombre y Apellidos:</strong> Andrés Samuel Podadera González</li>
+                    <li><strong>Contenido:</strong> Plugin de VSCode</li>
+                    <li><strong>Nombre del plugin:</strong> Prettier - Code formatter</li>
+                    <li><strong>Descripción:</strong> Permite dar formato o estilos al código (indentación,
+                        tipo de comillado, longitud
+                        de
+                        línea, cantidad de espacios para una tabulación, etc)</li>
+                    <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+                            target="_blank" title="Enlace a la página oficial del plugin">Link
+                            del
+                            plugin</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Pie de página -->
+    <footer id="pieDePagina">
+        <div>
+            <h2>Software Utilizado</h2>
+            <a class="iconoMenuNav" href="#menu"><img src="iconoNavegacion.svg" alt="icono de un mapa de navegación"
+                    title="Navegar al menú de navagación"></a>
+        </div>
+        <ul>
+            <li>
+                <p>Edición de Vídeo: <a href="https://www.avs4you.com/es/avs-video-editor.aspx" target="_blank">AVS
+                        Video Editor</a> y
+                    <a href="https://screenpal.com/" target="_blank">ScreenPal</a>
+                </p>
+            </li>
+            <li>
+                <p>Edición de Imágenes: <a href="http://www.gimp.org.es/" target="_blank">GIMP</a> </p>
+            </li>
+            <li>
+                <p>Edición de Audio: <a href="https://www.audacityteam.org/">Audacity</a></p>
+            </li>
+            <li>
+                <p>Otras: <a href="https://apps.microsoft.com/detail/9mz95kl8mr0l?hl=es-MX&gl=MX"
+                        target="_blank">Herramienta Recortes Windows</a> y <a
+                        href="https://apps.microsoft.com/detail/9pcfs5b6t72h?hl=es-ES&gl=ES" target="_blank">Paint</a>
+                </p>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="./scripts/funcionalidadBotones.js"></script>
+
+</body>
+
+</html>

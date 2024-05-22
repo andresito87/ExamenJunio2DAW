@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documento HTML5</title>
+		<style>
+			#ele_canvas{
+				border: solid 3px #4682B4;
+				background-color: #FFFFE0;
+			}
+
+
+		</style>
+		<script>
+			/* Función definida para crear un rectángulo en el canvas con id="ele_canvas"*/
+			function dibujarTriangulos(){
+
+			var elemento=document.getElementById('ele_canvas');
+			var dibujo;
+
+				// Crea el contexto del canvas.
+				dibujo=elemento.getContext('2d');
+				 
+				// Indica al contexto que se va a comenzar un trazado
+				dibujo.beginPath();
+				 
+				//Define las coordenadas de inicio.
+				dibujo.moveTo(150,50);
+				 
+				//Crea una línea desde el punto anterior hasta las coordenadas 200, 120
+				dibujo.lineTo(200,120);
+				 
+				//Crea una línea hasta las nuevas coordenadas
+				dibujo.lineTo(90,120);
+
+				//Definimos el ancho del borde y los colores de relleno y borde.
+				
+				dibujo.lineWidth="20";
+				dibujo.fillStyle="red";
+				dibujo.strokeStyle="blue";
+				
+				
+				//Cierra el camino creado anteriormente.
+				
+				dibujo.closePath();
+				dibujo.stroke();
+				dibujo.fill();
+	
+
+		
+
+
+			 
+			
+			}
+			
+			/* Escucha que llama a la función dibujarRectangulo cuando se cargue la página*/
+			window.addEventListener('load',dibujarTriangulos);
+		</script>
+	</head>
+	<body>
+		<canvas id="ele_canvas" width="300" height="150">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+
+	</body>
+</html>

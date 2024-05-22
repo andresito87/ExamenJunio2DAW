@@ -1,0 +1,120 @@
+body{
+    background-image: url(img/old_map.png);
+}
+#carcasa{
+    background-color: #101010;
+    padding: 50px 30px;
+    border: 3px solid #343434;
+    border-radius: 60px 60px 30px 30px;
+    width:300px;
+    height: 510px;
+    text-align: center;
+    box-shadow: 0px 0px 10px #000;
+    font-size: 17px;
+    font-family: Oregano;
+    color: #676767;
+    float: left;
+}
+#mobile{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#marca{
+    background-image: url(img/logo.png);
+    width: 122px;
+    height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#audif{
+    background-image: url(img/audif.png);
+    width: 75px;
+    height: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#pantalla{
+    border: 1px solid #343434;
+    box-shadow: 0px 0px 2px #343434;
+    background-color: #1a1a1a; 
+    width: 300px;
+    height: 400px;
+}
+#content{
+    background-image: none;
+    width: 300px;
+    height: 378px;
+    overflow: hidden;
+    word-wrap: break-word;
+    position: relative;
+}
+#navegacion{
+    opacity: 0;
+    width: 300px;
+    height: 17px;
+    background-color: #101010;
+    z-index: 9999;
+}
+#icons div {
+    float:left;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+#iconos{
+    height: 385px;
+}
+object{
+    height: 378px;
+}
+#icons span{
+    clear: both;
+}
+#hora{
+    float: right;
+    padding: 0 5px 0 5px;
+}
+#botBajos input{
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #343434;
+    font-size: 15px;
+}
+#b2{
+    border: 1px solid #343434 !important;
+    background-color: #1a1a1a !important;
+    height: 55px !important;
+}
+#shoutDown{
+    float: left;
+    top: 60px;
+    position:relative;
+    background-color: #101010;
+    width: 10px;
+    height: 60px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+}
+.leftIcons{
+    position: absolute;
+    left: 500px;
+}
+.rightIcons{
+    right: 500px;
+    position: absolute;
+}
+.centerIcons{
+     top: 500px;
+     position: absolute;
+     left: 100px;
+}

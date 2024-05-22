@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo canvas con imágenes</title>
+    <style>
+        #ele_canvas {
+            border: solid 3px #4682B4;
+            background-color: #FFFFE0;
+        }
+    </style>
+    <script>
+
+        function dibujarRectangulo() {
+            var miCanvas = document.getElementById("ele_canvas");
+            var dibujo = miCanvas.getContext("2d");
+            var imagen = new Image();
+            imagen.src = "foto.jpg";
+            imagen.onload = function () {
+                /* Cargaríamos la imagen en el canvas*/
+                dibujo.drawImage(this, 0, 0);
+                /* Cargaríamos la imagen reescalándola a unas dimensiones de 100 x 100 en la posición 0,400*/
+                dibujo.drawImage(this, 0, 400, 100, 100);
+
+                // Seleccionamos una parte de la imagen desde la posicioón 0,0 a la 2000,2000 y la mostramos en el canvas en una posición determinada y reescalada a unas dimensiones de 200 x 200100 en la posición 0,400*/
+                // Posición 300,500 de nuestra imagen original,
+                // Cogemos 1000 de ancho y 2000 de alto
+                // Mostramos en la posición del canvas 100,100
+                // El trozo de imagen redimensionado a 200 x 200 píxeles
+                dibujo.drawImage(this, 300, 500, 1000, 2000, 100, 100, 200, 200);
+
+                /* posicionamos la imagen original invertida y desplazada */
+
+                dibujo.translate(300, 500);
+                dibujo.scale(1, -1);
+                dibujo.drawImage(this, 0, 0, 100, 100);
+            };
+        }
+
+        /* Escucha que llama a la función dibujarRectangulo cuando se cargue la página*/
+        window.addEventListener('load', dibujarRectangulo);
+    </script>
+
+</head>
+
+<body>
+    <canvas id="ele_canvas" width="600" height="600">
+        Su navegador no soporta el elemento canvas.
+    </canvas>
+</body>
+
+</html>

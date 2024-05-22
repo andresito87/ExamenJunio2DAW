@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Unidad 5: Animaciones</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./styles/estilos.css">
+</head>
+
+<body>
+    <!--Encabezado-->
+    <header>
+        <div class="autor">
+            <img src="./img/iconoNombreApellidos.png" alt="icono de nombre y apellidos del autor">
+            <h1>Andrés Samuel Podadera González</h1>
+            <img src="./img/iconoNombreApellidos.png" alt="icono de nombre y apellidos del autor">
+
+        </div>
+        <p><img src="./img/miFoto.png" alt="Foto de Andrés Samuel Podadera González"></p>
+    </header>
+    <!--Menú de navegación-->
+    <nav>
+        <ul>
+            <li><a href="#transformaciones"><img src="./img/iconoTransformaciones.png"
+                        alt="icono de tranformaciones" />Transformaciones-Transiciones</a></li>
+            <li><a href="#animacionesCSS"><img src="./img/iconoAnimacionesCss.png"
+                        alt="icono de animaciones con css" />Animaciones CSS</a></li>
+            <li><a href="#animacionesCanvas"><img src="./img/iconoAnimacionesCanvas.png"
+                        alt="icono de animaciones con la api de canvas" />Animaciones Canvas</a></li>
+            <li><a href="#animacionesSVG"><img src="./img/iconoAnimacionesSVG.png"
+                        alt="icono de animaciones en svg" />Animaciones SVG</a></li>
+        </ul>
+    </nav>
+    <!--Seccion transformaciones: Ejercicio 2.2-->
+    <section id="transformaciones">
+        <div class="izquierda"><a href="#transformaciones">Web<div class="imagen"><img src="img/iconoWWW.png"
+                        alt="icono de enlace al sitio web" /></div></a></div>
+        <div class="derecha"><a href="#transformaciones">
+                <div class="imagen"><img src="img/iconoBot.png" alt="icono del enlace a la página de soporte" /></div>
+                Soporte
+            </a></div>
+    </section>
+    <!--Seccion animaciones CSS: Ejercicio 3-->
+    <section id="animacionesCSS">
+        <div class="animacion">
+            <div id="polo" class="polo"></div>
+            <div id="cuerpo" class="cuerpo">
+                <div id="carga" class="carga"></div>
+            </div>
+        </div>
+        <div id="pilaCargada" class="textoPilaCargada">¡Carga Completada!</div>
+        <div class="botones">
+            <button id="reanudar">Iniciar<br>Reanudar</button>
+            <button id="parar">Parar</button>
+        </div>
+    </section>
+
+    <!--Seccion animaciones Canvas: Ejercicio 4-->
+    <section id="animacionesCanvas">
+        <canvas id="canvas" width="300" height="150">
+            Su navegador no soporta el elemento canvas.
+        </canvas>
+        <button id="iniciarCanvas">Iniciar animación</button>
+    </section>
+    <!--Seccion animaciones SVG: Ejercicio 5-->
+    <section id="animacionesSVG">
+        <svg width="400" height="150" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0,0)">
+                <!-- Path para la letra A trazo inclinado -->
+                <path id="pathA" d="M50,30 L110 110" style="stroke:#7b0303; stroke-width:3; fill:none;"
+                    stroke-dasharray="6,3,3,3"></path>
+                <!-- Grupo para la letra A -->
+                <g id="inicialA">
+                    <text x="20" y="60" font-family="Serif" font-size="50" fill="#7b0303">A</text>
+                    <animateMotion id="animacionactivadaAlClic" path="M0,0 L80 90" begin="click" dur="3s"
+                        repeatCount="1" fill="freeze"></animateMotion>
+                </g>
+
+                <!-- Path para la letra P trazo quebrado -->
+                <path id="pathS" d="M120,40 L120,60 L130,60 L130,80 L150,80 L150,110"
+                    style="stroke:#1a47a2; stroke-width:5; fill:none;"></path>
+                <!-- Grupo para la letra P -->
+                <g transform="translate(-130,-120)">
+                    <g id="letterS">
+                        <text x="130" y="120" font-family="Verdana" font-size="30" fill="#000000" font-weight="bold">P
+                            <animateMotion path="M120,40 L120,60 L130,60 L130,80 L150,80 L150,100 L150,140"
+                                attributeName="startOffset" dur="3s" repeatCount="1" values="0; 100%" fill="freeze"
+                                begin="4s">
+                            </animateMotion>
+                        </text>
+                    </g>
+                </g>
+
+                <!-- Path para la letra G trazo curvo -->
+                <path id="pathG" d="M200,40 Q220,60 240,60 Q260,60 260,80 Q260,100 240,100 Q220,100 220,120"
+                    style="stroke:#2e6b0f; stroke-width:7; fill:none;" stroke-dasharray="10,5,5,10,15"></path>
+                <!-- Grupo para la letra G -->
+                <g transform=" translate(-200,-120)">
+                    <g id="letterG">
+                        <text x="200" y="120" font-family="Verdana" font-size="30" fill="#000000" font-weight="bold">G
+                            <animateMotion
+                                path="M200,40 Q220,60 240,60 Q260,60 260,80 Q260,100 240,100 Q220,100 200,140 Q180,100"
+                                attributeName="startOffset" dur="2s" repeatCount="3" values="0; 100%" fill="freeze">
+                            </animateMotion>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </svg>
+
+    </section>
+
+    <footer>
+        Hecho con 💛 por
+        <a href="https://github.com/andresito87" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+            </svg>
+        </a>
+    </footer>
+
+    <!--Carga de scripts-->
+    <script src="./scripts/animacionesCSS.js"></script>
+    <script src="./scripts/animacionesCanvas.js"></script>
+
+</body>
+
+</html>

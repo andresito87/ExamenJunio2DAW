@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+}
+
+#gameboy{
+    background-color: rgb(223, 219, 210);
+    box-shadow: 5px 5px 12px;
+    height: 600px;
+    width: 400px;
+    border-radius: 20px 20px 90px 20px;
+    margin: 50px;
+    padding: 50px 30px;
+    
+}
+
+#borde_pantalla{
+    background-color: gray;
+    height: 200px;
+    border-radius: 10px 10px 50px 10px;  
+    padding: 30px 80px;
+}
+
+#pantalla{
+    background-color: rgb(35, 35, 26);
+    border-radius: 2px;
+    box-shadow: inset 10px 10px 5px 3px rgb(10, 10, 10);
+    height: 200px;
+    text-align: center;
+    font-family: helvetica;
+}
+
+#pelota{
+    background-color: rgb(39, 75, 39);
+    transform: translate(30px, 30px);
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    animation-duration: 15s;
+    display: none;
+}
+
+@keyframes desplazamiento_pelota{
+
+    0% {  
+        transform: translate(30px, 30px);      
+    }
+
+    25% {
+        transform: translate(110px, 150px);
+    }
+
+    50%{
+        transform: translate(180px, 30px);
+    }
+
+    75%{
+        transform: translate(110px, 150px);
+    }
+
+    100%{
+        transform: translate(30px, 30px);
+    }
+
+}
+
+#texto{
+    margin: 12px 5px;
+    font-size: 19px;
+    font-family: helvetica;
+}
+
+.resaltado{
+    font-size: 25px;
+}
+
+.disminuir{
+    font-size: 12px;
+}
+
+#consola{
+    padding: 50px 0px;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 40% 50%;
+    
+}
+
+#fondo_flechas{
+    background-color: rgb(199, 196, 189);
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+#sel{
+    font-family: helvetica;
+    font-size: 10px;
+    transform: translate(90px, 0px) rotate(-38deg);
+}
+
+#sta{
+    font-family: helvetica;
+    font-size: 10px;
+    transform: translate(0px, -15px) rotate(-38deg);
+}
+

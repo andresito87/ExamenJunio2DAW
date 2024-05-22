@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>    
+     <meta charset="UTF-8">
+ <style>
+          #lienzo_texto{ 
+               border: dashed 2px #006400; 
+          }
+</style>
+<script>
+           function dibujarTexto(){
+               var miCanvas=document.getElementById("lienzo_texto");
+               var dibTexto=miCanvas.getContext("2d");
+               dibTexto.textBaseline="ideographic";
+               dibTexto.textAlign="center";
+               dibTexto.font="2em Nueva";
+               dibTexto.fillStyle="purple";
+               dibTexto.fillText("TEXTO DE PRUEBA",150,75);
+           }
+     window.addEventListener('load',dibujarTexto);
+</script>
+</head>
+<body>
+     <canvas id="lienzo_texto" width="300" height="100"></canvas>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Ejemplo de Transiciones</title>
+  <meta charset="UTF-8">
+    <style type="text/css">
+       h2{text-align: center;}
+       #transicion,#transicion2 {
+            background-color:plum;
+            width: 115px;
+            height: 115px;
+            border: solid 2px black;
+            margin: 25px;
+            text-align: center;
+
+        }
+        /* La transición se activa con pseudo-clase :active, es decir al hacer click en el objeto */
+        
+        #transicion:hover {
+            background-color: yellowgreen;
+            opacity: 0.5;
+            width: 200px;
+            height: 200px;
+            transform: rotate(90deg);
+            /* La transición se aplica sobre todas las propiedades que cambian, concretamente, fondo, ancho, alto y la transformación y dura 5 segundos */
+            transition: all, 5s;
+        }
+
+
+        #transicion2:hover {
+            background-color: yellowgreen;
+            opacity: 0.5;
+            width: 200px;
+            height: 200px;
+            transform: rotate(90deg);
+            /* La transición se aplica sobre diferente propiedades con configuraciones de tiempo, ritmo y espera diferentes */
+            transition: height 1s ease 3s,background-color 5s linear, width 10s ease-in, transform 15s ease-out 10s;
+        }
+
+        #transicion3 {
+            background-color:plum;
+            width: 115px;
+            height: 115px;
+            border: solid 2px black;
+            margin: 25px;
+            text-align: center;
+            transition: all 5s;
+        }
+
+        #transicion3:hover {
+            background-color: yellowgreen;
+            opacity: 0.5;
+            width: 200px;
+            height: 200px;
+            transform: rotate(90deg);
+            /* La transición se aplica sobre diferente propiedades con configuraciones de tiempo, ritmo y espera diferentes */
+            transition: height 1s ease 3s,background-color 5s linear, width 10s ease-in, transform 15s ease-out 10s;
+        }
+
+
+        .contenedor{ 
+            width:90%;
+            border:solid blue 2px;
+            text-align: center;
+           
+        }
+        
+   
+    </style>
+</head>
+
+<body>
+    <h2> La transformación se realizará al hacer pasar el ratón sobre el objeto, pseudo-clase :hover </h2>
+    <div class="contenedor">
+        <div id="transicion">
+            <h4>Transición 1 igual tiempo - Pon el ratón encima</h4>
+        </div>
+        <div id="transicion2">
+            <h4>Transición 2 diferentes tiempos - Pon el ratón encima</h4>
+        </div>
+        <div id="transicion3">
+            <h4>Transición 3 diferentes tiempos - Pon el ratón encima. Entrada y salida</h4>
+        </div>
+    </div>
+   
+
+
+</body>
+
+</html>

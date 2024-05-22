@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <title>Maqueta Tarea 06</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos_tarea.css" media="screen">
+
+    <!--jQuery-->
+    <!-- version CDN uncompressed -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- version CDN compressed -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
+    <!-- version local -->
+    <!-- <script src="../js/jquery-3.7.0.js"></script> -->
+</head>
+
+<body>
+    <!-- Cabecera -->
+    <header id="encabezado">
+
+        <img class="logo_cabecera" src="" alt="">
+
+        <h1>TAREA 06</h1>
+
+        <h3>Andrés Samuel Podadera González</h3>
+
+    </header>
+
+    <!-- Zona de navegación -->
+    <nav>
+        <fieldset class="menu">
+            <legend>Paneles visibles</legend>
+            <label for="imagen"><input type="checkbox" value="img" name="imagenes" id="imagen">Zona de
+                Imagen</label>
+            <label for="texto"><input type="checkbox" value="txt" name="texto" id="texto">Zona de Texto </label>
+        </fieldset>
+
+        <button id="inicializar" class="boton" type="reset">Inicializar</button>
+    </nav>
+
+    <!--  --------------------------------------------------- -->
+    <!-- Zona contenedor de imagen -->
+    <!--  --------------------------------------------------- -->
+    <section class="contenedor_imagen">
+
+
+        <!--  --------------------------------------------------- -->
+        <!-- Composición de imágenes -->
+        <!--  --------------------------------------------------- -->
+
+
+        <div class="visual_img">
+            <div class="div_img_grande">
+                <img id="img_1" class="img_grande" src="../images/logo_ies_aguadulce.png"
+                    alt="Logotipo del IES AGUADULCE">
+            </div>
+            <div class="div_img_grande">
+
+                <img id="img_2" class="img_grande" src="../images/logo_ies_aguadulce.png"
+                    alt="Logotipo del IES AGUADULCE">
+            </div>
+            <div class="div_img_grande">
+                <img id="img_3" class="img_grande" src="../images/logo_ies_aguadulce.png"
+                    alt="Logotipo del IES AGUADULCE">
+            </div>
+
+        </div>
+
+        <!--  --------------------------------------------------- -->
+        <!-- Miniaturas -->
+        <!--  --------------------------------------------------- -->
+
+        <div class="miniaturas">
+            <img id="mini1" class="img_miniaturas" src="../images/pel_ani_01.png"
+                alt="Imagen de la cabeza de una chica">
+
+            <img id="mini2" class="img_miniaturas" src="../images/batman.jpeg" alt="Imagen de batman">
+
+            <img id="mini3" class="img_miniaturas" src="../images/spiderman.jpeg" alt="Imagen de spiderman">
+
+            <img id="mini4" class="img_miniaturas" src="../images/superman.jpeg" alt="Imagen de superman">
+
+            <img id="mini5" class="img_miniaturas" src="../images/thor.jpeg" alt="Imagen de thor">
+
+            <img id="mini6" class="img_miniaturas" src="../images/wonderwoman.jpeg" alt="Imagen de wonderwoman">
+
+            <img id="mini7" class="img_miniaturas" src="../images/lobezno.jpeg" alt="Imagen de lobezno">
+
+        </div>
+
+
+        <!--  --------------------------------------------------- -->
+        <!-- Opciones e historia -->
+        <!--  --------------------------------------------------- -->
+
+
+        <div class="action_img">
+            <!--  --------------------------------------------------- -->
+            <!-- Contenedor opciones de imagenes -->
+            <!--  --------------------------------------------------- -->
+
+            <div class="menu_img">
+                <!-- Cada opción de menú se introduce dentro de un div -->
+                <!-- Origen de las imágenes -->
+                <p class="separador"> Sobre el panel de imágenes</p>
+                <div>
+                    <p>Seleccione disposición de las imágenes:</p>
+                    <input type="radio" id="horizontal" name="alineacion" value="1">
+                    <label for="horizontal">Horizontal</label><br>
+                    <input type="radio" id="vertical" name="alineacion" value="2">
+                    <label for="vertical">Vertical</label><br>
+                </div>
+                <div>
+                    <label for="seleccion_color">Selecione el color de fondo: </label>
+                    <input type="color" id="seleccion_color" />
+                </div>
+
+                <p class="separador"> Sobre el contenedor de la imagen y la imagen seleccionada</p>
+                <div>
+                    <!-- Filtro -->
+                    <label for="filtro"> Seleccione filtro: </label>
+
+                    <select id="filtro">
+
+                        <option value="1">Escala de grises al 100%</option>
+                        <option value="2">Invertir color al 100%</option>
+                        <option value="3">Sepia al 100%</option>
+                        <option value="4">Saturación al 200%</option>
+                        <option value="5">Sin Filtro</option>
+
+                    </select>
+                </div>
+                <!-- Grosor -->
+                <div>
+                    <label for="borde">Indique el grosor del borde: </label>
+                    <input type="number" id="borde" min="0" max="10" size="3">
+                </div>
+                <!-- Color -->
+                <div>
+                    <label for="seleccion_color_borde">Seleccione el color del borde:</label>
+                    <input type="color" id="seleccion_color_borde" />
+                </div>
+
+
+            </div>
+            <!--  --------------------------------------------------- -->
+            <!-- Contenedor origen de las imágenes -->
+            <!--  --------------------------------------------------- -->
+
+            <div class="origen_img">
+                <button class="bot_origen"> Ver origen de las imágenes seleccionadas</button>
+                <div id="mostrar_origen_imagenes">
+                    <p>Insertar orígenes de las imágenes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  --------------------------------------------------- -->
+    <!-- Zona contenedor de texto -->
+    <!--  --------------------------------------------------- -->
+    <section class="contenedor_texto">
+
+        <!--  --------------------------------------------------- -->
+        <!-- Texto -->
+        <!--  --------------------------------------------------- -->
+
+        <div class="visual_txt">
+            <h1 id="titulo_1">DISEÑO DE INTERFACES WEB</h1>
+            <h2 id="titulo_2">UNIDAD DE TRABAJO 6</h2>
+        </div>
+
+        <!--  --------------------------------------------------- -->
+        <!-- Acciones -->
+        <!--  --------------------------------------------------- -->
+        <div class="action_txt">
+            <button id="mostrar_slide"> Mostrar / Ocultar con Efecto</button>
+
+            <div id="div_velocidad">
+                <label for="velocidad"> Velocidad: </label>
+                <input type="number" name="velocidad" id="velocidad" max="5000" min="0" step="100" size="6">
+            </div>
+            <div id="div_separacion">
+                <label for="separacion"> Separación entre letras: </label>
+                <input type="number" name="separacion" id="separacion" max="20" min="-10" size="3">
+            </div>
+            <div id="div_fuente">
+                <label for="fuente"> Seleccione fuente: </label>
+                <select id="fuente">
+                    <option value="1">Fuente 1</option>
+                    <option value="2">Fuente 2</option>
+                    <option value="3">Fuente 3</option>
+                    <option value="4">Fuente 4</option>
+                </select>
+            </div>
+        </div>
+
+        <!--  --------------------------------------------------- -->
+        <!-- Historial -->
+        <!--  --------------------------------------------------- -->
+        <div id="historial">
+            <p id="mensaje_cabecera_historial">Historial de acciones realizadas:</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <h2>PIE DE PÁGINA</h2>
+        <div id="info_pie_de_pagina">
+            <div id="información_imagenes">
+                <h3>Autoría de imágenes:</h3>
+                <p><span>Autor:</span><a href="https://copilot.microsoft.com/images/create" target="_blank">Copilot
+                        Designer(IA)</a></p>
+                <p><span>Licencia:</span><a href="https://www.microsoft.com/es-es/servicesagreement#13q_AIServices"
+                        target="_blank">Licencia
+                        de
+                        uso</a></p>
+
+            </div>
+            <div id="fuentes_utilizadas">
+                <h3>Fuentes utilizadas:</h3>
+                <ul>
+                    <li>Fuente 1: Times New Roman</li>
+                    <li>Fuente 2: Arial</li>
+                    <li>Fuente 3: Courier New</li>
+                    <li>Fuente 4: Verdana</li>
+                </ul>
+            </div>
+            <div id="filtros_utilizados">
+                <h3>Filtros utilizados:</h3>
+                <ul>
+                    <li>Escala de grises al 100%</li>
+                    <li>Invertir color al 100%</li>
+                    <li>Sepia al 100%</li>
+                    <li>Saturación al 200%</li>
+                </ul>
+            </div>
+        </div>
+        <div id="enlace_repositorio">Hecho con 💛 por
+            <a href="https://github.com/andresito87" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

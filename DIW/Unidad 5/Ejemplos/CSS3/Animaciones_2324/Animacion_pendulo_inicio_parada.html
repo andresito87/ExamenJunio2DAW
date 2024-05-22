@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Animaciones</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .zona{
+            display: flex;
+            justify-content: center;
+
+        }
+        .animacion{
+            margin:100px;
+        }
+
+        /* Definimos la estructura del péndulo*/
+        .pendulo{
+            text-align: center;
+            width:50px;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid pink;
+        }
+        /* Definiemos la estructura del hilo*/
+        .hilo{
+            width:2px;
+            height: 150px;
+            border:solid 2px black;
+        }
+        /* Definiemos la estructura de la bola*/
+        .bola{
+            width:50px;
+            height: 50px;
+            border:solid 2px black;
+            border-radius: 50%;
+            background-color: aqua;
+        }
+
+        #pendulo1{
+            animation: animacion_pendulo1 4s ease-in-out infinite;
+        }
+
+        @keyframes animacion_pendulo1 {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(45deg);
+                }
+
+            50%{
+                transform: rotate(90deg);
+            }
+            75%{
+                transform: rotate(45deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animaciones</h1>
+    
+    <h2>Ejemplo de animación @keyframe</h2>
+<!-- Esta zona se corresponde con una animación de un conjunto de objetos que simulan un péndulo-->
+    <div class="zona animacion">
+        <!-- Definimos la estructura del péndulo 1-->
+        <div id="pendulo1" class="pendulo">
+            <!-- Hilo del pendulo -->
+            <div id="hilo1" class="hilo">
+			</div>
+            <!-- Bola del pendulo -->
+			<div id="bola1" class="bola">
+			</div>
+		</div>
+    </div>
+
+	<button id="parar">Parar</button>
+	<button id="reanudar">Reanudar</button>
+
+
+    <script>
+        var boton1 = document.getElementById("parar"); // Selecciona el botón por su ID
+            boton1.addEventListener("click", function() { // Agrega un evento de clic al botón
+            var pendulo1 = document.getElementById("pendulo1");
+            pendulo1.style.animationPlayState = "paused";
+
+    });
+
+        var boton2 = document.getElementById("reanudar"); // Selecciona el botón por su ID
+            boton2.addEventListener("click", function() { // Agrega un evento de clic al botón
+            var pendulo1 = document.getElementById("pendulo1");
+            pendulo1.style.animationPlayState = "running";
+});
+    </script>
+</body>
+</html>

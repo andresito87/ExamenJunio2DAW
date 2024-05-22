@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de animación con un fondo</title>
+    <style>
+
+          h2{text-align: center;}
+          
+          #bloque {
+          
+            /* Definimos el estilo del bloque donde se mostrarán la imagen de fondo.*/
+            width:400px;
+            height:400px;
+            border: solid black 2px;
+            border-radius: 10px;
+            position:relative;
+            margin: 0 auto;
+            background-size:cover;
+            background-repeat: no-repeat;
+            opacity:0;
+            
+            /* Definimos el estilo del bloque donde se mostrarán la imagen de fondo.*/
+            animation-duration: 6s;
+            animation-name: foto;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+          
+          }
+
+          /* Definimos la animacion.*/
+          @keyframes foto {
+            from {
+              opacity: 0.1;
+              background-size: 100%;
+              background-image:url("foto.jpg");
+              background-position-y: 100%;
+            }
+
+            to {
+              background-image:url("foto.jpg");
+              background-size: 330%;
+              background-position-x: 60%;
+
+              opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+  
+
+  <h2>Animación de fondo de imagen</h2>
+  <div id="bloque"> </div>
+
+      
+</body>
+</html>

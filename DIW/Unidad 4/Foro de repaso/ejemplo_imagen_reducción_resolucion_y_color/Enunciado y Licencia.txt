@@ -1,0 +1,24 @@
+
+Os dejo un ejemplo donde se ha producido la reducción del peso de una imagen.  He reducido la resolución de la misma, así he bajado la resolución de 1920px a 1000px, dejando el alto proporcional, además le he aplicado una compresión de 90% recomendada por Gimp. He dejado todo lo relacionado con los metadatos.
+
+La imagen original tiene un peso de 171 KB, tras la bajada de la resolución se queda en 116 KB. 
+
+A la vez he realizado otra exportación con Gimp a formato png (resolución 100px, viendo como ha subido a 470 KB, lo que demuestra que este tipo de formato no es adecuado para este tipo de imagen realista.
+
+Por último he generado la misma imagen convirtiéndola en blanco negro Para ello hemos utilizado la opción: Colores - Tono saturación, elijo la opción saturación y le pongo valor -100. La imagen se convierte a blanco y negro.
+
+Posteriormente dentro de la misma opción puedo elegir alguno de los colores y jugar con la luminosidad
+
+También podemos jugar con la herramienta brillo y contraste para ajustar un poco más los detalles de la imagen en blanco y negro. El  peso de la imagen se queda en 79kb
+
+
+
+
+
+Dejo ficheros base, transformaciones y licencia de donde se ha obtenido la imagen.
+
+Un saludo.
+
+
+Licencia pixabay
+https://pixabay.com/es/illustrations/pel%c3%adcula-negativo-fotografias-1668918/

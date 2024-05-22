@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #cbcbcb;
+    --color-secundario: #f4f4f4;
+    --color-titulos: #3170a0;
+    --color-textos: #81eadd;
+    --color-animaciones: #fc8f8f;
+    --color-animaciones-hover: #ff0000;
+    --color-sombra-oscura: #100f0f;
+    --color-canvas: #feee89;
+}
+
+body {
+    width: 100%;
+    height: 600px;
+    font-family: Lato, sans-serif, serif;
+    background-color: var(--color-secundario);
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header header"
+        "nav nav"
+        "transformaciones animacionesCSS"
+        "animacionesCanvas animacionesSVG"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-titulos);
+    margin: 10px 5px;
+    text-shadow: var(--color-sombra-oscura) 2px 1px 2px;
+}
+
+header div.autor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header div.autor img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+header p>img {
+    width: 20em;
+    border-radius: 10px;
+}
+
+header p>img:hover {
+    transform: scale(1.1);
+    animation: rotar 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    cursor: pointer;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotateY(180deg);
+    }
+
+    to {
+        transform: rotateY(-180deg);
+    }
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--color-titulos);
+    height: 5em;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+    display: flex;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: var(--color-primario);
+}
+
+nav ul li:hover {
+    background-color: var(--color-canvas);
+    color: var(--color-textos);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+nav ul li a {
+    color: var(--color-titulos);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, font-size 0.1s;
+}
+
+nav ul li a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+nav ul li a:active {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-animaciones-hover);
+    transition: color 1s, font-size 1s;
+}
+
+nav ul li a:active img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+}
+
+nav img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+/*Ejercicio 2.2 Transiciones y transformaciones*/
+
+#transformaciones {
+    grid-area: transformaciones;
+    background-color: var(--color-animaciones);
+    width: 50vw;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#transformaciones img {
+    width: 3em;
+    height: 3em;
+}
+
+#transformaciones>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 15px;
+    padding: 10px;
+    background-color: yellow;
+    height: 40%;
+    width: 400px;
+    border-radius: 10px;
+}
+
+#transformaciones>div.izquierda img {
+    width: 35px;
+    height: 35px;
+}
+
+#transformaciones>div.derecha img {
+    width: 35px;
+    height: 35px;
+}
+
+#transformaciones div.izquierda div.imagen {
+    background-color: blueviolet;
+    width: 60px;
+    margin-left: 100px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#transformaciones div.derecha div.imagen {
+    background-color: blueviolet;
+    width: 60px;
+    margin-right: 45px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#transformaciones a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#transformaciones div.izquierda {
+    transform: translateX(-60%);
+}
+
+#transformaciones div.izquierda:hover {
+    animation: desplazarDerecha 1s linear forwards,
+        aumentarTamanoFuente 1s linear forwards,
+        cambiarColorFuente 1s ease-in-out forwards;
+}
+
+#transformaciones div.izquierda:hover div.imagen {
+    background-color: var(--color-animaciones-hover);
+}
+
+#transformaciones div.izquierda:hover img {
+    animation: girarDerecha 1s linear forwards;
+}
+
+#transformaciones div.izquierda:not(:hover) {
+    animation: desplazarIzquierda 1s linear forwards,
+        disminuirTamanoFuente 1s linear forwards;
+}
+
+#transformaciones div.izquierda:hover a {
+    color: var(--color-animaciones-hover);
+}
+
+#transformaciones div.derecha {
+    transform: translateX(60);
+}
+
+#transformaciones div.derecha:hover img {
+    animation: girarIzquierda 1s linear forwards;
+}
+
+#transformaciones div.derecha:hover div.imagen {
+    background-color: var(--color-animaciones-hover);
+}
+
+#transformaciones div.derecha:hover {
+    animation: desplazarIzquierdaFiguraDerecha 1s linear forwards,
+        aumentarTamanoFuente 1s linear forwards;
+}
+
+#transformaciones div.derecha:not(:hover) {
+    animation: desplazarDerechaFiguraDerecha 1s linear forwards,
+        disminuirTamanoFuente 1s linear forwards;
+}
+
+#transformaciones div.derecha:hover a {
+    color: var(--color-animaciones-hover);
+}
+
+@keyframes desplazarIzquierda {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-60%);
+    }
+}
+
+@keyframes desplazarDerecha {
+    from {
+        transform: translateX(-60%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes desplazarIzquierdaFiguraDerecha {
+    from {
+        transform: translateX(60%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes desplazarDerechaFiguraDerecha {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(60%);
+    }
+}
+
+@keyframes girarDerecha {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes girarIzquierda {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes aumentarTamanoFuente {
+    from {
+        font-size: 0.8em;
+    }
+
+    to {
+        font-size: 2em;
+    }
+}
+
+@keyframes disminuirTamanoFuente {
+    from {
+        font-size: 2em;
+    }
+
+    to {
+        font-size: 0.8em;
+    }
+}
+
+/*Ejercicio 3 Animaciones CSS*/
+
+#animacionesCSS {
+    grid-area: animacionesCSS;
+    background-color: var(--color-textos);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#animacionesCSS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#animacionesCSS div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#animacionesCSS div.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#animacionesCSS div.botones button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--color-primario);
+    color: var(--color-titulos);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 40px;
+}
+
+#animacionesCSS div.botones button:hover {
+    background-color: var(--color-animaciones-hover);
+    color: var(--color-textos);
+}
+
+#animacionesCSS div.polo {
+    width: 30px;
+    height: 15px;
+    background-color: var(--color-sombra-oscura);
+    border-radius: 5px 5px 0 0;
+    border-top: 4px solid blue;
+    border-left: 4px solid blue;
+    border-right: 4px solid blue;
+}
+
+#animacionesCSS div.cuerpo {
+    width: 50px;
+    height: 150px;
+    background-color: var(--color-sombra-oscura);
+    border-radius: 5px;
+    border: 4px solid blue;
+}
+
+#animacionesCSS div.cuerpo div.carga {
+    margin-top: auto;
+    width: 100%;
+}
+
+#animacionesCSS div.cuerpo div.carga {
+    animation: cargarPila 5s linear forwards;
+}
+
+#animacionesCSS div#pilaCargada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: trasladarRotarTextoPilaCargada 4s linear 2s forwards;
+    width: 100%;
+    margin: 10px 0;
+    transform: translate(-100px, -200px);
+    opacity: 0;
+    z-index: -1;
+}
+
+@keyframes cargarPila {
+    0% {
+        height: 0px;
+        background-color: orangered;
+    }
+
+    10% {}
+
+    20% {
+        height: 30px;
+        background-color: orange;
+    }
+
+    30% {}
+
+    40% {
+        height: 60px;
+        background-color: yellow;
+    }
+
+    50% {}
+
+    60% {
+        height: 90px;
+        background-color: yellowgreen;
+    }
+
+    70% {}
+
+    80% {
+        height: 120px;
+        background-color: greenyellow;
+    }
+
+    90% {}
+
+    100% {
+        height: 150px;
+        background-color: green;
+    }
+}
+
+@keyframes colorearRojo {
+    from {
+        background-color: var(--color-sombra-oscura);
+    }
+
+    to {
+        background-color: red;
+    }
+
+}
+
+@keyframes trasladarRotarTextoPilaCargada {
+    0% {
+        transform: translate(200px 10px);
+        opacity: 1;
+    }
+
+    10% {
+        transform: rotate3d(1, 5, 1, -180deg);
+        transform: translateX(200px) translateY(-50px);
+    }
+
+    20% {
+        transform: translateX(-200px) translateY(70px);
+    }
+
+    25% {
+        transform: translateX(-60px) translateY(-300px);
+        transform: rotate(270deg);
+    }
+
+    30% {
+        transform: translateX(-30px) translateY(-100px);
+        transform: scaleX(1.5);
+    }
+
+    40% {
+        transform: translateX(-60px) translateY(-150px);
+        transform: rotate(180deg);
+        transform: rotate3d(1, 1, 1, 180deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+        transform: scale(1, 1.2);
+        transform: translateX(100px) translateY(-150px);
+    }
+
+    60% {
+        transform: rotate(45deg);
+        transform: scale(1.2, 1);
+    }
+
+    70% {
+        transform: rotate(-45deg);
+        transform: scale(1, 1.2);
+        transform: translateX(-200px) translateY(-150px);
+    }
+
+    75% {
+        transform: rotate(30deg) scale(2, 0.8) translate(100px, -150px);
+        transform: rotate3d(3, 1, 3, 360deg);
+    }
+
+    80% {
+        transform: rotate3d(1, 1, 1, -180deg);
+        transform: translateX(100px) translateY(150px);
+        transform: scale(1.2, 1);
+    }
+
+    90% {
+        transform: rotate(-45deg);
+        transform: scale(1, 1.2);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+/*Ejercicio 4 Animaciones con Canvas*/
+
+#animacionesCanvas {
+    grid-area: animacionesCanvas;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-textos);
+}
+
+#animacionesCanvas canvas {
+    background-color: var(--color-canvas);
+    width: 40vw;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#animacionesCanvas #canvas {
+    border: solid 3px blue;
+    background-color: var(--color-canvas);
+}
+
+#animacionesCanvas button {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--color-primario);
+    color: var(--color-titulos);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 40px;
+}
+
+#animacionesCanvas button:hover {
+    background-color: var(--color-animaciones-hover);
+    color: var(--color-textos);
+}
+
+/*Ejercicio 5 Animaciones con SVG*/
+
+#animacionesSVG {
+    grid-area: animacionesSVG;
+    background-color: var(--color-animaciones);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#trazosSVG {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: var(--color-primario);
+    color: var(--color-titulos);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer svg {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    body {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+            "nav"
+            "transformaciones"
+            "animacionesCSS"
+            "animacionesCanvas"
+            "animacionesSVG"
+            "footer";
+    }
+
+    nav {
+        height: 300px;
+        display: grid;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        width: 50%;
+    }
+
+    #transformaciones {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #transformaciones div.derecha {
+        width: 320px;
+    }
+
+    #animacionesCanvas {
+        background-color: var(--color-animaciones);
+    }
+
+    #animacionesCanvas canvas {
+        width: 70vw;
+        height: 300px;
+    }
+
+    #animacionesSVG {
+        background-color: var(--color-textos);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+            "nav"
+            "transformaciones"
+            "animacionesCSS"
+            "animacionesCanvas"
+            "animacionesSVG"
+            "footer";
+    }
+
+    nav {
+        height: 300px;
+        display: grid;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        width: 50%;
+    }
+
+    #transformaciones {
+        width: 100%;
+        height: 300px;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: "izquierda"
+            "derecha";
+    }
+
+    #transformaciones div.derecha {
+        transform: translateX(2em);
+        width: 320px;
+    }
+
+    #animacionesCanvas {
+        background-color: var(--color-animaciones);
+    }
+
+    #animacionesSVG {
+        background-color: var(--color-textos);
+    }
+}

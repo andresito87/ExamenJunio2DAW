@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animaciones con canvas</title>
+    <style>
+        /* Definimos el fondo y el borde de nuestros canvas*/
+        #canvas_animacion,
+        #canvas_grafica {
+            border: solid 3px #4682B4;
+            background-color: darkseagreen;
+        }
+
+        #canvas_inicio {
+            border: solid 3px #4682B4;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+
+
+        window.onload = function () {
+            // Al cargar la página dibujamos el botón play
+
+
+            // Dibujamos el botón de play
+            /* Inicializamso nuestro canvas */
+            var micanvas_02 = document.getElementById("canvas_inicio");
+            var boton = micanvas_02.getContext("2d");
+            boton.beginPath();
+            boton.fillStyle = "green";
+            boton.moveTo(5, 5);
+            boton.lineTo(45, 25);
+            boton.lineTo(5, 45);
+            boton.closePath();
+            boton.fill();
+        };
+
+        /*Definimos las funciones que nos permitiran dibujar en nuestros canvas */
+
+        /* Con esta función vamos a dotar de movimiento a un círculo*/
+        function movimiento() {
+
+            /* Inicializamso nuestro canvas */
+            var micanvas_01 = document.getElementById("canvas_animacion");
+            var dibujo = micanvas_01.getContext("2d");
+            var i;
+
+            var x = 75;
+            var y = 75;
+            var r = 50;
+            /* Obtenemos las dimensiones de nuestro canvas ancho y alto.*/
+            var ancho = micanvas_01.width;
+            var alto = micanvas_01.height;
+
+            /* Definimos una función que nos dibujará en el canvas dibujo, en la posicion_x,posicion_y una cincunferencia con un radio raadio */
+            function dibuja(dibujo, posicion_x, posicion_y, radio) {
+                /* Iniciamos la ruta */
+                dibujo.beginPath();
+                /*Dibujamos la circunferencia*/
+                dibujo.arc(posicion_x, posicion_y, radio, 0, 2 * Math.PI, true);
+                /* Cerramos la ruta, aunque con fill no sería necesario ya que lo rellenaría.*/
+                dibujo.closePath();
+                /* Rellenamos*/
+                dibujo.fill();
+            }
+
+            /* Utilizamos la función setInterval para dibujar una circuferencia cada x milisegundos, en nuestro caso 40.*/
+
+            var mip = setInterval(function () {
+                /* Estas variables nos van a permitir desplazar la figuar por el eje x e y*/
+                x = x + 1;
+                y = y + 1;
+
+                /* Borraremos el canvas para posteriormente dibujar una nueva fijura en la posición x e y*/
+                /* como estas van cambiando, se producirá así el movimiento. */
+
+                dibujo.clearRect(0, 0, ancho, alto);
+
+                /* Llamamos a la función que nos dibujará la circunferencia*/
+                /* x será la posción en el eje x del canvas */
+                /* y será la posción en el eje y del canvas */
+                /* r será el radio de la circunferencia.*/
+
+                dibuja(dibujo, x, y, r);
+
+                /* Las líneas que vienen a continuación nos permiten cambiar el color y el radio de la circunferencia*/
+                if (x >= 0 && x <= 125) {
+                    dibujo.fillStyle = "rgb(255,15,127)";
+                    r = r - 0.5;
+                }
+                if (x >= 126 && x <= 250) {
+                    dibujo.fillStyle = "rgb(0,215,227)";
+                    r = r + 0.5;
+                }
+                /* Paramos la animación cuando x llega a 200*/
+                if (x >= 200) {
+                    clearInterval(mip);
+                }
+            }
+                , 40);
+        }
+
+        function desplazamiento() {
+            var micanvas_03 = document.getElementById("canvas_grafica");
+            var barra = micanvas_03.getContext("2d");
+            var i;
+            var x = 10;
+            var ancho = micanvas_03.width;
+            var alto = micanvas_03.height;
+            var miint;
+
+
+            /* Esta función nos dibuja una rectángulo y nos muestra un número en pantalla*/
+            function dibuja_barra(barra, a) {
+                barra.beginPath();
+                barra.fillStyle = "turquoise";
+                barra.fillRect(10, 10, a, 100);
+                barra.closePath();
+                barra.textAlign = "center";
+                barra.font = "2em Arial";
+                barra.fillStyle = "red";
+                barra.fillText(parseInt(a / 2.8) + "%", 150, 75);
+            }
+            /* Iniciamos la función setInterva llamará a la función que pinta el rectángulo hasta que la variable x llegue a 280*/
+            /* En ese momento paramos la repeticón de la llamada a la función con clearInterval*/
+
+            /* Introducimos el identificador en la variable miint, que nos permitirá posteriormente detener la llamada a la función*/
+            miint = setInterval(function () {
+                x = x + 10;
+                /* Borramos solo la zona donde se escribe el texto*/
+                /* Aunque podríamos borrar todo el canvas*/
+                barra.clearRect(120, 50, 200, 100);
+                dibuja_barra(barra, x);
+
+                if (x >= 280) {
+                    clearInterval(miint);
+                }
+            }
+                , 40);
+
+        }
+        /* Se ejecuta el canvas al cargar la página*/
+        window.addEventListener('load', desplazamiento);
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas_animacion" width="300" height="300">
+        Su navegador no soporta el elemento canvas.
+    </canvas>
+
+    <!-- Al hacer click en el canvas de rojo se activa la animación del canvas primero, la circunferencia moviéndose -->
+    <canvas id="canvas_inicio" width="50" height="50" onclick="movimiento()">
+        Su navegador no soporta el elemento canvas.
+    </canvas>
+    <canvas id="canvas_grafica" width="300" height="300">
+        Su navegador no soporta el elemento canvas.
+    </canvas>
+</body>
+
+</html>

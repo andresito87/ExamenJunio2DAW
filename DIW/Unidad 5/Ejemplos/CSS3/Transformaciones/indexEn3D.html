@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de Transformaciones</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .contenedor {
+            -webkit-perspective: 400px;
+            perspective: 400px;
+        }
+
+        .reversible {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 2s ease;
+            -webkit-transition: transform 2s ease;
+            transition: transform 2s ease;
+        }
+
+        div.reversible:hover {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .reversible div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 150px;
+            height: 150px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .reversible div:after {
+            content: attr(data-transitions);
+            display: block;
+            position: relative;
+            top: 70px;
+            text-align: center;
+        }
+
+        .cara {
+            background-color: gold;
+            z-index: 2;
+        }
+
+        .verso {
+            background-color: black;
+            color: #aaa;
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+    </style>
+    <div class="contenedor">
+        <div class="reversible">
+            <div data-transitions="VERSO" class="verso"></div>
+            <div data-transitions="CARA" class="cara"></div>
+        </div>
+    </div>

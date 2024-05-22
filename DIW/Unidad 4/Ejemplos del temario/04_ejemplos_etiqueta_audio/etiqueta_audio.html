@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/ico" sizes="96x96" href="./imagenes/favicon.ico">
+   
+
+    <title>Etiqueta audio</title>
+    <style>
+        .ejemplos_audios,header{
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .contenedor_audio{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            border:solid 2px black;
+            margin:10px;
+        }
+
+        .contenedor_audio:nth-child(odd){
+            background-color: bisque;
+        }
+        .contenedor_audio:nth-child(even){
+            background-color:burlywood
+        }
+        #audio1{
+            width: 160px;
+            height: 200px;
+            background: aqua;
+        }
+
+    </style>
+</head>
+<body>
+        <header>
+            <h1> ETIQUETA AUDIO</h1>
+        </header>
+        <!-- Audio obtenido de:
+        
+        J. S. Bach: Brandenburg Concerto No4-1 BWV1049 de Kevin MacLeod. 
+        https://freemusicarchive.org/music/Kevin_MacLeod/Classical_Sampler/Brandenburg_No4-1_BWV1049
+        
+        -->
+        <div class="ejemplos_audios">
+        
+            <div class="contenedor_audio">
+                <h3>Solo etiqueta audio</h3>
+                <audio src="./audios/pieza_01.mp3" type="audio/mpeg" controls></audio>
+                <pre>controls src="./audios/pieza_01.mp3" type="audio/mp3</pre>
+            </div>       
+
+            <div class="contenedor_audio">
+                <h3>Etiqueta audio con varios atributos</h3>
+                <audio src="./audios/pieza_01.mp3" type="audio/mpeg" controls preload="metadata"></audio>
+                <pre>src="./audios/pieza_01.mp3" controls preload="metadata" autoplay loop muted    </pre>
+            </div>       
+
+           <div class="contenedor_audio">
+                <h3>Etiqueta audio con etiquetas source</h3>
+                <audio controls preload="metadata">
+                    <source src="./audios/pieza_01.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <pre> source src="./audios/pieza_01.mp3" type="audio/mp3"</pre>
+            </div>       
+
+            <div class="contenedor_audio">
+                <h3>Etiqueta audio con varias fuentes</h3>
+                <audio controls preload="metadata">
+                    <source src="./audios/pieza_01.mp3" type="audio/mpeg">
+                    <source src="./audios/pieza_01.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                <pre> src="./audios/pieza_01.mp3" type="audio/mpeg"</pre>
+            </div>       
+
+            <div class="contenedor_audio">
+                <h3>Etiqueta audio con varias fuentes y subtítulos</h3>
+                <video height="200px" controls preload="metadata">
+                    <source src="./audios/pieza_01.mp3" type="audio/mpeg">
+                    <source src="./audios/pieza_01.ogg" type="audio/ogg">
+                    <track src="./subtitulos/subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+
+                    Your browser does not support the audio element.
+                </video>
+                <pre> src="./audios/pieza_01.mp3" type="audio/mpeg"</pre>
+            </div>       
+       
+            <div class="contenedor_audio">
+                <h3>Etiqueta audio con identificador para controles</h3>
+
+                <audio id="audio1" controls preload="metadata">
+                    <source src="./audios/pieza_01.mp3" type="audio/mpeg">
+                    <source src="./audios/pieza_01.ogg" type="audio/ogg">
+                    <track src="./subtitulos/subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+
+                    Your browser does not support the audio element.
+                </audio>
+                <pre>audio id="audio1" controls preload="metadata"</pre>
+            </div>      
+            
+            <!-- Se crean un conjunto de botones para controlar el reproductor-->
+            <div  class="contenedor_audio">
+                <h3>Botonoes</h3> 
+                <button onclick="iniciar()" type="button">Play Video</button>
+                <button onclick="pausar()" type="button">Pause Video</button>
+                <button onclick="parar()" type="button">Stop Video</button> 
+            </div>    
+       
+
+        </div>
+            <script>
+
+                // Seleccionamos el objeto audio deseado y lo asignamos a la variable repro_audio
+                var repro_audio = document.getElementById("audio1"); 
+                // Iniciamos la reproducción
+                function iniciar() { 
+                    repro_audio.play(); 
+                } 
+
+                // Pausamos la reproducción
+                function pausar() { 
+                    repro_audio.pause(); 
+                } 
+
+                // Paramos y volvemos al inicio.
+                function parar(){
+                    repro_audio.pause();
+                    repro_audio.currentTime = 0;
+                }
+                
+            </script>
+</body>
+</html>

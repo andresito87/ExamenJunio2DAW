@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" sizes="96x96" href="./imagenes/favicon/favicon-96x96.png">
+   
+    <title>Formas de insertar un video en la web</title>
+    <style>
+        .ejemplos,header{
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .video{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            border:solid 2px black;
+            margin:10px;
+            width:15%;
+            height:auto;
+        }
+
+        .video:nth-child(odd){
+            background-color: bisque;
+        }
+        .video:nth-child(even){
+            background-color:burlywood
+        }
+        h3{text-align: center;}
+
+    </style>
+</head>
+<body>
+        <header>
+            <h1> ETIQUETA VIDEO</h1>
+        </header>
+        <div class="ejemplos">
+        
+            <div class="video">
+                <h3>Etiqueta video</h3>
+                <video id="video1" src="./videos/video_01.mp4" type="video/mpeg" width=100% height=100% controls></video>
+            </div>       
+
+
+            <div class="video">
+                <h3>Etiqueta video con poster</h3>
+                <video src="./videos/video_01.mp4" type="video/mpeg" width=100% height=100% controls poster="./imagenes/img_poster.jpg"></video>
+            </div>       
+
+            <div class="video">
+                <h3>Etiqueta video con poster y metadata</h3>
+                <video src="./videos/video_01.mp4" type="video/mpeg" width=100% height=100% controls poster="./imagenes/img_poster.jpg" preload="metadata"></video>
+            </div>       
+            
+            <div class="video">
+                <h3>Etiqueta video con metadata y comienzo en segundo 20</h3>
+                <video src="./videos/video_02.mp4#t=20" type="video/mpeg" width=100% height=100% controls poster="./imagenes/img_poster.jpg" preload="metadata"></video>
+            </div>       
+
+            <div class="video">
+                <h3>Etiqueta video con poster, metadata y reproducen del segundo 20 al 40</h3>
+                <video src="./videos/video_01.mp4#t=20,40" type="video/mpeg" width=100% height=100% controls  preload="metadata"></video>
+            </div>       
+
+            
+
+            <div class="video">
+                <h3>Etiqueta video2 multiples fuentes con poster, metadata y comienzo en segundo 20</h3>
+                <video width=100% height=100% controls poster="./imagenes/img_poster.jpg"  preload="metadata">
+                        <source src="./videos/video_01.ogg" type="video/ogg"/>
+                        <source src="./videos/video_01.mp4" type="video/mpeg"/>
+                </video>
+            </div>       
+
+            <div  class="video">
+                <h3>Etiqueta video multiples fuentes y subtitulos</h3>
+                    <video width=100% height=100% controls poster="./imagenes/img_poster.jpg" preload="metadata">
+                            <source src="./videos/video_02.ogg" type="video/ogg"/>
+                            <source src="./videos/video_02.mp4" type="video/mpeg"/>
+                            <track src="./subtitulos/subtitulos_es.vtt" kind="subtitles" srclang="es" label="Español" default>
+                            <track src="./subtitulos/subtitulos_en.vtt" kind="subtitles" srclang="en" label="Inglés" >
+        
+                            Your browser does not support the audio element.
+    
+                    </video>
+            </div>        
+            <div class="video">
+                <h3>Etiqueta iframe</h3>
+                <iframe width=100% height=100% src="https://www.youtube.com/embed/hIAGtbszch4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <pre>https://www.youtube.com/watch?v=hIAGtbszch4</pre>
+
+            </div>       
+
+            <div class="video">
+                <h3>Debe utilizarse para plugin</h3>
+                <h3>Etiqueta object no debe utilizarse para video.</h3>
+                
+                <object type="application/pdf" 
+                    data="./recursos/doc.pdf"
+                    width="100%" height="100%">
+                </object> 
+            </div>       
+            
+            <div class="video">
+                <h3>Debe utilizarse para plugin</h3> 
+                <h3>Etiqueta embeb no debe utilizarse para video.</h3>
+                <embed type="application/pdf" 
+                    src="./recursos/doc.pdf"
+                    width="100%" height="100%"
+                    title="Ejemplo de pdf">
+            </div>  
+            <div id="video10" class="video">
+                <h3>Botonoes</h3> 
+                <button onclick="iniciar()" type="button">Play Video</button>
+                <button onclick="pausar()" type="button">Pause Video</button>
+                <button onclick="parar()" type="button">Stop Video</button> 
+                <button onclick="SubirVolumen()" type="button">Subir un punto el volumen</button> 
+                <button onclick="BajarVolumen()" type="button">Bajar un punto el volumen</button> 
+                <button onclick="MostrarDuracion()" type="button">Mostrar Duración</button> 
+                <button onclick="MostrarVolumen()" type="button">Mostrar Volumen</button> 
+                <button onclick="ControlesActivos()" type="button">Controles activos</button> 
+            </div>    
+  
+        </div>
+        <script>
+                var repro_video = document.getElementById("video1"); 
+                // Iniciamos la reproducción
+                function iniciar() { 
+                    repro_video.play(); 
+                } 
+
+                // Pausamos la reproducción
+                function pausar() { 
+                    repro_video.pause(); 
+                } 
+
+                // Paramos y volvemos al inicio.
+                function parar(){
+                    repro_video.pause();
+                    repro_video.currentTime = 0;
+                }
+                
+                //Subir volumen.
+                function SubirVolumen(){
+                    if (repro_video.volume<1){
+                        repro_video.volume=repro_video.volume+0.1;
+                    }
+                }
+
+                // Bajar volumen.    
+                function BajarVolumen(){
+                    if (repro_video.volume>0){
+                        repro_video.volume=repro_video.volume-0.1;
+                    }
+                }
+
+                // Mostrar duración del video en segundos    
+                function MostrarDuracion(){
+                    alert("La duración del video es de: "+repro_video.duration+" segundos");
+                }
+
+                // Mostrar el nivel del audio
+                function MostrarVolumen(){
+                    alert("El volumen tiene el siguiente valor: "+repro_video.volume+" sobre 1");
+                }
+
+                // Indica si el reproductor tiene los controles visibles
+                function ControlesActivos(){
+                    if (repro_video.controls){
+                        alert("Los controles están activos");
+                        repro_video.controls=false;
+                        alert("Pero ya no");}
+                    else{
+                        alert("Los controles no están activos")
+                        repro_video.controls=true;
+                        alert("Ahora han vuelto");
+                    }
+                    
+                }
+
+        </script>
+</body>
+</html>

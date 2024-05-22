@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documento HTML5</title>
+		<style>
+			#ele_canvas{
+				border: solid 3px #4682B4;
+				background-color: #FFFFE0;
+			}
+		</style>
+
+		<script>
+			/* Función definida para crear un rectángulo en el canvas con id="ele_canvas"*/
+			 function dibujarCirculo()
+				{
+					   var miCanvas=document.getElementById("ele_canvas"); 
+					   var dibujo=miCanvas.getContext("2d"); 
+					   dibujo.fillStyle="rgb(0,255,127)"; 
+					   dibujo.arc(50,50,40,0,2*Math.PI,true); 
+					   dibujo.fill(); 
+				}
+				window.addEventListener('load',dibujarCirculo);
+		</script>
+	</head>
+	<body>
+		<canvas id="ele_canvas" width="300" height="150">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+
+	</body>
+</html>

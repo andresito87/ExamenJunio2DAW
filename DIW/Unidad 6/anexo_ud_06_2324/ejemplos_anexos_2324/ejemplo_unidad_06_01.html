@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css\estilos.css" media="screen">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>src="script\tarea06.js"</script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Ejemplo U.T. 06 - jQuery</title>
+    <style>
+      .borde{
+            border: solid black 2px;
+            width:9vw;
+            height: 15vh;
+            margin:1vw;
+          
+      }
+      .enlinea{
+        display: inline-block;
+      }
+
+      
+      .contenedor{
+            border: solid blue 2px;
+            width:57vw;
+            height: 20vh;
+            margin:5px;
+ 
+      }
+
+
+    </style>
+<script>
+          $(document).ready(function(){
+               
+               /* Asignamos diferentes funciones al boton primro #btn */
+               $("#btn").on({
+                   click: function(){$("p").hide();},
+                   mouseover: function(){$("p").css("color","blue");},
+                   dblclick:function(){$("p").show();},
+               })
+
+               /*Al pulsar el botón dos, asignamos estilo al parrafo 1 y eliminamos la función asignada al evento mouseover del boton1 #btn*/
+               $("#btn2").click(function(){
+                    $("p").css("color","black");
+                    $("#btn").off("mouseover");
+               })
+
+               var txt="";
+               var origen="";
+               var i=1;
+               
+
+               /* Recogemos la información del atributo src de cada imagen y lo vamos almacenando en la variable txt*/
+               $(".miniaturas").each(function(index){
+                    origen=$(this).attr("src");
+                    txt=txt+"Imagen"+i+" tiene como origen: "+origen+"   "+"</br>";
+                    i++;
+                });
+
+                /*Creamos una nueva etiqueta al final de nuestro documento e insertamos en ella los orígenes de las imágenes*/
+                $("body").append("<p>"+txt+"</p>");
+               
+               
+               /* Asignamos un ancho y alto a todas las imágenes */
+               $(".miniaturas").attr("width","300px");
+               $(".miniaturas").attr("height","150px");    
+               
+               
+              
+
+               /* Cambiamos el tamñao y realizamos una transformación a las imágenes insertadas*/
+               
+               var ancho=250;
+               var alto=150;
+               var giro=0;
+               $(".miniaturas").each(function(index){
+                    $(this).attr("width",ancho+"px");
+                    $(this).attr("height",alto+"px");
+
+                    $(this).css("transform","rotate("+giro+"deg)");
+                 
+                    ancho=ancho+50;
+                    alto=alto+15;
+                    giro=giro+15;
+                });
+           
+            
+                /* Al pulsar el botón3, cambiamos el estilo y contenido del primer párrafo*/
+                $("#btn3").click(function(){
+                    
+                    $("#pa").css("color","red");
+                    $("#pa").text("I. He cambiado el texto del primer parrafo");
+                    $("#pa").css("text-transform"," uppercase");
+               })
+               
+         
+               /*Añadimos al bloque bloque_1 la clase contenedor*/
+               $("#bloque_1").addClass("contenedor");
+
+               
+               /*Creamos 5 div dentro del bloque contenedor bloque_1*/
+               var x=0; 
+               for (x=0;x<5;x++){
+                    $("#bloque_1").append("<div></div>");
+                }
+
+                /* Le asignamos a los div dentro del bloque bloque_1 las clases borde y enlinea */
+                $("#bloque_1>div").addClass("borde enlinea");
+
+                /*Eliminamos la clase en linea y los div aparecerán uno debajo de otros*/    
+                $("#btn4").click(function(){
+                    $("#bloque_1>div").removeClass("enlinea");
+
+               })
+
+               $("#btn5").click(function(){
+                   
+                    $(".miniaturas:first").fadeOut(2000);
+
+               })
+               $("#btn6").click(function(){
+                   
+                   $(".miniaturas:first").fadeIn(2000);
+
+              })
+
+
+            $("#btn7").click(function(){
+                     $(".miniaturas:last").slideUp("slow");
+              });
+
+              $("#btn8").click(function(){
+                     $(".miniaturas:last").slideDown("slow");
+              });
+
+
+              $("#btn9").click(function(){
+                     origen=$(".miniaturas:first").attr("src");
+                     
+                     $(".miniaturas:last").slideUp(1000,function() 
+                        {
+                            $(".miniaturas:last").attr("src",origen);
+                        }
+                     );   
+                     $(".miniaturas:last").slideDown("slow");
+              });
+
+          });
+          
+     </script>
+
+</head>
+
+<body>
+
+     <p id="pa"> este es el primer párrafo </p>
+     <p id="pb"> este es el segundo párrafo </p>
+
+     <img class="miniaturas" src="puesta01.jpg" alt="Puesta de sol primera">    
+     <img class="miniaturas" src="puesta02.jpg" alt="Puesta de sol segunda">    
+     <img class="miniaturas" src="puesta03.jpg" alt="Puesta de sol tercera">    
+     <br>
+     <button id="btn">Click me</button>
+     <button id="btn2">Elimina evento mouseover</button>
+     <button id="btn3">Cambiar texto de parrafos</button>
+     <button id="btn4">Eliminar clase enlinea</button>
+    </br>
+    <div id="bloque_1"></div>
+    <button id="btn5">Efecto fadeOut</button>
+    <button id="btn6">Efecto fadeIn</button>
+    <button id="btn7">Efecto slideUp</button>
+    <button id="btn8">Efecto slideDown</button>
+    <button id="btn9">Efecto slideUp-Down</button>
+     
+
+</body>
+
+</html>
+
+
+$("#btn").click(function(){
+
+    $("p").hide();
+
+});

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documento HTML5</title>
+		<style>
+			#ele_canvas{
+				border: solid 3px #4682B4;
+				background-color: aqua;
+			}
+		
+
+		</style>
+		<script>
+			/* Función definida para crear un rectángulo en el canvas con id="ele_canvas"*/
+			function dibujar(){
+
+
+				var miCanvas=document.getElementById("ele_canvas"); 
+				var dibujo=miCanvas.getContext("2d"); 
+				var grd=dibujo.createRadialGradient(50,80,5,90,100,80);
+				   grd.addColorStop(0,"blue");
+				   grd.addColorStop(0.25,"white");
+				   grd.addColorStop(0.50,"green");
+				   grd.addColorStop(1,"yellow");
+
+				   dibujo.fillStyle=grd;
+				   dibujo.arc(120,80,60,0,2*Math.PI,true); 
+				   dibujo.fill(); 
+			}
+			
+			/* Escucha que llama a la función dibujarRectangulo cuando se cargue la página*/
+			window.addEventListener('load',dibujar);
+		</script>
+	</head>
+	<body>
+		<canvas id="ele_canvas" width="300" height="150">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+
+	</body>
+</html>

@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+
+:root {
+    --azulClaro: #aee4ff;
+    --azulOscuro: #0f4c75;
+    --azulParaHover: #3dd3fc;
+    --blanco: #ffffff;
+    --azulTextoDestacado: royalblue;
+}
+
+* {
+    box-sizing: border-box;
+    background-color: var(--azulClaro);
+}
+
+.iconoMenuNav img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecera" "navegacion" "contenidos" "pieDePagina";
+}
+
+header {
+    grid-area: cabecera;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 3em;
+    color: var(--azulOscuro);
+    margin: 10px;
+    text-align: center;
+}
+
+header img {
+    width: 15em;
+    height: 15em;
+    border-radius: 2%;
+    margin: 10px;
+}
+
+nav {
+    grid-area: navegacion;
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav li {
+    background-color: var(--blanco);
+    display: inline;
+    margin: 20px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--blanco);
+    border: solid var(--azulParaHover) 2px;
+}
+
+nav li a span {
+    text-decoration: underline;
+    background-color: var(--blanco);
+    color: var(--azulTextoDestacado);
+}
+
+nav li a:hover span,
+nav li a:hover {
+    background-color: var(--azulParaHover);
+}
+
+main {
+    grid-area: contenidos;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imagenes>img {
+    width: 20em;
+    height: 20em;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+.imagenes picture img {
+    width: 20em;
+    height: 20em;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+main section video {
+    width: 60%;
+    height: 60%;
+    margin: 10px;
+    border-radius: 5%;
+}
+
+main section .video:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+main section .botonesVideo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+main section .botonesVideo button {
+    border-radius: 10px;
+    background-color: var(--blanco);
+    border: solid var(--azulParaHover) 2px;
+    transition: all 0.5s;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+main section .botonesVideo button:hover {
+    background-color: var(--azulParaHover);
+}
+
+main section #descripcion {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#descripcion ul {
+    text-align: center;
+    list-style-type: none;
+}
+
+#descripcion ul li {
+    margin: 10px;
+    padding: 10px;
+}
+
+#descripcion ul li strong {
+    font-size: 1.5em;
+    color: var(--azulTextoDestacado);
+}
+
+#descripcion ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--blanco);
+    border: solid var(--azulParaHover) 2px;
+    transition: all 0.5s;
+}
+
+#descripcion ul li a:hover {
+    background-color: #3dd3fc;
+}
+
+footer {
+    grid-area: pieDePagina;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p {
+    margin: 10px;
+}
+
+/*dividir en dos columnas la lista de enlaces*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer li {
+    display: inline;
+    margin: 20px;
+}
+
+footer li p {
+    margin: 10px;
+}
+
+footer li p a {
+    color: var(--azulOscuro);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1280px) {
+    header img {
+        display: none;
+    }
+
+    main section .imagenes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "imagen1 imagen2"
+            "imagen3 imagen4";
+    }
+
+    main section .imagenes img:nth-child(1) {
+        grid-area: imagen1;
+    }
+
+    main section .imagenes img:nth-child(2) {
+        grid-area: imagen2;
+    }
+
+    main section .imagenes img:nth-child(3) {
+        grid-area: imagen3;
+    }
+
+    main section .imagenes picture:nth-child(4) {
+        grid-area: imagen4;
+    }
+
+    .video .botonesVideo {
+        font-size: 0.7em;
+    }
+
+    footer li {
+        margin: 5px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav li {
+        margin: 5px;
+    }
+
+    nav li a {
+        font-size: 1em;
+    }
+
+    main section .imagenes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main section .botonesVideo button {
+        padding: 1px;
+        margin: 1px;
+    }
+}

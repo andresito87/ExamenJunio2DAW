@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>index demo</title>
+  <style>
+        #adios{
+            display: none;        }
+    
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+ <!-- Ejemplo extraido de la documentación oficial de jquery -->
+ 
+ <div id="clickme">
+        <p>Click para imagen</p>
+  
+  <img id="book" src="puesta01.jpg" alt="Pueta de sol" width="100" height="200">
+ 
+</div>
+  <br>
+
+  <button>Toggle (con el texto)</button>
+    <p>Hello</p>
+    
+    <!-- Este segundo texto lo ponemos oculto con estilos -->
+    <p id="adios">Good Bye</p>
+    <!-- Al pulsar el botón con toggle, lo que realiza es que los elementos visibles los oculta y los ocultos los muestra-->
+    <!-- -->
+
+<script>
+
+    $( "#clickme" ).on( "click", function() {
+        $( "#book" ).toggle( "slow", function() {
+            // Animation complete.
+            $("#clickme").append("<p>Imagen ocultada</p>");
+
+        });
+    });
+
+
+    $( "button" ).on( "click", function() {
+        $( "p" ).toggle();
+    } );
+
+
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo jQuery</title>
+    <link rel="stylesheet" href="./css/tarea_06.css">
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+               <!-- Eejmplo para mostrar el marcado y desmarcado de campos input -->
+               <div class="seleccion_imagen">
+                    <input class="s_img" type="checkbox" id="s_img1" name="s_img1" value="img1">
+                    <label for="s_img1">Img 1</label>
+                    <input class="s_img" type="checkbox" id="s_img2" name="s_img2" value="img2" >
+                    <label for="s_img2">Img 2</label>
+                    <input class="s_img" type="checkbox" id="s_img3" name="s_img3" value="img3" >
+                    <label for="s_img3">Img 3</label>
+                    <input class="s_img" type="checkbox" id="s_img4" name="s_img4" value="img4" >
+                    <label for="s_img4">Img 4</label>
+                    <input class="s_img" type="checkbox" id="s_img5" name="s_img5" value="img5" >
+                    <label for="s_img5">Img 5</label>
+                    <input class="s_img" type="checkbox" id="s_img6" name="s_img6" value="img6" >
+                    <label for="s_img6">Img 6</label>
+                </div>  
+                <br>
+                <br>
+
+			<button id="marcar"
+                    type="button"> Marcar todos los checkbox</button>  
+
+			<button id="desmarcar"
+                    type="button"> Desmarcar todos los checkbox</button>  
+                    
+			<script>
+                    /* El evento se activa al cambiar el estado del input */
+                    $('input[type=checkbox]').on('change', function() {
+						if ($(this).is(':checked')) {
+							alert("El campo"+$(this).attr("name")+" tiene el valor: "+  $(this).val()+ " y está marcado");
+						} else {
+							alert("El campo"+$(this).attr("name")+" tiene el valor: "+  $(this).val()+ " y NO está marcado");
+						}
+			
+				});
+				
+                    /* Desmarcamos todos los input  al pulsar el botón desmarcar*/
+				 $("#desmarcar").on("click",function(){
+				      $(".s_img").prop("checked", false);     
+
+				});
+                    /* Marcamos todos los input al pulsar el botón marcar*/
+				 $("#marcar").on("click",function(){
+				      $(".s_img").prop("checked", true);     
+
+				});
+
+                    </script>
+</body>
+
+</html>

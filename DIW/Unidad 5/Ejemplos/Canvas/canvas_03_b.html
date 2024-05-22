@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Documento HTML5</title>
+		<style>
+			#ele_canvas{
+				border: solid 3px #4682B4;
+				background-color: #FFFFE0;
+			}
+			#ele_canvas_2{
+				border: solid 3px black;
+				background-color: #FF0000;
+			}
+
+		</style>
+		<script>
+			/* Función definida para crear un rectángulo en el canvas con id="ele_canvas"*/
+			function dibujar(){
+
+			var elemento=document.getElementById('ele_canvas');
+			var dibujo= elemento.getContext("2d");
+				dibujo.beginPath(); //inicio de ruta
+				dibujo.fillStyle="red"; //color de relleno rojo;
+				dibujo.strokeStyle="black"; //color de contorno negro;
+				dibujo.moveTo(100,50); //dibujar rombo
+				dibujo.lineTo(150,150);
+				dibujo.lineTo(100,250);
+				dibujo.lineTo(50,150);
+				dibujo.lineWidth="4"; // definimos el grosor del contorno a 2
+				dibujo.closePath();
+				dibujo.fill(); //rellenar de color
+				dibujo.stroke(); //rellenar de color
+				
+				dibujo.save(); //guardamos contextyo
+
+				dibujo.beginPath(); //inicio de ruta
+				dibujo.fillStyle="blue"; //color de relleno azul;
+				dibujo.strokeStyle="green"; //color de contorno verde;
+				dibujo.moveTo(100,60); //dibujar rombo
+				dibujo.lineTo(140,150);
+				dibujo.lineTo(100,240);
+				dibujo.lineTo(60,150);
+				dibujo.lineWidth="2";
+				dibujo.closePath();
+				dibujo.fill(); //rellenar de color
+				dibujo.stroke(); //rellenar de color
+	
+
+				dibujo.restore(); //recuperamos contexto.
+				// Nos cogerá los mismos estilos que teníamos.
+				dibujo.beginPath(); //inicio de ruta
+				dibujo.lineWidth="6"; // Se modifica la línea para que sea visible, aunque con el contexto se recuperaría el valor guardado.
+				dibujo.moveTo(100,80); //dibujar rombo
+				dibujo.lineTo(120,150);
+				dibujo.lineTo(100,220);
+				dibujo.lineTo(80,150);
+				dibujo.closePath();
+				dibujo.stroke(); //borde de color seleccionado.
+				dibujo.fill(); //rellenar de color
+		
+
+			}
+			
+			
+			
+			/* Escucha que llama a la función dibujarRectangulo cuando se cargue la página*/
+			window.addEventListener('load',dibujar);
+		</script>
+	</head>
+	<body>
+		<canvas id="ele_canvas" width="200" height="300">
+			Su navegador no soporta el elemento canvas.
+		</canvas>
+		
+	</body>
+</html>
