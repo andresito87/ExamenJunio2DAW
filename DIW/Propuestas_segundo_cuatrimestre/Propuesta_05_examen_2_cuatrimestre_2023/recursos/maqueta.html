@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen DIW (Segundo parcial). Curso 22/23</title>
+    <link rel="stylesheet" href="estilos_examen_junio.css" media="screen">
+    
+</head>
+<body>
+    <header>
+        <h2>EXAMEN JUNIO (MAQUETA)</h2>
+    </header>
+    
+
+
+    <div class="zona z_datos">
+        <!-- ---------------------------------------------- -->
+        <!-- Debes rellenar esta información  con tus datos -->
+        <!-- ---------------------------------------------- -->
+
+        <h3>Nombre del Alumn@</h3>
+        <h3>Centro de referncia</h3>
+        <br>
+        <h3>Rellena los datos</h3>
+    </div>
+    
+    <!-- Zona reservada para insertar la imagen tratada  -->	
+    <div class="zona z_imagen">
+        <h2>ZONA DE IMAGEN</h2>
+
+        <!-- ---------------------------------------------------- -->
+        <!-- Debes insertar aquí la imagen del ejercicio ........ -->
+        <!-- ---------------------------------------------------- -->
+
+    </div>
+
+	<!-- Zona reservada para insertar el video suministrado -->
+    <div class="zona z_video">
+        <h2>ZONA DE VIDEO</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiquetas necesarias para que el video se visualice correctamente -->
+        <!-- -------------------------------------------------------------------------- -->
+
+        <button id="b_play" type="button">Play</button>  
+        <button id="b_pause" type="button"> Pause</button>  
+
+    </div>
+
+
+    <!-- Zona reservada para la animación -->
+    <div class="zona z_animacion">
+        <h2>ZONA DE ANIMACIÓN</h2>
+        <!-- Definimos los elementos que conformarán la bander de Andlucía-->
+        <div id="banda_1"></div>
+        <div id="banda_2"></div>
+        <div id="banda_3"></div>
+        <div id="escudo">
+            <img id="img_escudo" src="./EscudoAndalucia.svg">
+        </div>
+    </div>
+
+	<!-- Zona reservada para crear el ejercicio de jquery -->
+    <div class="zona z_jquery">
+        <h2>ZONA DE JQUERY</h2>
+        <div class="elementos_jquery">
+			<div class="zona_bandera">  
+				<h3>Al hacer click en cada una de las tres zonas se aplica el color seleccionado</h3>
+				
+                <!-- Se define una bandera con tres div -->
+                <div id="bandera">
+                    <div id="zona_1" class="zona_b"></div>                            
+                    <div id="zona_2" class="zona_b"></div>                            
+                    <div id="zona_3" class="zona_b"></div>                            
+               </div>
+            </div>
+			<div  class="zona_interaccion">
+                <h4>Zona de interacción</h4>
+                <label for="s_color">Selecciona color:</label>
+                <select id="s_color">
+                    <option value="red">Rojo</option>
+                    <option value="green">Verde</option>
+                    <option value="white">Blanco</option>
+                    <option value="yellow">Amarillo</option>
+                </select>
+                <button id="b_gris" type="button">Escala de grises</button>  
+                <button id="b_colores_letra" type="button"> Escribir colores</button>  
+                <button id="b_orientacion" type="button"> Cambiar orientación Vertical</button>  
+
+            </div>
+		</div>    
+	</div>    
+</body>
+
+</html>
