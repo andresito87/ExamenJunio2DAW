@@ -56,6 +56,7 @@ img {
 
 .escudo1 {
     animation: escudo1Animation 10s linear normal;
+    animation-iteration-count: 2;
     top: 90%;
     left: 50%;
 }
@@ -63,6 +64,7 @@ img {
 .escudo2 {
     animation: escudo2Animation 10s linear normal;
     animation-delay: 2.5s;
+    animation-iteration-count: 2;
     top: 90%;
     left: 40%;
 }
@@ -78,6 +80,7 @@ img {
     z-index: 1;
     top: 70%;
     left: 43%;
+    animation-iteration-count: 2;
 }
 
 @keyframes escudo1Animation {

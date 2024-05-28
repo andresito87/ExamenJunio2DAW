@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones con Canvas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let x1 = 0;
+        let y1 = 100;
+        let x2 = 0;
+        let y2 = 300;
+
+        function drawCircle(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fillStyle = 'blue';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawSquare(x, y) {
+            ctx.beginPath();
+            ctx.rect(x, y, 30, 30);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function animate() {
+            // Limpiar el canvas solo para la animación del círculo
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dibujar el círculo (desplazándose y borrándose)
+            drawCircle(x1, y1);
+            x1 += 5;
+            if (x1 > canvas.width) x1 = 0;
+
+            // Dibujar el cuadrado (desplazándose y dejando estela)
+            drawSquare(x2, y2);
+            x2 += 5;
+            if (x2 > canvas.width) x2 = 0;
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>
