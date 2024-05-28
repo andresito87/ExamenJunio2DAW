@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    border: 2px solid #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo {
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: color 0.5s;
+}
+
+.escudo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+.escudo1 {
+    animation: escudo1Animation 10s linear normal;
+    top: 90%;
+    left: 50%;
+}
+
+.escudo2 {
+    animation: escudo2Animation 10s linear normal;
+    animation-delay: 2.5s;
+    top: 90%;
+    left: 40%;
+}
+
+.superheroe {
+    position: absolute;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    animation: superheroeAnimation 10s linear normal;
+    z-index: 1;
+    top: 70%;
+    left: 43%;
+}
+
+@keyframes escudo1Animation {
+    0% {
+        top: -50px;
+        left: 100%;
+    }
+
+    50% {
+        top: 90%;
+        left: 0%;
+    }
+
+    60% {
+        top: 90%;
+        left: 50%;
+    }
+
+    100% {
+        top: 90%;
+        left: 50%;
+    }
+
+}
+
+@keyframes escudo2Animation {
+    0% {
+        top: -50px;
+        left: 0;
+    }
+
+    50% {
+        top: 90%;
+        left: 100%;
+    }
+
+    60% {
+        top: 90%;
+        left: 40%;
+    }
+
+    100% {
+        top: 90%;
+        left: 40%;
+    }
+}
+
+@keyframes superheroeAnimation {
+    0% {
+        top: -50px;
+    }
+
+    60% {
+        top: 70%;
+    }
+
+    100% {
+        top: 70%;
+    }
+}

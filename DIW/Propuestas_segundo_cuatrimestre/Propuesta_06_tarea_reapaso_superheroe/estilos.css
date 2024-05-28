@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 800px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "header header"
+        "main aside"
+        "footer footer";
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 100px;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(254, 207, 120);
+    text-align: center;
+}
+
+aside h2 {
+    margin: 1rem;
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "imagen musicaVideo css"
+        "canva svg jquery";
+}
+
+#zonaImagen {
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#zonaMusicaVideo {
+    grid-area: musicaVideo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#zonaCss {
+    grid-area: css;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#zonaCanva {
+    grid-area: canva;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#zonaSVG {
+    grid-area: svg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#zonaJquery {
+    grid-area: jquery;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 100px;
+}
+
+/* ------------- Media queries -------------- */
+@media (max-width: 700px) {
+    body {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+            "aside"
+            "main"
+            "footer";
+    }
+
+    main {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "imagen"
+            "canva"
+            "musicaVideo"
+            "svg"
+            "css"
+            "jquery";
+    }
+}
