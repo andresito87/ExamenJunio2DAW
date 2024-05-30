@@ -1,0 +1,240 @@
+:root {
+    --color-titulos: #4439e8;
+    --color-fondo: #bfbfc0;
+    --color-fondo-tarjeta: #d7a1e8;
+    --color-texto-destacado: #843939;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-fondo-tarjeta);
+    color: white;
+}
+
+h1 {
+    color: var(--color-titulos);
+}
+
+/* Estilos de la zona de inputs para buscar localizacion */
+#inputs_botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+    background-color: var(--color-titulos);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos a la zona de cargando */
+#cargando {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#cargando img {
+    width: 250px;
+    height: 200px;
+}
+
+/* Estilos de la zona de previsión del tiempo actual */
+#info_lugar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#divPoblacion,
+#divPais,
+#divRegion {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: var(--color-fondo-tarjeta);
+    font-weight: bold;
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid var(--color-titulos);
+}
+
+#divPoblacion p:first-child,
+#divPais p:first-child,
+#divRegion p:first-child {
+    color: var(--color-texto-destacado);
+    font-size: 1.5em;
+}
+
+/* Colocamos la previsión del tiempo y el mapa en una sola fila */
+#divPrevisionMapa {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#divPrevisionMapa div {
+    margin: 20px;
+}
+
+#tarjetaTiempo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-titulos);
+    border-radius: 10px;
+    width: 500px;
+    margin: 20px auto;
+    background-color: var(--color-fondo-tarjeta);
+    font-weight: bold;
+}
+
+#tarjetaTiempo h3 {
+    color: var(--color-titulos);
+}
+
+
+/* Estilos de la zona de prevision del tiempo de 10 días */
+svg {
+    width: 400px;
+    height: 400px;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+}
+
+#tiempo10Dias {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetaTiempo {
+    max-width: 70px;
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: var(--color-fondo-tarjeta);
+}
+
+#prevision10Dias span {
+    font-size: 1.5em;
+    color: var(--color-texto-destacado);
+
+}
+
+/* Estilos de la zona de localización */
+#localizacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-fondo-tarjeta);
+    font-weight: bold;
+    border: 1px solid var(--color-titulos);
+    margin: 20px auto;
+}
+
+#map {
+    width: 450px;
+    height: 450px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilos de la zona de prevision por geolocalizacion */
+
+#contenedorGeolocalizacion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#previsionGeolocalizacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-titulos);
+    border-radius: 10px;
+    width: 500px;
+    margin: 20px auto;
+    background-color: var(--color-fondo-tarjeta);
+    font-weight: bold;
+}
+
+#mapaGeolocalizacion {
+    width: 450px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-fondo-tarjeta);
+    font-weight: bold;
+    border: 1px solid var(--color-titulos);
+    margin: 20px auto;
+}

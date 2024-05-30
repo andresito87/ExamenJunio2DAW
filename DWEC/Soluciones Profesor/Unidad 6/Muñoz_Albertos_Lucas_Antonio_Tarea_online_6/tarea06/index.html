@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulta del Tiempo</title>
+<link rel="stylesheet" href="./css/estilo.css" media="screen">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+<body>
+<h1>Aplicación del tiempo</h1>
+<div class="contenido" id="contenido">
+
+    <form id="formulario">
+        <input type="text" id="localidad" name="localidad" required placeholder="Introduce una ciudad">
+        <button type="submit" id="btnhoy">Obtener Tiempo Actual</button>
+        <button type="submit" id="btn10dias">Obtener Tiempo  10 dias</button>
+        <button type="button" id="btnlocalizacion">Tiempo en mi Localización</button>
+        <button type="button" id="btnMapa">Tiempo Mapa</button>
+        
+    </form>
+    <div>
+        <img id="carga" src="./imagenes/loading.gif" alt="Cargando..." />
+    </div>
+    <div id="informacion" class="datos">
+        <div id="infociudad">
+            <div><p>Poblacion</p><p id="poblacion"></p></div>
+            <div><p>País</p><p id="pais"></p></div>
+            <div><p>Región</p><p id="region"></p></div>
+        </div>
+        <div class="pronostico">
+            <div id="infoTiempoHoy">
+                <h3 id="ciudad"></h3>
+                <p id="icono"></p>
+                <p id="descripcion"></p>
+                <p id="temperaturas"></p>
+                <p id="precipitacion"></p>
+                <p id="humedad"></p>
+                <p id="IRU"></p>
+                <p id="vientoetiqueta">Viento:</p>
+                <p id="viento">Velocidad: <span id="vientovelocidad"></span>  Dirección: <span id="vientodireccion"></span></p>
+                <div></div>
+                <p id="estaciones">Estaciones de donde de adquieren los datos:<span></span></p>
+                <div id="otros"><p>Más Datos &#8595</p><p id="datos"></p></div>
+                <div id="datosHora">
+                    <p>Datos Horarios &#8595</p><div id="datos"></div>
+                    
+
+                </div>
+                
+            </div>
+            <div id="infoTiempo10dias">
+            </div>
+            <div id="mapa">
+                <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.794059753417969%2C37.09407380187568%2C-3.410911560058594%2C37.25492649757629&amp;layer=mapnik&amp;" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=37.1745&amp;mlon=-3.6025#map=12/37.1745/-3.6025">Ver el mapa más grande</a></small>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="cambia"></div> -->
+    <div id="zonaleaflet">
+
+        <h2 id="mensajeMapa">Desplazate por el mapa y haz click en la posición que deseas conocer el pronóstico</h2>
+        <div id="leaflet">
+            <div id="infoTiempoHoy">
+                <h3 id="ciudad"></h3>
+                <p id="icono"></p>
+                <p id="descripcion"></p>
+                <p id="temperaturas"></p>
+                <p id="precipitacion"></p>
+                <p id="humedad"></p>
+                <p id="IRU"></p>
+                <p id="vientoetiqueta">Viento:</p>
+                <p id="viento">Velocidad: <span id="vientovelocidad"></span>  Dirección: <span id="vientodireccion"></span></p>
+                <div></div>
+                <p id="estaciones">Estaciones de donde de adquieren los datos:<span></span></p>
+                <div id="otros"><p>Más Datos &#8595</p><p id="datos"></p></div>
+                <div id="datosHora">
+                    <p>Datos Horarios &#8595</p><div id="datos"></div>
+                </div>
+            
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+    
+</div>
+<footer>
+    <p class="autor">Lucas Antonio Muñoz Albertos | Desarrollo Web en Entorno Cliente | Tarea 6 | 2024</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    
+
+</script>
+<script src="./js/index.js"></script>
+  
+</body>
+</html>
