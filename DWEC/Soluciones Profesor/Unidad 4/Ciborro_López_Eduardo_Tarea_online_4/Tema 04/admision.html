@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Admisión</title>
+    <!-- agregamos el atributo defer para esperar a que carge el documento completo antes de ejecutar el codigo javascript-->
+    <script defer src="./comprobacionadmision.js"></script> 
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <div>
+        <h1>Solicitud de Admisión</h1>
+        <fieldset class="contenedorformularios">
+            <form name="admision" id="admision" method="get">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Introduzca su nombre" required/>
+
+                <label for="nacionalidad">Nacionalidad:</label>
+                <select name="nacionalidad" id="nacionalidad">
+                    <option value="0" selected="selected">Seleccione Nacionalidad</option>
+                    <option value="ES">España</option>
+                    <option value="EN">Inglaterra</option>
+                    <option value="USA">Estados Unidos</option>
+                    <option value="FR">Francia</option>
+                    <option value="IT">Italia</option>
+                </select>
+                <div class= "contrasena">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="min=8 max=21" required/>
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconopassword" id="contraicono" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                </svg>
+                </div>
+
+                <div class= "contrasena">
+                <label for="repetirContrasena">Repetita la Contraseña:</label>
+                <input type="password" id="repetirContrasena" name="repetirContrasena" placeholder="min=8 max=21"  required/>
+                <svg xmlns="http://www.w3.org/2000/svg" class="iconopassword" id="repcontraicono" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                </svg>
+                </div>
+        
+                <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+
+            </form>
+        </fieldset>
+    </div>
+    <div id="resultado"></div>
+    <div id="visitada"></div>
+</body>
+
+</html>

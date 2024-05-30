@@ -1,0 +1,474 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+:root {
+    --color-1: #dcbea7;
+    --font-name: "Lato", sans-serif;
+    --font-nav: "Lato", sans-serif;
+    --font-body: "Lato", sans-serif;
+
+    /* Clamp permite establecer un rango de valores posible para ciertas propiedades de estilo.
+       Tres parámetros: un valor mínimo, un valor preferido y un valor máximo */
+    /* Las unidades rem son medidas relativas al tamaño de la fuente raíz del documento. Combinando clamp para el tamaño de la fuente raíz con 
+       rem para el resto del documento se consigue que los elementos sean responsivos. */
+    font-size: clamp(0.5rem, 0.9vw + 0.5rem, 1rem);
+}
+
+body {
+    font-family: var(--font-body);
+    border-collapse: collapse;
+    margin: 0;
+    height: 98.3vh;
+    display: grid;
+    background-color: #fffddb;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.30fr 0.20fr 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "ejercicio_2 ejercicio_2 ejercicio_3 ejercicio_3"
+        "ejercicio_4 ejercicio_4 ejercicio_4 ejercicio_4"
+        "ejercicio_5 ejercicio_5 ejercicio_5 ejercicio_5"
+        "footer footer footer footer";
+}
+
+/* Cabecera */
+header {
+    grid-area: header;
+    font-family: var(--font-name);
+    color: #6d042c;
+    background-image: linear-gradient(rgb(134 197 178) 0%, rgb(155 105 201) 48%, rgb(100 77 167) 100%);
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 0.20fr;
+    grid-template-areas: "nombre logies";
+    box-shadow: inset rgb(101 101 101 / 47%) 0px -5px 20px 0px;
+}
+
+.nombre {
+    grid-area: nombre;
+    justify-self: end;
+}
+.foto {
+    grid-area: logies;
+}
+.foto img {
+    width: 8rem;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+
+/* Menu */
+nav {
+    grid-area: nav;
+    font-family: var(--font-name);
+    background-color: #32797578;
+    display: grid;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 2px 20px 0px;
+}
+nav ul {
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+nav ul li {
+    list-style: none;
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+/* OPCIÓN 1 DEL MENÚ */
+#menu_ico2 {
+    width: 60px;
+}
+#menu_ico2:active, 
+#menu_texto2:active #menu_ico2 {
+    transition: all 2s;
+    transform: rotate(28deg) scale(0.6, 0.6) translate(100px, -420px);
+    filter: hue-rotate(90deg) saturate(500%);
+}
+#menu_texto2:active #menu_ico2 {
+    transition: all 2s;
+    transform: rotate(28deg) scale(0.6, 0.6) translate(100px, -420px);
+    filter: hue-rotate(90deg) saturate(500%);
+}
+
+
+/* OPCIÓN 2 DEL MENÚ */
+#menu_ico3 {
+    width: 50px;
+    z-index: 20;
+    position: relative;
+}
+#menu_ico3_2 {
+    width: 50px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+#menu_ico3:active, 
+#menu_ico3_2:active ~ #menu_ico3,
+#menu_texto3:active #menu_ico3 {
+    transition: all 4s;
+    transform: rotate(-1800deg) scale(1.5, 1.5);
+    filter: hue-rotate(107deg) saturate(500%);
+}
+
+
+/* OPCIÓN 3 DEL MENÚ */
+#menu_ico4 {
+    width: 60px;
+    transition: all, 1s;
+}
+#menu_ico4:active, 
+#menu_texto4:active #menu_ico4 {
+    filter: invert(0.1) hue-rotate(-100deg) saturate(300%);
+    transform: scale(2, 2);
+}
+
+
+/* OPCIÓN 4 DEL MENÚ */
+ul li:last-child {
+    width: 100%;
+}
+#menu_ico5 {
+    width: 60px;
+    transition: all 2s;
+    position: relative;
+}
+#menu_ico5_2 {
+    opacity: 0;
+    width: 30px;
+    position: absolute;
+    left: 310px;
+    bottom: 0;
+}
+#menu_ico5:active, 
+#menu_texto5:active #menu_ico5 {
+    filter: invert(0.1) hue-rotate(-50deg) saturate(300%);
+    transform: scale(0.9, 0.9) translate(282px, 5px) rotate(600deg);
+}
+
+#menu_ico5:active + #menu_ico5_2, 
+#menu_texto5:active #menu_ico5_2 {
+    opacity: 1;
+    transform: scale(0.9, 0.9) translate(45px, 30px) rotate(90deg);
+    transition: transform 1s ;
+    transition-delay: 2s;
+}
+
+
+
+/****** CONTENIDO ******/
+.ejercicio {
+    border: 1px solid rosybrown;
+    background-color: white;
+    margin: 1rem;
+}
+
+
+
+/**** EJERCICIO 2 ****/
+#ejercicio_2 {
+    grid-area: ejercicio_2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* divs de los iconos */
+#contenedor_sol {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+#contenedor_luna {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+#ejercicio_2 div {
+    padding: 15px;
+    border: 1px solid #9e005d;
+    background-color: #9e005d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 0;
+    transition: all 4s;
+}
+
+/* iconos */
+#ejercicio_2 img {
+    background-color: #e79dae;
+    border: 1px solid #e79dae;
+    border-radius: 50%;
+    padding: 18px;
+    transition: all 4s;
+}
+#ico_sol {
+    width: 80px;
+}
+#ico_luna {
+    width: 76px;
+}
+
+/* texto de los iconos */
+#ejercicio_2 p {
+    font-size: 0px;
+    color:#2db9b1;
+    font-weight: bolder;
+    transition: font-size 4s, color 5s;
+}
+
+/* hover de los divs */
+#ejercicio_2 > div:hover {
+    flex-grow: 0.35;
+    background-color: #ff8086;
+    border-color: #ff8086;
+    transition: all 4s;
+}
+
+
+/* hover de los iconos */
+#ejercicio_2 > div:hover #ico_sol {
+    background-color: #9a6bc8;
+    border-color: #9a6bc8;
+    transform: rotate(360deg);
+    transition: all 4s;
+}
+#ejercicio_2 > div:hover #ico_luna {
+    background-color: #9a6bc8;
+    border-color: #9a6bc8;
+    transform: rotate(-360deg);
+    transition: all 4s;
+}
+
+/* hover del texto */
+#ejercicio_2 > div:hover > p {
+    color: #9e005d;
+    font-size: 30px;
+    transition: font-size 2s, color 4s 2s;
+}
+
+
+
+
+
+/**** EJERCICIO 3 ****/
+#ejercicio_3 {
+    grid-area: ejercicio_3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+#ejercicio_3 .contenedor_botones {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.contenedor_botones button {
+    width: 110px;
+    height: 40px;
+    font-size: 18px;
+    background-color:#2db9b1;
+    border: 3px solid #218883;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#ejercicio_3 .contenedor_botones button:active {
+    width: 110px;
+    height: 40px;
+    font-size: 18px;
+    background-color:#2db9b1;
+    border: 3px solid #218883;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#ejercicio_3 .contenedor_pila {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#ejercicio_3 .contenedor_pila #aviso {
+    height: 35px;
+    place-content: center;
+
+}
+#ejercicio_3 .contenedor_pila #aviso p {
+    font-size: 20px;
+}
+#ejercicio_3 img {
+    width: 68px;
+}
+
+#polo {
+    opacity: 0;
+    width: 30.5px;
+    height: 12.4px;
+    position: absolute;
+    background-color: red;
+    top: 3px;
+    border-top-left-radius: 2.7px;
+    border-top-right-radius: 2.7px;
+    text-align: center;
+    align-content: center;
+}
+#polo p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #008000;
+    top: -6px;
+}
+
+#carga {
+    width: 62px;
+    position: absolute;
+    background-color: #ff2f00;
+    bottom: 38px;
+    border-radius: 8px;
+}
+
+#aviso {
+    height: 35px;
+    position: relative;
+}
+#texto_aviso {
+    opacity: 0;
+    position: absolute;
+    top: -210px;
+    left: -230px;
+    white-space: nowrap;
+}
+
+/* Animación de la carga de la pila */
+/* Con "hue-rotate" el color empieza siendo naranja y va pasando por distintos tonos de naranja y amarillo hasta llegar a verde. 
+Le añado saturación y brillo para llegar al color deseado*/
+@keyframes cargar_pila1 {
+    /* Empieza vacía */
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 155.5px;
+        filter: hue-rotate(70deg) brightness(2) saturate(500%);
+    }
+}
+
+/* Animación del polo de la pila */
+/* Para que no aparezca gradualmente le indico que hasta el último la opacidad sea 0 y al final del todo se la cambio */
+@keyframes pintar_polo1 {
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animación del texto */
+/* Primero se muestra y luego se le hacen varios movimientos, rotaciones y cambios de tamaño */
+@keyframes mostrar_mensaje {
+    2% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.9, 1.9) rotateY(180deg) rotateX(360deg);
+        top: -100px;
+        left: 140px;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5, 1.5);
+        top: 10px;
+        left: -90px;
+    }
+  }
+
+
+/**** EJERCICIO 4 ****/
+#ejercicio_4 {
+    grid-area: ejercicio_4;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 30px 0 30px;
+}
+
+#ejercicio_4 .contenedor_botones button {
+    width: 200px;
+    height: 60px;
+    font-size: 24px;
+}
+
+#contenedor_canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas_polo {
+    width: 40px;
+    height: 35px;
+    border: solid 2px #f90006;
+    border-bottom: 0px;
+}
+#canvas_pila {
+    width: 140px;
+    height: 200px;
+    border: solid 4px #0000ff;
+}
+
+
+
+/**** EJERCICIO 5 ****/
+#ejercicio_5 {
+    grid-area: ejercicio_5;
+    text-align: center;
+}
+/* Para que cambie el cursor cuando se pase por la lectra L del nombre y se aprecie como un elemento "cliqueable" */
+#svg text:last-child {
+    cursor: pointer;
+}
+
+
+footer {
+    grid-area: footer;
+    font-family: var(--font-body);
+    font-weight: bolder;
+    padding: 2rem;
+}
+footer p:last-child {
+    margin-top: 10px;
+    grid-area: footer;
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+

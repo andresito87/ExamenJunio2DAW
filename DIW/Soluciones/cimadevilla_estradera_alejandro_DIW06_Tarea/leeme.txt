@@ -1,0 +1,6 @@
+Los ficheros que se suministran es para facilitar el diseño y centrarte solo en la interacción
+Si no quieres usarlos recuerda que la estructura de la maqueta debe ser igual que la que se indica en el enunciado.
+No hay obligación de utilizarlos.
+Lo primero que debes realizar es crear tantos directorios como recursos y comenzar a incluir dentro los diferentes ficheros: imágenes, css, js
+Se suministran el logo del centro y una imagen generada por IA
+En caso de añadir más reglas al CSS añádelas al final del fichero o en un fichero independiente

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud de Admisión</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <script src="js/solicitud_admision.js"></script>
+</head>
+<body>
+    <main>
+        <div class="titulo_formulario">
+            <h1>Formulario de Solicitud de Admisión</h1>
+            <img src="imagenes/39escalines_imagen1.jpeg" alt="39 escalones formulario">
+        </div>
+        <form  method="post" action="">
+            <fieldset>
+                <legend>Solicitud de admisión</legend>
+                <!-- NOMBRE -->
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" onfocus="darFoco('nombre')" onblur="quitarFoco('nombre')" 
+                    title="Campo requerido de 10 a 25 caracteres alfabéticos incluyendo la ñ, minúsculas y mayúsculas." required>
+                </div>
+    
+                <!-- PAISES -->
+                <div>
+                    <label for="nacionalidad">Nacionalidad:</label>
+                    <select id="nacionalidad" onfocus="darFoco('nacionalidad')" onblur="quitarFoco('nacionalidad')">
+                        <option value="">Selecciona una nacionalidad (Opcional)</option>
+                        <option value="España">España</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="México">México</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                    </select>
+                </div>
+    
+                <!-- CONTRASEÑA -->
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" onfocus="darFoco('contrasena')" onblur="quitarFoco('contrasena')"
+                    title="Campo requerido: No puede comenzar con 'ç', ',' o '$'. Debe tener solo de 1 a 3 números, no necesariamente consecutivos. No puede contener 'select' o 'where'. No debe contener ';'. Debe terminar con un '.' seguido de un número. Longitud mínima de 8 caracteres y máxima de 21." required>
+                    <label for="repetirContrasena">Repetir Contraseña:</label>
+                    <input type="password" id="repetirContrasena" onfocus="darFoco('repetirContrasena')" onblur="quitarFoco('repetirContrasena')" title="Debe coincidir con la contraseña anterior." required>
+                    <span onmousedown="mostrarContrasena()" onmouseup="ocultarContrasena()" onmouseleave="ocultarContrasena()">
+                        <img id="iconoContrasena"src="imagenes/cerrar-ojo.png" alt="Mostrar Contraseña">
+                    </span>
+                </div>
+            </fieldset>
+            <div class="botones">
+                <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </div>
+    
+        </form>
+        <div id="salida"></div>
+        <div class="atras">
+            <p><a href="index.html">Volver al inicio</a></p>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes Malvados</title>
+    <!-- agregamos el atributo defer para esperar a que carge el documento completo antes de ejecutar el codigo javascript-->
+    <script defer src="./comprobacionplanes.js"></script>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <div>
+        <h1>Planes Malvados</h1>
+        <fieldset class="contenedorformularios">
+            <form name="planes" id="planes" method="get">
+                <label for="nombrePlan">Nombre del Plan:</label>
+                <input type="text" id="nombrePlan" name="nombrePlan" required>
+
+                <label for="codigoPlan">Código del Plan:</label>
+                <input type="text" id="codigoPlan" name="codigoPlan" pattern="^[a-zAZ]\d{3,7}$" required>
+
+                <label>Tipo de Plan:</label>
+                <!-- Solo es necesario marcar como required uno de los inputs del grupo (mismo name) pero la W3C recomienda ponerlos en todos-->
+                <label><input class="radioinput" type="radio" id="1" name="tipoPlan" value="operacionesCampo" required> Operaciones en campo</label>
+                <label><input class="radioinput" type="radio" id="2" name="tipoPlan" value="recursosFinancieros" required> Manejo de recursos financieros</label>
+                <label><input class="radioinput" type="radio" id="3" name="tipoPlan" value="desarrolloTecnologia" required> Desarrollo de tecnología</label>
+                <label><input class="radioinput" type="radio" id="4" name="tipoPlan" value="luchasPoder" required> Luchas de poder interno</label>
+                <label><input class="radioinput" type="radio" id="5" name="tipoPlan" value="operacionesRescate" required> Operaciones de rescate</label>
+                <label><input class="radioinput" type="radio" id="6" name="tipoPlan" value="cifradoDescifrado" required> Cifrado y descifrado</label>
+                <label><input class="radioinput" type="radio" id="7" name="tipoPlan" value="operacionesEncubiertas" required> Operaciones encubiertas</label>
+                <label><input class="radioinput" type="radio" id="8" name="tipoPlan" value="contraInteligencia" required> Contrainteligencia</label>
+                <label><input class="radioinput" type="radio" id="9" name="tipoPlan" value="desinformacionEstrategica" required> Desinformación Estratégica</label>
+                <!--diferencia del datalist y select, en el datalist no es obligatorio elegir una de las opciones disponibles (en select si),
+                se puede escribir lo que se quiera en el campo de texto y sera valido-->
+                <label for="pais">País:</label>
+                <input type="text" list="paises" id="pais" name="pais">
+                <datalist id="paises">
+                    <option value="Inglaterra"></option>
+                    <option value="Estados Unidos"></option>
+                    <option value="Francia"></option>
+                    <option value="Alemania"></option>
+                    <option value="URSS"></option>
+                </datalist>
+
+                <input type="reset" name="borrar" id="borrar" value="Borrar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </form>
+        </fieldset>
+    </div>
+    <div id="resultado"></div>
+    <div id="visitada"></div>
+</body>
+
+</html>

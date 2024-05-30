@@ -1,0 +1,453 @@
+/* Definimos colores con variables */
+  :root {
+    --background-color-menu: #1a222d;
+    --background-color-blue: #2a3c52;
+    --background-color-grey:#f2f2f2;
+    --background-color-blue2: rgba(182, 205, 216, 0.2);
+    --background-color-white: #ffffff;
+    --typography-text-color-orange: #FF6000;
+    --typography-text-color-white: #ffffff;
+    --typography-text-tittle: #2a3c52;
+    --typography-text-basic: #33393f;
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    src: url("./Inter/Inter-Regular.ttf") format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url("./Poppins/Poppins-Bold.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: "Nova";
+    src: url("./NovaSquare-Regular.ttf") format('truetype');
+  }
+
+/* Importamos fuentes externas por url */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Estilos generales para toda la web*/
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  /* Estilos generales para el body del documento */
+  body {
+    background-color: var(--background-color-white);
+    color: var(--typography-text-basic);
+    font-family: 'Inter', 'Roboto', sans-serif;
+    line-height: 1.25;
+    font-size: 0.875rem;
+  }
+
+   /* Definimos la estructura general */
+   #page {
+    width: 100%;
+    height: auto;
+    display: grid;
+    /* Definimos las columnas */
+    grid-template-columns: 1fr;
+    /* Definimos las filas */
+    /* grid-template-rows: auto auto auto auto; */
+    grid-template-rows: 90px 40px 1fr 200px;
+    /* Definimos la separación */
+    grid-gap: 10px;
+    /* Definimos las celdas*/
+    grid-template-areas: 
+      "head"
+      "nav"
+      "main"
+      "foot";
+  }
+
+  /* Estilos del header */
+#page>header {
+    grid-area: head;
+    max-width: 100vw;
+    min-height: 10vh;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    grid-template-areas: "subhead1 subhead2 subhead3";
+    justify-content: center;
+    text-align: center;
+  }
+  /* Estilos particulares de la primera subzona del header */
+#page>header>#subhead1 {
+    grid-area: subhead1;
+    width: 100%;
+    display: flex;
+    margin: 5px;
+    /*Definimos como centramos los elementos horizontalmente: eje principal*/
+    justify-content: center;
+     /*Definimos como centramos los elementos del flex verticalmente: eje secundario*/
+    align-items: center;
+  }
+  /* Estilos particulares de la segunda subzona del header */
+  #page>header>#subhead2 {
+    grid-area: subhead2;
+    width: 100%;
+    display: flex;
+    margin: 5px;
+     /*Definimos como centramos los elementos horizontalmente: eje principal*/
+    justify-content: center;
+     /*Definimos como centramos los elementos del flex verticalmente: eje secundario*/
+    align-items: center;
+  }
+  /* Estilos particulares de la tercera subzona del header */
+#page>header>#subhead3 {
+    grid-area: subhead3;
+    width: 100%;
+    display: flex;
+    margin: 5px;
+     /*Definimos como centramos los elementos horizontalmente: eje principal*/
+    justify-content: center;
+     /*Definimos como centramos los elementos del flex verticalmente: eje secundario*/
+    align-items: center;
+  }
+  
+  .logos {
+    width: 70%;
+  }
+
+/* Estilos de la barra de navegación */
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color-blue2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Línea sombreada */
+  border-top: #384a57 1px solid;
+  font-size: 15px;
+}
+
+/* Estilos de la lista de navegación */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 95%;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--typography-text-tittle);
+}
+
+nav ul li a:hover {
+  cursor: pointer;
+  color: var(--typography-text-color-orange);
+}
+/* Estilos del main */
+#page>main {
+    grid-area: main;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 200px 850px;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "submain1" 
+    "submain2" 
+    "submain3";
+    justify-content: center;
+    text-align: center;
+}
+
+ /* Estilos particulares de la primera subzona del main */
+ #page>main>#submain1{
+  grid-area: submain1;
+  width: 100%;
+  display: grid;
+  margin: 5px;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 1fr 1fr 1fr;
+  /* Definimos la separación */
+  grid-gap: 20px;
+  /* Definimos las celdas*/
+  grid-template-areas: 
+      "i-original"
+      "i-composicion"
+      "i-responsiva";
+}
+.i-original {
+  grid-area: i-original;
+  display: grid;
+  padding: 15px;
+  margin: 0 5px;
+  align-content: center;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 10% 1fr;
+  /* Definimos la separación */
+  grid-gap: 15px;
+  /* Definimos las celdas*/
+  grid-template-areas: 
+      "t-original t-original"
+      "i-original1 i-original2";
+}
+
+.t-original {
+  grid-area: t-original;
+  display: flex;
+  flex-direction: row;
+  color: var(--typography-primary-color);
+  font-family: 'Poppins', Verdana, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.i-original1 {
+  grid-area: i-original1;
+  background-color: var(--background-color-blue2);
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.i-original2 {
+  grid-area: i-original2;
+  background-color: var(--background-color-blue2);
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.i-composicion {
+  grid-area: i-composicion;
+  display: grid;
+  padding: 15px;
+  margin: 0 5px;
+  align-content: center;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 30px 1fr;
+  /* Definimos la separación */
+  grid-gap: 15px;
+  /* Definimos las celdas*/
+  grid-template-areas: 
+      "t-composicion"
+      "i-composicion1";
+}
+.t-composicion {
+  grid-area: t-composicion;
+  display: grid;
+  color: var(--typography-primary-color);
+  font-family: 'Poppins', Verdana, sans-serif;
+}
+
+.i-composicion1 {
+  grid-area: i-composicion1 ;
+}
+
+.i-responsiva {
+  grid-area: i-responsiva;
+  display: grid;
+  padding: 15px;
+  margin: 0 5px;
+  align-content: center;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 30px 1fr;
+  /* Definimos la separación */
+  grid-gap: 15px;
+  /* Definimos las celdas*/
+  grid-template-areas: "t-responsiva"
+      "i-responsiva1";
+}
+.t-responsiva {
+  grid-area: t-responsiva;
+  display: grid;
+  color: var(--typography-primary-color);
+  font-family: 'Poppins', Verdana, sans-serif;
+}
+
+.i-responsiva1 {
+  grid-area: i-responsiva1 ;
+  background-color: var(--background-color-blue2);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding-top: 12px;
+}
+
+/* Estilos particulares de la segunda subzona del main */
+#page>main>#submain2 {
+  grid-area: submain2;
+  width: 100%;
+  display: grid;
+  margin: 5px;
+  background-color: var(--background-color-blue);
+  color: var(--typography-text-color-white);
+  align-content: center;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 30px 1fr;
+  /* Definimos la separación */
+  grid-gap: 15px;
+  /* Definimos las celdas*/
+  grid-template-areas: "t-submain2"
+      "a-submain2";
+}
+/* Título de la  segunda subzona del main */
+.t-submain2 {
+  grid-area: t-submain2;
+  display: flex;
+  flex-direction: row;
+  color: var(--typography-primary-color);
+  font-family: 'Poppins', Verdana, sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+/* Estilos de la zona del audio */
+.a-submain2{
+  grid-area: a-submain2;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin:20px;
+  padding: 20px 0;
+}
+/* Estilos particulares de la tercera subzona del main */
+#page>main>#submain3 {
+  grid-area: submain3;
+  width: 100%;
+  display: grid;
+  margin: 5px;
+  padding: 20px;
+  align-content: center;
+  /* Definimos las columnas */
+  grid-template-columns: 1fr;
+  /* Definimos las filas */
+  grid-template-rows: 30px 1fr 1fr;
+  /* Definimos la separación */
+  grid-gap: 15px;
+  /* Definimos las celdas*/
+  grid-template-areas: 
+      "t-submain3"
+      "v-submain3"
+      "i-submain3"
+      "b-submain3";
+}
+/* Título de la tercera subzona del main */
+.t-submain3 {
+  grid-area: t-submain3;
+  display: flex;
+  flex-direction: row;
+  color: var(--typography-primary-color);
+  font-family: 'Poppins', Verdana, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilos de la zona del video */
+.v-submain3{
+  grid-area: v-submain3;
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  border: 1px solid #eee;
+  margin:20px;
+  padding: 20px;
+  width:50%;
+  height:auto;
+}
+.i-submain3{
+  grid-area: i-submain3;
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  margin:20px;
+  line-height: 30px;
+}
+.b-submain3{
+  grid-area: b-submain3;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin:20px 90px;
+}
+.btn{
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px 30px ;
+  background-color: var(--background-color-blue);
+  color: var(--typography-text-color-white);
+}
+
+ /* Estilos para el pie de página */
+ #page>footer {
+    grid-area: foot;
+    width: 100%;
+    background-color: var(--background-color-blue);
+    color: var(--typography-text-color-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: "subfooter1 subfooter2 subfooter3";
+    align-content: center;
+  }
+  
+  #page>footer>#subfooter1 {
+    grid-area: subfooter1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+  
+  #page>footer>#subfooter2 {
+    grid-area: subfooter2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #page>footer>#subfooter3 {
+    grid-area: subfooter3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .m-top {
+    margin-top: 12px;
+  }
+  .m-top20 {
+    margin-top: 20px;
+  }
+  
+  .m-bottom {
+    margin-bottom: 12px;
+  }
+  .m-bottom20 {
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }

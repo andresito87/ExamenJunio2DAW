@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Creación de Planes Malvados</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <script src="js/planes_malvados.js"></script>
+</head>
+<body>
+    <main>
+        <div class="titulo_formulario">
+            <h1>Formulario de Creación de Planes Malvados</h1>
+            <img src="imagenes/39escalines_imagen3.jpeg" alt="39 escalones plan">
+        </div>
+        <form method="post" action="">
+            <fieldset>
+                <legend>Crear un plan malvado</legend>
+
+                <!-- NOMBRE DEL PLAN -->
+                <div>
+                    <label for="nombrePlan">Nombre del Plan:</label>
+                    <input type="text" id="nombrePlan" oninput="convertirMayusculas()" onfocus="darFoco('nombrePlan')" onblur="quitarFoco('nombrePlan')" 
+                    pattern="[A-ZÑÁÉÍÓÚÇ\s]+" 
+                    title="Campo requerido en mayúsculas." required>
+                </div>
+      
+                <!-- CÓDIGO DEL PLAN -->
+                <div>
+                    <label for="codigoPlan">Código del Plan:</label>
+                    <input type="text" id="codigoPlan" pattern="[A-Za-z]\d{3,7}" onfocus="darFoco('codigoPlan')" onblur="quitarFoco('codigoPlan')" 
+                    title="Campo requerido, debe contener un caracter seguido de 3 a 7 dígitos." required>
+                </div>
+    
+                <!-- TIPO DE PLAN -->
+                <div>
+                    <label>Tipo de Plan:</label><br>
+                    <div>
+                        <input type="radio" id="campo" name="tipoPlan" value="Operaciones en campo" required>
+                        <label for="campo">Operaciones en campo</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="financieros" name="tipoPlan" value="Manejo de recursos financieros">
+                        <label for="financieros">Manejo de recursos financieros</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="tecnologia" name="tipoPlan" value="Desarrollo de tecnología">
+                        <label for="tecnologia">Desarrollo de tecnología</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="poder" name="tipoPlan" value="Luchas de poder interno">
+                        <label for="poder">Luchas de poder interno</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rescate" name="tipoPlan" value="Operaciones de rescate">
+                        <label for="rescate">Operaciones de rescate</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cifrado" name="tipoPlan" value="Cifrado y descifrado">
+                        <label for="cifrado">Cifrado y descifrado</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="encubiertas" name="tipoPlan" value="Operaciones encubiertas">
+                        <label for="encubiertas">Operaciones encubiertas</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="contrainteligencia" name="tipoPlan" value="Contrainteligencia">
+                        <label for="contrainteligencia">Contrainteligencia</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="desinformacion" name="tipoPlan" value="Desinformación Estratégica">
+                        <label for="desinformacion">Desinformación Estratégica</label>
+                    </div>
+                </div>
+                
+                <!-- PAISES -->
+                <div>
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" list="paises" onfocus="darFoco('pais')" onblur="quitarFoco('pais')">
+                    <datalist id="paises">
+                        <option value="Irlanda">
+                        <option value="Reino Unido">
+                        <option value="Francia">
+                        <option value="Alemania">
+                        <option value="Polonia">
+                    </datalist>
+                </div>
+    
+            </fieldset>
+            <div class="botones">
+                <input type="reset" name="reiniciar" id="borrar" value="Borrar" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </div>
+        </form>
+    
+        <div id="salida"></div>
+
+        <div class="atras">
+            <p><a href="index.html">Volver al inicio</a></p>
+        </div>
+        <footer>
+            <div id="visitasUsuario"></div>
+        </footer>
+    </main>
+</body>
+</html>

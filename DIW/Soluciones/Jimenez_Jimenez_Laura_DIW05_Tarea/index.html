@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones</title>
+    <link rel="shortcut icon" sizes="56x56" href="./recursos/iconos/molinillo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./estilos.css">
+</head>
+<body>
+    
+    <header>
+        <div class="nombre"><h1>Laura Jiménez Jiménez</h1></div>
+        <div class="foto"><img src="./recursos/img/foto.png" alt="foto"></div>
+    </header>
+
+
+    <!-- EJERCICIO 1 -->
+    <nav>
+        <ul>
+            <li>
+                <a id="menu_texto2" href="#ejercicio_2">
+                    <img id="menu_ico2" src="./recursos/iconos/fuegos-artificiales.png" alt="Transformaciones-Transiciones" title="Transformaciones-Transiciones">
+                    Transformaciones-Transiciones
+                </a>
+            </li>
+
+            <li>
+                <a id="menu_texto3" href="#ejercicio_3">
+                    <img id="menu_ico3_2" src="./recursos/iconos/palito.png" alt="Animaciones-CSS" title="Animaciones-CSS">
+                    <img id="menu_ico3" src="./recursos/iconos/molinillo.png" alt="Animaciones-CSS" title="Animaciones-CSS">
+                    Animaciones-CSS
+                </a>
+            </li>
+            <li>
+                <a id="menu_texto4" href="#ejercicio_4">
+                    <img id="menu_ico4" src="./recursos/iconos/despertador.png" alt="Animaciones-Canvas" title="Animaciones-Canvas">
+                    Animaciones-Canvas
+                </a>
+            </li>
+
+            <li>
+                <a id="menu_texto5" href="#ejercicio_5">
+                    <img id="menu_ico5" src="./recursos/iconos/bolos.png" alt="Animaciones-SVG" title="Animaciones-SVG">
+                    Animaciones-SVG
+                    <img id="menu_ico5_2" src="./recursos/iconos/bolo.png" alt="Animaciones-SVG" title="Animaciones-SVG">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- EJERCICIO 2 -->
+    <div class="ejercicio" id="ejercicio_2">
+
+        <div id="contenedor_sol">
+            <p>Icono sol</p>
+            <img id="ico_sol" src="./recursos/iconos/sol.png" alt="sol">
+        </div>
+        <div id="contenedor_luna">
+            <img id="ico_luna" src="./recursos/iconos/luna.png" alt="luna">
+            <p>Icono luna</p>
+        </div>
+
+    </div>
+
+
+    <!-- EJERCICIO 3 -->
+    <div class="ejercicio" id="ejercicio_3">
+
+        <div class="contenedor_pila">
+            <img src="./recursos/img/pila_css_01.png" alt="pila vacía">
+            <div id="polo"><p>+</p></div>
+            <div id="carga"></div>
+            <div id="aviso"><p id="texto_aviso">¡Carga completada!</p></div>
+        </div>
+        <div class="contenedor_botones">
+            <button id="iniciar_pila1" type="button">Iniciar</button>
+            <button id="pausar" type="button">Pausar</button>
+            <button id="reanudar" type="button">Reanudar</button>
+        </div>
+
+    </div>
+
+
+    <!-- EJERCICIO 4 -->
+    <div class="ejercicio" id="ejercicio_4">
+
+        <div id="contenedor_canvas">
+            <canvas id="canvas_polo">
+            </canvas>
+            <canvas id="canvas_pila">
+            </canvas>
+            <canvas id="canvas_texto" width="200" height="75">
+            </canvas>
+        </div>
+        <div class="contenedor_botones">
+            <button id="iniciar_pila2" type="button">Iniciar</button>
+        </div>
+
+    </div>
+
+
+    <!-- EJERCICIO 5 -->
+    <div class="ejercicio" id="ejercicio_5">
+
+        <svg id="svg" width=1020 height=550>
+
+            <g transform="translate(0,0)">
+                <path d="m70 75 h150 l-30 100 h150 l-30 100 h150 l-30 100 h150 l-30 102" style="stroke:#9b69c9; stroke-width:3; fill:none;"></path>
+                <text x="45" y="100" fill="#00756e" stroke="#00756e" stroke-width="3" style="font-size: 80px">J
+                    <animateMotion path="m0, 0 h150 l-30 100 h150 l-30 100 h150 l-30 100 h150 l-30 112" begin="4s" dur="5s" fill="freeze"></animateMotion>  
+                </text>
+            </g>
+
+            <g transform="translate(0,0)">
+                <path d="m550 60 q 5 200 200 210 q 200 10 100 203" style="stroke:#0ec9be; stroke-width:10; fill:none;" stroke-dasharray="10,2"></path>
+                <text x="-25" y="25" fill="#00756e" stroke="#00756e" stroke-width="3" style="font-size: 80px">J
+                    <animateMotion path="m550 60 q 5 200 200 210 q 200 10 100 212" dur="2s" repeatCount="3" fill="freeze"></animateMotion>  
+                </text>
+            </g>
+
+            <!-- Considero esta la animación 1 por ser la de la letra del nombre y finalmente quedar a la izquierda -->
+            <g transform="translate(0,0)">
+                <path d="m950 75 l-722 412" style="stroke:#ff7591; stroke-width:5; fill:none;" stroke-dasharray="6,3,3,3"></path>
+                <text x="950" y="85" fill="#9e005d" stroke="#9e005d" stroke-width="3" style="font-size: 80px">L
+                    <animateMotion path="M0, 0 l-734 424" begin="click" dur="5s" fill="freeze"></animateMotion>  
+                </text>
+            </g>
+
+        </svg>
+
+    </div>
+    
+    
+    <footer id="pie_pagina">
+        <p>Página realizada por Laura Jiménez Jiménez</p>
+        <p>En el menú puse iconos pero al final añadí texto para que quedase más claro cual era cada opción. Los iconos hacen los efectos de tamaño y color solicitados en la tarea. Adicionalmente le he añadido algunos efectos más.</p>
+    </footer>
+
+
+    <script>
+
+        window.onload = function() {
+
+            // --- Código js para el Ejercicio 3 ---
+            // Obtenemos los elementos del DOM con los que vamos a trabajar y los asignamos a variables
+            let iniciar_pila1 = document.getElementById('iniciar_pila1');
+            let pausar = document.getElementById('pausar');
+            let reanudar = document.getElementById('reanudar');
+            let carga1 = document.getElementById("carga");
+            let polo1 = document.getElementById("polo");
+            let texto_aviso1 = document.getElementById("texto_aviso");
+
+            // Evento de escucha para el botón Inicio al hacer click
+            // Si se pulsa inicia todas las animaciones
+            iniciar_pila1.addEventListener("click", function() {
+                carga1.style.animation = "cargar_pila1 5s linear forwards"; 
+                polo1.style.animation = "pintar_polo1 0.5s linear 4.5s forwards";
+                texto_aviso1.style.animation = "mostrar_mensaje 3s linear 2s forwards";
+            });
+            // Evento de escucha para el botón Pausa al hacer click
+            // Si se pulsa pausa todas las animaciones
+            pausar.addEventListener("click", function() {
+                carga1.style.animationPlayState = "paused"; 
+                polo1.style.animationPlayState = "paused"; 
+                texto_aviso1.style.animationPlayState = "paused"; 
+            });
+            // Evento de escucha para el botón Reanudar al hacer click
+            // Si se pulsa reanuda todas las animaciones
+            reanudar.addEventListener("click", function() {
+                carga1.style.animationPlayState = "running"; 
+                polo1.style.animationPlayState = "running"; 
+                texto_aviso1.style.animationPlayState = "running"; 
+            });
+
+
+
+            // --- Código js para el Ejercicio 4--- 
+            // Obtenemos el elemento botón Iniciar y lo asignamos a la variable iniciar_pila2
+            let iniciar_pila2 = document.getElementById('iniciar_pila2');
+
+            // Evento de escucha para el botón Iniciar al hacer click, llama a la funcion canvasCargaPila
+            iniciar_pila2.addEventListener("click", canvasCargaPila);
+
+        }
+        
+        
+        
+        function canvasCargaPila() {
+            let canvasPila = document.getElementById("canvas_pila"); 
+            let pila2 = canvasPila.getContext("2d"); 
+            let canvasPolo = document.getElementById("canvas_polo"); 
+            let polo2 = canvasPolo.getContext("2d"); 
+            let x=150;
+            let interval;
+            
+            // Iniciamos la función setInterval que llamará a la función que rellena la pila hasta que la variable x llegue a 0          
+            // En ese momento se llama a la función que pinta el polo de la pila, a la función que pinta el texto y se para la repeticón de la llamada a la función con clearInterval
+            
+            // Introducimos el identificador del intervalo en la variable interval, que nos permitirá posteriormente detener la llamada a la función
+            interval=setInterval(function() {
+                    // Como el origen de coordenadas esta situado en la parte superior izquierda la variable x debe ir decreciendo
+                    x = x - 10;
+                    cargarPila(pila2, x);
+
+                    // Cuando x llega a 0 ha terminado de llenarse la pila, se llama a la función que pinta el polo y a la función que pinta el texto
+                    // Despues borra el intervalo
+                    if (x <= 0) {
+                        pintarPolo(polo2);
+                        pintarTexto();
+                        clearInterval(interval);
+                    }
+                }, 300);
+
+
+            // Función que rellena el cuerpo de la pila pintando un rectángulo con el valor a que va cambiando en la función setInterval antes de llamar a la función
+            function cargarPila(pila2, a) {
+                pila2.beginPath();
+                pila2.fillStyle = "#008000";
+                pila2.fillRect(0,a,300,150);
+                pila2.closePath();
+            }
+
+            // Función que rellena el polo de la pila
+            function pintarPolo(polo2) {
+                polo2.beginPath();
+                polo2.fillStyle = "#0000ff";
+                polo2.fillRect(0,0,300,150);
+                polo2.closePath();
+            }
+
+            // Función que pinta el texto
+            function pintarTexto() {
+               let canvasTexto = document.getElementById("canvas_texto");
+               let texto = canvasTexto.getContext("2d");
+               texto.textAlign = "center";
+               texto.font = "2em Nueva";
+               texto.fillStyle = "red";
+               texto.fillText("¡Cargada!",98,35);
+           }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

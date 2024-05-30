@@ -1,0 +1,136 @@
+/*Estilo de títulos*/
+h1 {
+    color:darkblue;
+    font-size: 50px;
+    text-align: center;
+    padding: 30px;
+}
+
+/*Estilo de los enlaces*/
+ul li{
+    display: flex;
+    justify-content: center;
+    margin:20px 100px;
+    padding: 20px;
+    background-color: rgb(83, 96, 127);
+}
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+ul li a:hover{
+    font-weight: bold;
+}
+
+/*Estilo de las imágenes*/
+.imagenes{
+    display: flex;
+    justify-content: center;
+}
+.imagenes img {
+    width: 300px;
+}
+.titulo_formulario img {
+    width: 200px;
+    height: auto;
+}
+
+/*Estilo de las páginas de formularios*/
+.titulo_formulario{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+/*Estilo del formulario*/
+form {
+    width: 60%;
+    margin: 10px auto;
+}
+fieldset {
+    border: 2px solid darkblue;
+}
+legend{
+    color:darkblue;
+    font-size: 24px;
+}
+form fieldset div {
+    margin:20px;
+}
+label{
+    font-size: 20px;
+}
+#nombre, #nombrePlan {
+    width: 500px;
+}
+#codigoPlan, #pais{
+    width: 300px;
+}
+#contrasena {
+    width: 200px;
+    margin-right: 10px;
+}
+#repetirContrasena {
+    width: 200px;
+}
+
+
+/*Icono para mostrar contraseña*/
+#iconoContrasena{
+    margin-left: 20px;
+    width: 30px;
+}
+
+/*Estilo para los campos validados*/
+.check {
+    background-color: rgba(173, 228, 173, 0.623); 
+}
+/*Estilo para los campos no validados*/
+.error {
+    border: solid 2px #ff0000;
+    background-color: #ff000016;
+}
+/*Estilo para los mensajes de error*/
+.mensajeError{
+    color:#ff0000;
+}
+/*Estilo para los campos con foco*/
+.foco {
+    border: solid 2px hsl(64, 100%, 50%);
+    background-color: #e1ff0059;
+    font-weight: 500;
+    font-size: large;
+}
+/*Estilos para los botones*/
+.botones input{
+    border: white;
+    margin:10px;
+    background-color: darkblue;
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+}
+/*Estilos para mostrar resultados*/
+#salida{
+    margin:40px;
+    font-size: 20px;
+}
+/*Estilos para el número de visitas*/
+#visitasUsuario{
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(100, 148, 237, 0.288);
+    font-size: 20px;
+    font-weight: bold;
+}
+/*Estilos de enlace para volver atrás*/
+.atras a{
+    display: inline;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(100, 148, 237, 0.288);
+    color:darkblue;
+    text-decoration: none;
+}

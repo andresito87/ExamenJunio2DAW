@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    width: 50%;
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 2em;
+    border:2px solid black;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(153, 127, 255);
+}
+.contenedorformularios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(27, 147, 198);
+    
+}
+
+label {
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contrasena{    
+    margin-top: 10px;
+    position: relative;
+    width: 300px;
+}
+
+input, select {
+    color:black;
+    padding: 15px 15px 15px 15px;
+    width: 100%;
+}
+
+.iconopassword{
+    color: black;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 90%;
+    top: 69%; 
+    transform: translateY(-50%);
+    
+}
+
+#reiniciar{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#borrar{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.radioinput {
+    width: 15%;
+}
+
+#resultado {
+    text-align: center;
+    margin: 20px;
+    font-weight: bolder;
+}
+
+#visitada {
+    text-align: center;
+    color:brown;
+    margin: 20px;
+    font-weight: bolder;
+}
+
+/* clases creadas para ser agregadas a los elementos mediante JavaScript*/
+
+.correcto{
+    background-color: green;
+}
+
+.incorrecto {
+    background-color: red;
+}
+
+.foco {
+    background-color: yellow;
+}
+
+.revelado {
+    color: rgb(79, 79, 79);
+}
