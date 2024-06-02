@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="./favicon.ico">
+
+    <title>Resumen de etiquetas IMG, VIDEO y AUDIO</title>
+
+    <!-- Estilos -->
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        #botones {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            background-color: #eaed4d;
+            color: rgb(89, 91, 31);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid #070707;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #064409;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Etiqueta IMG -->
+    <h1>Etiqueta IMG responsiva</h1>
+    <img sizes="(min-width: 600px) 80vw, 95vw"
+        srcset="./Images/06_composicion_mejorada_dim_650.png 650w,./Images/05_composicion_mejorada_dim_1100.jpg 1100w,"
+        src="./Images/05_composicion_mejorada_dim_1100.jpg" alt="imagen responsiva que cambia según dispositivo">
+
+    <!-- Etiqueta Audio -->
+    <h1>Etiqueta AUDIO</h1>
+    <audio controls preload="metadata">
+        <source src="./Audios/01_audio.mp3" type="audio/mp3">
+        <source src="./Audios/01_audio.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Etiqueta Video -->
+    <h1>Etiqueta VIDEO</h1>
+    <video id="video" width=100% height=100% controls poster="./Images/video.jpg" preload="metadata">
+        <source src="./Videos/01_video.mp4" type="video/mp4">
+        <source src="./Videos/01_video.webm" type="video/webm">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <div id="botones">
+        <button class="btn" onclick="iniciar()" type="button">Play</button>
+        <button class="btn" onclick="pausar()" type="button">Pause</button>
+        <button class="btn" onclick="parar()" type="button">Stop</button>
+        <button class="btn" onclick="subirVolumen()" type="button">Subir un punto el volumen</button>
+        <button class="btn" onclick="bajarVolumen()" type="button">Bajar un punto el volumen</button>
+        <button class="btn" onclick="mostrarDuracion()" type="button">Mostrar Duración</button>
+        <button class="btn" onclick="mostrarVolumen()" type="button">Mostrar Volumen</button>
+        <button class="btn" onclick="controlesActivos()" type="button">Controles activos</button>
+    </div>
+    <script>
+        let repro_video = document.getElementById("video");
+        // Iniciamos la reproducción
+        function iniciar() {
+            repro_video.play();
+        }
+
+        // Pausamos la reproducción
+        function pausar() {
+            repro_video.pause();
+        }
+
+        // Paramos y volvemos al inicio.
+        function parar() {
+            repro_video.pause();
+            repro_video.currentTime = 0;
+        }
+
+        //Subir volumen.
+        function subirVolumen() {
+            if (repro_video.volume < 1) {
+                repro_video.volume = repro_video.volume + 0.1;
+            }
+        }
+
+        // Bajar volumen.    
+        function bajarVolumen() {
+            if (repro_video.volume > 0) {
+                repro_video.volume = repro_video.volume - 0.1;
+            }
+        }
+
+        // Mostrar duración del video en segundos    
+        function mostrarDuracion() {
+            alert("La duración del video es de: " + repro_video.duration + " segundos");
+        }
+
+        // Mostrar el nivel del audio
+        function mostrarVolumen() {
+            alert("El volumen tiene el siguiente valor: " + repro_video.volume + " sobre 1");
+        }
+
+        // Indica si el reproductor tiene los controles visibles
+        function controlesActivos() {
+            if (repro_video.controls) {
+                alert("Los controles están activos");
+                repro_video.controls = false;
+                alert("Pero ya no");
+            }
+            else {
+                alert("Los controles no están activos");
+                repro_video.controls = true;
+                alert("Ahora han vuelto");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
