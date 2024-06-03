@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ************************************************************************************************ */
+/* Estructura de la maqueta y elementos genéricos */
+/* ************************************************************************************************ */
+
+body {
+
+    /* Definimos el contenedor principal como un grid */
+    display: grid;
+
+    /* Definimos la separación entre cada una de las zonas */
+    grid-gap: 5px;
+
+    /* Definimos el número de filas y columnas que conforman nuestra maqueta*/
+    grid-template-columns: 15% 15% 34% 35%;
+    grid-template-rows: 50px 300px 300px;
+
+    /* Definimos mediante areas nuestra maqueta*/
+    grid-template-areas:
+        "header header header header"
+        "datos imagen imagen video"
+        "animacion animacion jquery jquery";
+    justify-items: stretch;
+}
+
+/* Asignamos a todos los div , cabecera y pie un borde para diferenciarlos */
+header,
+.zona {
+    border: 2px solid black;
+    margin: 2px;
+}
+
+/* Asignamos cada una de las areas definidas en el grid a un elemento del HTML */
+header {
+    grid-area: header;
+}
+
+.z_datos {
+    grid-area: datos;
+}
+
+.z_imagen {
+    grid-area: imagen;
+}
+
+.z_video {
+    grid-area: video;
+}
+
+.z_animacion {
+    grid-area: animacion;
+}
+
+.z_jquery {
+    grid-area: jquery;
+}
+
+.zona {
+    text-align: center;
+}
+
+/* Estilos para los encabezados h2 y h3 y los botones*/
+h2 {
+    text-align: center;
+    color: red;
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+h3 {
+    text-align: center;
+    color: blue;
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Definimos el color de los botones de todo el formulario */
+button {
+    background-color: yellowgreen;
+}
+
+/* ************************************************************************************************ */
+/* ZONA RELACIONADO CON EL VIDEO */
+/* ************************************************************************************************ */
+.z_video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.z_video button {
+    width: 200px;
+    margin: 5px;
+}
+
+/* ************************************************************************************************ */
+/* RELACIONADO CON LA ZONA DE ANIMACIÓN */
+/* ************************************************************************************************ */
+
+/* ------------------------------------*/
+/* Definimos el tamaño y la posición de las bandas y el escudo que conforman la bandera */
+/* ------------------------------------*/
+#banda_1,
+#banda_2,
+#banda_3 {
+    width: 20px;
+    height: 10px;
+    background-color: black;
+    border: 2px solid black;
+    position: relative;
+}
+
+#banda_1 {
+    /* Banda situada en la parte izquierda superior, tendrá que tener un color verde */
+    left: 5%;
+    top: 10px;
+}
+
+#banda_2 {
+    /* Banda situaada en la parte izquierda, un poco más abajo que la banda_1, tendrá que tener un color blanco */
+    left: 20%;
+    top: 80px;
+}
+
+#banda_3 {
+    /* Banda situada en la parte derecha inferior, tendrá que tener un color verde */
+    left: 80%;
+    top: 150px;
+}
+
+#escudo {
+    width: 10%;
+    height: auto;
+    left: 45%;
+    top: -70px;
+    z-index: 2;
+    position: relative;
+}
+
+#img_escudo {
+    width: 50px;
+    height: auto;
+}
+
+
+
+/* ************************************************************************************************ */
+/* ZONA RELACIONADA CON LA PARTE DE JQUERY */
+/* ************************************************************************************************ */
+.z_jquery {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Zona relacionada con la bandera y la zona de interacción*/
+.elementos_jquery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 250px;
+}
+
+/* Definimos los estilos de los dos div que conforman la zona de jquery */
+.elementos_jquery>div {
+    border: solid 2px blue;
+    margin: 2px;
+    height: 100%;
+}
+
+/* Zona de bandera */
+.zona_bandera {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Zona de interacción*/
+.zona_interaccion {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+}
+
+.zona_interaccion * {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------------------------------------------*/
+/* Definimos los elementos que conforman la bandera  de la zona de jquery, sobre la que tendremos que interactuar*/
+/* --------------------------------------------------------------------------------------------------------------*/
+
+/* Contenedor de las franjas de la bandera*/
+#bandera {
+    display: flex;
+    flex-direction: column;
+
+    left: 101px;
+    width: 204px;
+    height: 154px;
+    border: solid 2px blue;
+    margin: auto auto;
+}
+
+/* --------------------------------------------------------------------------------------------------------------*/
+/* Cada una de las franjas que conforman la bandera y sobre las que tendremos que actuar aplicando los efectos.*/
+/* --------------------------------------------------------------------------------------------------------------*/
+
+.zona_b {
+    border: solid 1px black;
+    margin: auto auto;
+    width: 200px;
+    height: 50px;
+}
+
+
+
+/* ************************************************************************************************ */
+/* ************************************************************************************************ */
+/* ************************************************************************************************ */
+/* ************************************************************************************************ */
+/* DESARROLLO A REALIZAR POR EL ALUMNADO */
+/* ************************************************************************************************ */
+
+#banda_2 {
+    animation: banda2Animacion 2s forwards;
+}
+
+@keyframes banda2Animacion {
+    /*La  animación  comenzará  con  la  banda_2,  tendrá  que  aumentar  su  tamaño  horizontal  (ocupará 
+aproximadamente la mitad de la ubicación) y verticalmente. El alto debe ser proporcional al ancho para 
+que  la composición quede  proporcionada. El color de  esta banda  debe  cambiar a  blanco. Esta banda 
+debe quedar, más o menos centrada. Este proceso debe durar 2 segundos.*/
+
+    0% {
+        width: 50%;
+        height: 10px;
+        background-color: black;
+    }
+
+    100% {
+        width: 50%;
+        height: 25px;
+        background-color: white;
+        top: 80px;
+        left: 90px;
+    }
+}
+
+/*Las  bandas  superior  e  inferior  (1  y  3)  deben  tener  el  mismo  alto  y  ancho  que  has  definido  para  la 
+banda_2 (es su estado  final)  y deben posicionarse encima  y debajo de  ésta.  El color de estas bandas 
+debe cambiar a verde. Deben empezar la animación cuando haya finalizado la animación de la banda_2 
+(blanca). La animación de estas bandas debe durar 2 segundos.*/
+#banda_1 {
+    animation: banda1Animacion 2s forwards;
+}
+
+@keyframes banda1Animacion {
+    0% {
+        width: 50%;
+        height: 10px;
+        background-color: black;
+        top: 10px;
+        left: 5%;
+    }
+
+    100% {
+        width: 50%;
+        height: 25px;
+        background-color: green;
+        top: 82px;
+        left: 90px;
+    }
+}
+
+#banda_3 {
+    animation: banda3Animacion 2s forwards;
+}
+
+@keyframes banda3Animacion {
+    0% {
+        width: 20px;
+        height: 10px;
+        background-color: black;
+        top: 150px;
+        left: 80%;
+    }
+
+    100% {
+        width: 50%;
+        height: 25px;
+        background-color: green;
+        top: 79px;
+        left: 90px;
+    }
+}
+
+#escudo {
+    animation: escudoAnimacion 4s forwards;
+}
+
+@keyframes escudoAnimacion {
+    0% {
+        transform: scale(0);
+        filter: grayscale(0%);
+        top: -100px;
+    }
+
+    50% {
+        transform: scale(1);
+        filter: grayscale(50%);
+
+    }
+
+    100% {
+        transform: scale(1);
+        filter: grayscale(100%);
+        top: 0px;
+    }
+}
