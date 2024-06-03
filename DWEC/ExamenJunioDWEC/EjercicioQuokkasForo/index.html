@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Adopción de Quokkas</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="formulario_adopcion">
+            <h1>Formulario de Adopción</h1>
+        </div>
+        <form method="post" action="">
+            <fieldset>
+                <legend>Formulario de adopción</legend>
+                <!--nombre-->
+                <div>
+                    <label for="nombre">Nombre del Quokka:</label>
+                    <input type="text" id="nombre" name="nombre"
+                        title="Campo requerido compuesto de dos palabras separadas por un espacio a tres máximo.Los caracteres seran alfabéticos incluida la ñ, sin acentos, la segunda palabra comienza por mayúscula."
+                        required>
+                </div>
+                <!--codigo de adopción-->
+                <div>
+                    <label for="codigo">Humano adoptador:</label>
+                    <input type="text" id="codigo"
+                        title="Campo requerido: última letra en minúscula, debe aparecer al menos una vez ',' no puede contener la palabre 'extincion', debe comenzar por '*'', la longitud máxima es de 20. No pueden aparecer dígitos."
+                        required>
+                </div>
+                <!--donación anual-->
+                <div>
+                    <label for="donacion">Donación Anual:</label>
+                    <input type="text" id="donacion"
+                        title="Campo requerido:número entre 0 y 1000, el separador es la coma." required>
+                </div>
+
+            </fieldset>
+            <div class="botones">
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </div>
+        </form>
+        <div id="resultado"></div>
+    </main>
+
+</body>
+
+</html>

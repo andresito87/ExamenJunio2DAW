@@ -1,0 +1,88 @@
+/*Estilo de títulos*/
+h1 {
+    color: rgb(58, 58, 59);
+    font-size: 40px;
+    text-align: center;
+    padding: 30px;
+}
+
+/*Estilo de las páginas de formularios*/
+.titulo_formulario {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+/*Estilo del formulario*/
+form {
+    width: 60%;
+    margin: 10px auto;
+}
+
+fieldset {
+    border: 2px solid rgb(58, 58, 59);
+}
+
+legend {
+    color: rgb(58, 58, 59);
+    font-size: 24px;
+}
+
+form fieldset div {
+    margin: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#nombre {
+    width: 500px;
+}
+
+#codigo {
+    width: 300px;
+}
+
+#donacion {
+    width: 200px;
+    margin-right: 10px;
+}
+
+/*Estilo para las imágnes*/
+#resultado img {
+    max-width: 100px;
+    height: auto;
+}
+
+/*Estilo para los campos validados*/
+.check {
+    background-color: green;
+}
+
+/*Estilo para los campos no validados*/
+.error {
+    border: solid 2px yellow;
+    background-color: yellow;
+}
+
+/*Estilo para los mensajes de error*/
+.mensajeError {
+    color: #ff0000;
+}
+
+/*Estilos para los botones*/
+.botones input {
+    border: white;
+    margin: 10px;
+    background-color: rgb(58, 58, 59);
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+}
+
+/*Estilos para mostrar resultados*/
+#resultado {
+    margin: 40px;
+    font-size: 20px;
+}
