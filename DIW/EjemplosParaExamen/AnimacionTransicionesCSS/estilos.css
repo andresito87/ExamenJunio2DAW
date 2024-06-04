@@ -141,3 +141,14 @@ img {
         top: 70%;
     }
 }
+
+
+/* Transiciones */
+h1.titulo {
+    transition: font-size 2s, font-weight 2s;
+}
+
+h1.titulo:hover {
+    font-size: 30px;
+    font-weight: bold;
+}

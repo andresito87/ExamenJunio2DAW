@@ -205,10 +205,10 @@ header {
 
 #textoTransicion {
     color: black;
+    transition: color 2s, letter-spacing 2s;
 }
 
 #textoTransicion:hover {
     color: red;
-    transition-duration: 2s;
     letter-spacing: 14px;
 }
