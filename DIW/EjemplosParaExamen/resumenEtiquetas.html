@@ -57,6 +57,13 @@
         srcset="./Images/06_composicion_mejorada_dim_650.png 650w,./Images/05_composicion_mejorada_dim_1100.jpg 1100w,"
         src="./Images/05_composicion_mejorada_dim_1100.jpg" alt="imagen responsiva que cambia según dispositivo">
 
+    <picture>
+        <source media="(width >= 900px)" srcset="./Images/05_composicion_mejorada_dim_1100.jpg">
+        <source media="(width >= 600px) and (width < 900px)" srcset="logo-medium.png">
+        <source media="(width < 600px)" srcset="./Images/06_composicion_mejorada_dim_650.png">
+        <img src="./Images/06_composicion_mejorada_dim_650.png" alt="imagen responsiva">
+    </picture>
+
     <!-- Etiqueta Audio -->
     <h1>Etiqueta AUDIO</h1>
     <audio controls preload="metadata">
