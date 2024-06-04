@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQuery-->
+    <!--CDN-->
+    <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+    <!--Local-->
+    <script src="./jquery-3.7.1.js"></script>
+    <script src="./jQuery.js" defer></script>
+
+    <title>Uso jQuery</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        .mensaje {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="mensaje"></p>
+    <button id="cargarTexto">Cargar Texto</button>
+    <button id="mostrar">Mostrar texto</button>
+    <button id="ocultar">Ocultar texto</button>
+    <br>
+    <form action="" method="post" id="formRegistro">
+        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="apellidos" id="apellidos">
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+    <div id="datosFormulario"></div>
+    <br>
+    <p id="modificarEstilos">Mensaje para cambiar estilos</p>
+    <button id="cambiarEstilos">Cambiar estilos</button>
+    <br>
+    <p id="cambiarTamanyoFuente">Tamaño de fuente modificable mediante input tipo range</p>
+    <input type="range" name="cambiarFuente" id="cambiarFuente">
+    <br>
+    <p id="cambiarNegrita">Mensaje modificable mediante checkbox</p>
+    <label for="negrita">Marcar para poner en Negrita</label>
+    <input type="checkbox" name="negrita" id="negrita">
+    <br>
+    <p id="cambiarColor">Mensaje modificable mediante select</p>
+    <select name="color" id="color">
+        <option value="black" selected>Negro</option>
+        <option value="red" selected>Rojo</option>
+        <option value="green" selected>Verde</option>
+    </select>
+    <br>
+    <h3 id="paises"></h3>
+    <div class="paises"></div>
+    <br>
+    <p id="mejorAlumno"></p>
+
+    <h3>Imagen Seleccionada</h3>
+    <select name="selectorImagen" id="selectorImagen">
+        <option value="https://i.pinimg.com/564x/2f/fd/94/2ffd94b4d68438ee4873f09ea6b3458a.jpg" selected>Primera Imagen
+            Superheroes
+        </option>
+        <option value="https://i.pinimg.com/564x/08/c2/80/08c2806b80172149d0a0cfcb50890a19.jpg">Segunda Imagen
+            Superheroes</option>
+        <option value="https://i.pinimg.com/originals/28/23/69/282369fc2ed6ad4ba2c387914d527062.jpg">Tercera Imagen
+            Superheroes
+        </option>
+    </select>
+    <img id="imagen" src="" alt="">
+
+</body>
+
+</html>
