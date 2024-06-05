@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen DIW (Segundo parcial). Curso 23/24</title>
+    <link rel="stylesheet" href="./estilos/estilos_examen_junio.css" media="screen">
+    <script src="./Scripts/jquery-3.5.0.js" defer></script>
+    <script src="./Scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Sustituir este texto por tu nombre y apellidos o añadirlo al lado -->
+        <h1>Andrés Samuel Podadera González</h1>
+    </header>
+
+
+    <!-- Zona reservada para insertar la imagen tratada  -->
+    <div class="zona z_imagen">
+        <h2>ZONA DE IMAGEN</h2>
+
+        <div class="zona_img_responsiva">
+            <!-- ---------------------------------------------------- -->
+            <!-- Insertar etiqueta/s necesarias para que la imagen se vea como se indica en el enunciado. -->
+            <!-- ---------------------------------------------------- -->
+            <picture>
+                <source media="(width >= 600px)" srcset="./Imagenes/img_composicion.jpg">
+                <source media="(width < 600px)" srcset="./Imagenes/img_composicion_600.jpg">
+                <img src="./Imagenes/img_composicion.jpg" alt="imagen responsiva">
+            </picture>
+        </div>
+    </div>
+
+    <!-- Zona reservada para insertar el video suministrado -->
+    <div class="zona z_video">
+        <h2>ZONA DE VIDEO</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiqueta/s necesarias para que el video se visualice correctamente -->
+        <!-- -------------------------------------------------------------------------- -->
+        <div class="botonera">
+            <video id="video" width=100% height=100% controls poster="./Imagenes/img_composicion.jpg"
+                preload="metadata">
+                <source src="./Videos/AnimacionCSS.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <button id="botonReiniciarVideo" type="button">Reiniciar</button>
+        </div>
+    </div>
+
+
+    <!-- Zona reservada para la animación con @Keyframe-->
+    <div class="zona z_animacion_css">
+        <h2>ZONA DE ANIMACIÓN @KEYFRAME</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiqueta/s necesarias para realizar el slider -->
+        <!-- -------------------------------------------------------------------------- -->
+        <div id="animacionKeyFrame">
+            <img id="imagenInicial" src="./Imagenes/1.jpg" alt="imagen 1">
+        </div>
+    </div>
+
+
+    <!-- Zona reservada para la animación con SVG-->
+    <div class="zona z_animacion_svg">
+        <h2>ZONA DE ANIMACIÓN SVG</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiqueta/s necesarias para que realizar la animación con SVG -->
+        <!-- -------------------------------------------------------------------------- -->
+
+        <svg width="550" height="550" id="svgAnimacion">
+            <!-- Cuadrado -->
+            <rect x="100" y="100" width="300" height="300" stroke="blue" stroke-width="4" fill="white" />
+
+            <!-- Texto y animacion -->
+            <g transform="translate(0,0)">
+                <text x="100" y="120" id="textoSVG" class="textoSVG" fill="red">DIW</text>
+                <animateMotion id="animacionSVG" begin="click" path="m0,0 v0,0 h0 h260 v270 h-260 v-270" dur="2s"
+                    fill="freeze">
+                </animateMotion>
+            </g>
+
+        </svg>
+    </div>
+
+    <!-- Zona reservada para crear el ejercicio de jquery -->
+    <div class="zona z_jquery">
+        <h2>ZONA DE JQUERY</h2>
+
+        <div id="z_jquery_elementos">
+            <!-- Zona donde se muestran las imágenes -->
+            <div id="z_jquery_imagenes">
+                <!-- Las descripcioens alternativas no corresponden con la imagen para facilitar el trabajo con jQuery-->
+
+                <div id="primerDiv" class="elemento_img">
+                    <img id="imagen1" class="jquery_img" src="./Imagenes/1.jpg" alt="Imagen 1">
+                </div>
+                <div id="segundoDiv" class="elemento_img">
+                    <img id="imagen2" class="jquery_img" src="./Imagenes/2.jpg" alt="Imagen 2">
+                </div>
+                <div id="tercerDiv" class="elemento_img">
+                    <img id="imagen3" class="jquery_img" src="./Imagenes/3.jpg" alt="Imagen 3">
+                </div>
+                <div id="cuartoDiv" class="elemento_img">
+                    <img id="imagen4" class="jquery_img" src="./Imagenes/4.jpg" alt="Imagen 4">
+                </div>
+            </div>
+
+            <!-- Zona donde se muestran los elementos de interacción -->
+            <div id="z_jquery_interaccion">
+                <h3>Zona de interacción</h3>
+                <!-- Zona de botones -->
+                <!-- Opción 1-->
+                <div class="opcion color">
+                    <label for="color_h2">Color de los títulos h2 <input type="color" id="color_h2" /></label>
+                    <label for="color_fondo">Color de fondo de la clase zona: <input type="color"
+                            id="color_fondo" /></label>
+                    <button id="b_oscuro" type="button">Opción 1: Cambiar color de los títulos h2 y el color de fondo de
+                        la clase zona (en la maqueta)</button>
+                </div>
+                <!-- Opción 2-->
+                <div class="opcion orientacion">
+                    <button id="b_inverso" type="button">Opción 2: Mostrar las imágenes en orden inverso de la zona
+                        jQuery (Fade)</button>
+                </div>
+
+                <!-- Opción 3-->
+                <div>
+                    <button id="b_mostrar" type="button">Opción 3: Ocultar Imagen y mostrar texto alternativo de la
+                        imagen (Slide)</button>
+                </div>
+                <!-- Opción selección: filtros Eliminada -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

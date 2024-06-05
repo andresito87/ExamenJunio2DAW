@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+    margin: 10px;
+}
+
+.error {
+    margin: 0;
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+    background-color: #fdd;
+}
+
+.invalido {
+    margin-top: 5px;
+    color: red;
+    font-size: 12px;
+}
+
+.mensaje {
+    color: green;
+    font-size: 12px;
+    margin: 0;
+    border: 1px solid green;
+    box-shadow: 0 0 5px green;
+}
+
+label {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
