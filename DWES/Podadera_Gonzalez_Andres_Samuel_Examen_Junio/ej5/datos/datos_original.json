@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "Max",
+        "especie": "Perro",
+        "raza": "Labrador Retriever"
+    },
+    {
+        "id": 2,
+        "nombre": "Luna",
+        "especie": "Gato",
+        "raza": "Siamés"
+    },
+    {
+        "id": 3,
+        "nombre": "Coco",
+        "especie": "Pájaro",
+        "raza": "Canario"
+    },
+    {
+        "id": 4,
+        "nombre": "Rocky",
+        "especie": "Perro",
+        "raza": "Bulldog"
+    },
+    {
+        "id": 5,
+        "nombre": "Bella",
+        "especie": "Gato",
+        "raza": "Persa"
+    },
+    {
+        "id": 6,
+        "nombre": "Kiwi",
+        "especie": "Pájaro",
+        "raza": "Periquito"
+    }
+]

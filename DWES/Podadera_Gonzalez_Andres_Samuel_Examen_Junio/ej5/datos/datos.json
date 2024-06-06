@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Max",
+        "especie": "Perro",
+        "raza": "Labrador Retriever"
+    },
+    {
+        "id": 3,
+        "nombre": "Coco",
+        "especie": "P\u00e1jaro",
+        "raza": "Canario"
+    },
+    {
+        "id": 4,
+        "nombre": "Rocky",
+        "especie": "Perro",
+        "raza": "Bulldog"
+    },
+    {
+        "id": 5,
+        "nombre": "Bella",
+        "especie": "Gato",
+        "raza": "Persa"
+    }
+]

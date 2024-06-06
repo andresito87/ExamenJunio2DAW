@@ -1,0 +1,28 @@
+<?php
+$mascotas = array(
+            array('id' => '1', 'especie' => 'Perro', 'raza' => 'Labrador', 'edad' => 5, 'sexo' => 'Macho'),
+            array('id' => '2', 'especie' => 'Gato', 'raza' => 'Siames', 'edad' => 2, 'sexo' => 'Hembra'),
+            array('id' => '3', 'especie' => 'Ave', 'raza' => 'Canario', 'edad' => 3, 'sexo' => 'Hembra'),
+            array('id' => '4', 'especie' => 'Roedor', 'raza' => 'Hamster', 'edad' => 3, 'sexo' => 'Macho'),
+            array('id' => '5', 'especie' => 'Reptil', 'raza' => 'Serpiente', 'edad' => 7, 'sexo' => 'Hembra'),
+            array('id' => '6', 'especie' => 'Gato', 'raza' => 'Persa', 'edad' => 10, 'sexo' => 'Macho'),
+            array('id' => '7', 'especie' => 'Perro', 'raza' => 'Bulldog', 'edad' => 4, 'sexo' => 'Macho'),
+            array('id' => '8', 'especie' => 'Ave', 'raza' => 'Perico', 'edad' => 6, 'sexo' => 'Macho'),
+            array('id' => '9', 'especie' => 'Roedor', 'raza' => 'Cobaya', 'edad' => 3, 'sexo' => 'Hembra'),
+            array('id' => '10', 'especie' => 'Reptil', 'raza' => 'Iguana', 'edad' => 8, 'sexo' => 'Macho'),
+            array('id' => '11', 'especie' => 'Perro', 'raza' => 'Pastor Aleman', 'edad' => 9, 'sexo' => 'Hembra'),
+            array('id' => '12', 'especie' => 'Gato', 'raza' => 'Angora', 'edad' => 12, 'sexo' => 'Macho'),
+            array('id' => '13', 'especie' => 'Ave', 'raza' => 'Cacatua', 'edad' => 3, 'sexo' => 'Hembra'),
+            array('id' => '14', 'especie' => 'Roedor', 'raza' => 'Conejo', 'edad' => 5, 'sexo' => 'Macho'),
+            array('id' => '15', 'especie' => 'Reptil', 'raza' => 'Tortuga', 'edad' => 10, 'sexo' => 'Hembra'),
+            array('id' => '16', 'especie' => 'Gato', 'raza' => 'Maine Coon', 'edad' => 7, 'sexo' => 'Hembra'),
+            array('id' => '17', 'especie' => 'Perro', 'raza' => 'Golden Retriever', 'edad' => 6, 'sexo' => 'Macho'),
+            array('id' => '18', 'especie' => 'Ave', 'raza' => 'Lorito', 'edad' => 4, 'sexo' => 'Hembra'),
+            array('id' => '19', 'especie' => 'Roedor', 'raza' => 'Rata', 'edad' => 2, 'sexo' => 'Macho'),
+            array('id' => '20', 'especie' => 'Reptil', 'raza' => 'Gecko', 'edad' => 12, 'sexo' => 'Hembra'),
+            array('id' => '21', 'especie' => 'Gato', 'raza' => 'Sphynx', 'edad' => 8, 'sexo' => 'Macho'),
+            array('id' => '22', 'especie' => 'Perro', 'raza' => 'Chihuahua', 'edad' => 11, 'sexo' => 'Macho'),
+            array('id' => '23', 'especie' => 'Ave', 'raza' => 'Perdiz', 'edad' => 7, 'sexo' => 'Macho'),
+            array('id' => '24', 'especie' => 'Roedor', 'raza' => 'Hamster Ruso', 'edad' => 3, 'sexo' => 'Hembra'),
+            array('id' => '25', 'especie' => 'Reptil', 'raza' => 'Dragon Barbudo', 'edad' => 9, 'sexo' => 'Macho')
+        );
