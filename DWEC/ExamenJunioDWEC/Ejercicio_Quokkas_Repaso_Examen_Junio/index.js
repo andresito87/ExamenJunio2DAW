@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   /*  Ejercicio 1: Formulario de adopción de quokkas.
   Tu misión es proteger de la extinción a los quokkas. 
 
@@ -39,23 +39,23 @@ Deberéis cambiar el color de fondo a amarillo si ha habido un error en ese camp
 Nota: No se puede utilizar pattern. Se pueden utilizar regex101 y páginas similares (pero preguntándome antes). La elegancia del código también está en esos puntos. Primero que funcione. Puedes hacer otra solución con pattern para practicar.*/
 
   const botonEnviarFormulario = document.getElementById(
-    'botonEnviarFormulario'
+    "botonEnviarFormulario"
   );
 
   // Cuando hacen click en el botón enviar formulario
-  botonEnviarFormulario.addEventListener('click', event => {
+  botonEnviarFormulario.addEventListener("click", (event) => {
     // cancelo el envío del formulario
     event.preventDefault();
     // eliminar el contenido de resultado
     // document.getElementById('resultado').innerHTML = '';
-    while (document.getElementById('resultado').hasChildNodes()) {
+    while (document.getElementById("resultado").hasChildNodes()) {
       document
-        .getElementById('resultado')
-        .removeChild(document.getElementById('resultado').firstChild);
+        .getElementById("resultado")
+        .removeChild(document.getElementById("resultado").firstChild);
     }
-    const nombre = document.getElementById('nombre').value;
-    const humanoAdoptador = document.getElementById('humanoAdoptador').value;
-    const donacionAnual = document.getElementById('donacionAnual').value;
+    const nombre = document.getElementById("nombre").value;
+    const humanoAdoptador = document.getElementById("humanoAdoptador").value;
+    const donacionAnual = document.getElementById("donacionAnual").value;
 
     const patronNombre = /[A-Z]?[a-zA-Z]+ [A-Z][a-zA-Z]+( [A-Z][a-zA-Z]+)?/;
     // no excluye la palabra extinción
@@ -64,37 +64,37 @@ Nota: No se puede utilizar pattern. Se pueden utilizar regex101 y páginas simil
     const patronDonacionAnual = /^(0|[1-9]\d{0,2})(,\d{1,2})?$/;
 
     if (!patronNombre.test(nombre)) {
-      document.getElementById('nombre').style.backgroundColor = 'yellow';
-      const parrafoNombre = document.createElement('p');
+      document.getElementById("nombre").style.backgroundColor = "yellow";
+      const parrafoNombre = document.createElement("p");
       parrafoNombre.innerHTML = `Nombre incorrecto: <b>${
-        nombre == '' ? '"(campo vacío)"' : nombre
+        nombre == "" ? '"(campo vacío)"' : nombre
       }</b>`;
-      document.getElementById('resultado').appendChild(parrafoNombre);
+      document.getElementById("resultado").appendChild(parrafoNombre);
     } else {
-      document.getElementById('nombre').style.backgroundColor = '';
+      document.getElementById("nombre").style.backgroundColor = "";
     }
 
     if (!patronHumanoAdoptador.test(humanoAdoptador)) {
-      document.getElementById('humanoAdoptador').style.backgroundColor =
-        'yellow';
-      const parrafoHumanoAdoptador = document.createElement('p');
+      document.getElementById("humanoAdoptador").style.backgroundColor =
+        "yellow";
+      const parrafoHumanoAdoptador = document.createElement("p");
       parrafoHumanoAdoptador.innerHTML = `Código de adopción incorrecto: <b>${
-        humanoAdoptador == '' ? '"(campo vacío)"' : humanoAdoptador
+        humanoAdoptador == "" ? '"(campo vacío)"' : humanoAdoptador
       }</b>`;
-      document.getElementById('resultado').appendChild(parrafoHumanoAdoptador);
+      document.getElementById("resultado").appendChild(parrafoHumanoAdoptador);
     } else {
-      document.getElementById('humanoAdoptador').style.backgroundColor = '';
+      document.getElementById("humanoAdoptador").style.backgroundColor = "";
     }
 
     if (!patronDonacionAnual.test(donacionAnual)) {
-      document.getElementById('donacionAnual').style.backgroundColor = 'yellow';
-      const parrafoDonacionAnual = document.createElement('p');
+      document.getElementById("donacionAnual").style.backgroundColor = "yellow";
+      const parrafoDonacionAnual = document.createElement("p");
       parrafoDonacionAnual.innerHTML = `Donación anual incorrecta: <b>${
-        donacionAnual == '' ? '"(campo vacío)"' : donacionAnual
+        donacionAnual == "" ? '"(campo vacío)"' : donacionAnual
       }</b>`;
-      document.getElementById('resultado').appendChild(parrafoDonacionAnual);
+      document.getElementById("resultado").appendChild(parrafoDonacionAnual);
     } else {
-      document.getElementById('donacionAnual').style.backgroundColor = '';
+      document.getElementById("donacionAnual").style.backgroundColor = "";
     }
 
     if (
@@ -103,26 +103,26 @@ Nota: No se puede utilizar pattern. Se pueden utilizar regex101 y páginas simil
       patronDonacionAnual.test(donacionAnual)
     ) {
       // añadir la imagen
-      const imagen = document.createElement('img');
+      const imagen = document.createElement("img");
       // elegir una imagen al azar
       const numeroImagen = Math.floor(Math.random() * 6) + 1;
       imagen.src = `./imagenes/${numeroImagen}.jpeg`;
-      document.getElementById('resultado').appendChild(imagen);
+      document.getElementById("resultado").appendChild(imagen);
 
       // añadir el nombre del quokka
-      const parrafoNombre = document.createElement('p');
+      const parrafoNombre = document.createElement("p");
       parrafoNombre.textContent = `Nombre: ${nombre}`;
-      document.getElementById('resultado').appendChild(parrafoNombre);
+      document.getElementById("resultado").appendChild(parrafoNombre);
 
       // añadir los datos del humano
-      const parrafoHumanoAdoptador = document.createElement('p');
+      const parrafoHumanoAdoptador = document.createElement("p");
       parrafoHumanoAdoptador.textContent = `Código de adopción: ${humanoAdoptador}`;
-      document.getElementById('resultado').appendChild(parrafoHumanoAdoptador);
+      document.getElementById("resultado").appendChild(parrafoHumanoAdoptador);
 
       // añadir la donación anual
-      const parrafoDonacionAnual = document.createElement('p');
+      const parrafoDonacionAnual = document.createElement("p");
       parrafoDonacionAnual.textContent = `Donación anual: ${donacionAnual}`;
-      document.getElementById('resultado').appendChild(parrafoDonacionAnual);
+      document.getElementById("resultado").appendChild(parrafoDonacionAnual);
     }
   });
 
@@ -142,23 +142,23 @@ Hay 4 saltadores profesionales.
 */
 
   // ************ FETCH ************ //
-  const divContenidoFetch = document.getElementById('contenidoFetch');
+  const divContenidoFetch = document.getElementById("contenidoFetch");
 
-  document.getElementById('botonFetch').addEventListener('click', () => {
+  document.getElementById("botonFetch").addEventListener("click", () => {
     // eliminar el contenido anterior sin usar innerHTML
     // divContenidoFetch.innerHTML = '';
     while (divContenidoFetch.hasChildNodes()) {
       divContenidoFetch.removeChild(divContenidoFetch.firstChild);
     }
     // añadir imagen de carga
-    const imagenCarga = document.createElement('img');
-    imagenCarga.src = './ajaxquokka.gif';
-    imagenCarga.alt = 'imagen de carga quokka';
-    imagenCarga.id = 'imagenCarga';
+    const imagenCarga = document.createElement("img");
+    imagenCarga.src = "./ajaxquokka.gif";
+    imagenCarga.alt = "imagen de carga quokka";
+    imagenCarga.id = "imagenCarga";
     divContenidoFetch.appendChild(imagenCarga);
-    fetch('./quokka.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch("./quokka.json")
+      .then((res) => res.json())
+      .then((data) => {
         let contadorQuokkas = 0;
         let cantidadQuokkasSaltadores = 0;
         let setQuokkas = new Set();
@@ -167,34 +167,34 @@ Hay 4 saltadores profesionales.
           contadorQuokkas++;
           // contador de quokkas saltadores
           if (
-            data[key]['caracteristicas_adicionales']['saltador_profesional']
+            data[key]["caracteristicas_adicionales"]["saltador_profesional"]
           ) {
             cantidadQuokkasSaltadores++;
           }
           // set con los nombres de los quokkas
-          setQuokkas.add(data[key]['nombre']);
+          setQuokkas.add(data[key]["nombre"]);
         }
         // crear un objeto con claves todos los nombres del set y valores 0
         let quokkasAmigos = {};
-        setQuokkas.forEach(quokka => {
+        setQuokkas.forEach((quokka) => {
           quokkasAmigos[quokka] = 0;
         });
 
         // parrafo con las cantidad de quokkas
-        const parrafoCantidadQuokkas = document.createElement('p');
+        const parrafoCantidadQuokkas = document.createElement("p");
         parrafoCantidadQuokkas.textContent = `Cantidad de quokkas: ${contadorQuokkas}, sí ${setQuokkas.size} quokkas diferentes`;
         divContenidoFetch.appendChild(parrafoCantidadQuokkas);
 
         // parrafo con la cantidad de quokkas saltadores
-        const parrafoQuokkasSaltadores = document.createElement('p');
+        const parrafoQuokkasSaltadores = document.createElement("p");
         parrafoQuokkasSaltadores.textContent = `Hay ${cantidadQuokkasSaltadores} quokkas saltadores`;
         divContenidoFetch.appendChild(parrafoQuokkasSaltadores);
 
         // set con los amigos de los quokkas
         for (const key in data) {
-          setQuokkas.forEach(quokka => {
+          setQuokkas.forEach((quokka) => {
             if (
-              data[key]['caracteristicas_adicionales']['amigos'].includes(
+              data[key]["caracteristicas_adicionales"]["amigos"].includes(
                 quokka
               )
             ) {
@@ -219,30 +219,30 @@ Hay 4 saltadores profesionales.
         }, 0);
 
         // parrafo con el quokka con más amigos y la cantidad de amigos que tiene
-        const parrafoQuokkaMasAmigos = document.createElement('p');
+        const parrafoQuokkaMasAmigos = document.createElement("p");
         parrafoQuokkaMasAmigos.textContent = `${quokkaMasAmigos[0]} es el quokka con más amigos, tiene ${quokkaMasAmigos2} amigos`;
         divContenidoFetch.appendChild(parrafoQuokkaMasAmigos);
 
         // set con las comidas favoritas
         const setComidas = new Set();
         for (const key in data) {
-          data[key]['caracteristicas_adicionales']['comida_favorita'].forEach(
-            comida => {
+          data[key]["caracteristicas_adicionales"]["comida_favorita"].forEach(
+            (comida) => {
               setComidas.add(comida);
             }
           );
         }
 
         // parrafo con la comida que mas gusta
-        let parrafoComidaMasGusta = document.createElement('p');
+        let parrafoComidaMasGusta = document.createElement("p");
         let contadorComidas = 0;
-        let comidaMasGusta = '';
-        setComidas.forEach(comida => {
+        let comidaMasGusta = "";
+        setComidas.forEach((comida) => {
           let contador = 0;
           for (const key in data) {
             if (
-              data[key]['caracteristicas_adicionales'][
-                'comida_favorita'
+              data[key]["caracteristicas_adicionales"][
+                "comida_favorita"
               ].includes(comida)
             ) {
               contador++;
@@ -261,15 +261,15 @@ Hay 4 saltadores profesionales.
         // set con los colores de los quokkas
         const setColores = new Set();
         for (const key in data) {
-          setColores.add(data[key]['color'].split(' y ')[0]);
+          setColores.add(data[key]["color"].split(" y ")[0]);
         }
-        let parrafoColorMasPopular = document.createElement('p');
+        let parrafoColorMasPopular = document.createElement("p");
         let contadorColores = 0;
-        let colorMasPopular = '';
-        setColores.forEach(color => {
+        let colorMasPopular = "";
+        setColores.forEach((color) => {
           let contador = 0;
           for (const key in data) {
-            data[key]['color'].split(' y ').forEach(colorQuokka => {
+            data[key]["color"].split(" y ").forEach((colorQuokka) => {
               if (colorQuokka === color) {
                 contador++;
               }
@@ -286,26 +286,26 @@ Hay 4 saltadores profesionales.
         parrafoColorMasPopular.textContent = `El color más popular es ${colorMasPopular}, lo tienen ${contadorColores} quokkas`;
         divContenidoFetch.appendChild(parrafoColorMasPopular);
       })
-      .catch(error => console.error('Error al obtener los datos', error))
+      .catch((error) => console.error("Error al obtener los datos", error))
       .finally(() => {
-        console.warn('La consulta ha finalizado');
+        console.warn("La consulta ha finalizado");
         // quito la imagen de carga
-        document.getElementById('imagenCarga').remove();
+        document.getElementById("imagenCarga").remove();
       });
   });
 });
 
 // ************ JQUERY ************ //
 $(document).ready(() => {
-  $('#botonJQuery').click(() => {
+  $("#botonJQuery").click(() => {
     // limpiar el contenido anterior
-    $('#contenidoJQuery').empty();
+    $("#contenidoJQuery").empty();
     // añadir imagen de carga
-    $('#contenidoJQuery').append(
+    $("#contenidoJQuery").append(
       '<img src="./ajaxquokka.gif" alt="imagen de carga quokka" id="imagenCarga">'
     );
     // realizo la consulta con jQuery
-    $.getJSON('./quokka.json', data => {
+    $.getJSON("./quokka.json", (data) => {
       let contadorQuokkas = 0;
       let cantidadQuokkasSaltadores = 0;
       let setQuokkas = new Set();
@@ -313,35 +313,35 @@ $(document).ready(() => {
         // contador de quokkas
         contadorQuokkas++;
         // contador de quokkas saltadores
-        if (data[key]['caracteristicas_adicionales']['saltador_profesional']) {
+        if (data[key]["caracteristicas_adicionales"]["saltador_profesional"]) {
           cantidadQuokkasSaltadores++;
         }
         // set con los nombres de los quokkas
-        setQuokkas.add(data[key]['nombre']);
+        setQuokkas.add(data[key]["nombre"]);
       }
       // crear un objeto con claves todos los nombres del set y valores 0
       let quokkasAmigos = {};
-      setQuokkas.forEach(quokka => {
+      setQuokkas.forEach((quokka) => {
         quokkasAmigos[quokka] = 0;
       });
 
       // parrafo con las cantidad de quokkas
-      const parrafoCantidadQuokkas = $('<p></p>').text(
+      const parrafoCantidadQuokkas = $("<p></p>").text(
         `Cantidad de quokkas: ${contadorQuokkas}, sí ${setQuokkas.size} quokkas diferentes`
       );
-      $('#contenidoJQuery').append(parrafoCantidadQuokkas);
+      $("#contenidoJQuery").append(parrafoCantidadQuokkas);
 
       // parrafo con la cantidad de quokkas saltadores
-      const parrafoQuokkasSaltadores = $('<p></p>').text(
+      const parrafoQuokkasSaltadores = $("<p></p>").text(
         `Hay ${cantidadQuokkasSaltadores} quokkas saltadores`
       );
-      $('#contenidoJQuery').append(parrafoQuokkasSaltadores);
+      $("#contenidoJQuery").append(parrafoQuokkasSaltadores);
 
       // set con los amigos de los quokkas
       for (const key in data) {
-        setQuokkas.forEach(quokka => {
+        setQuokkas.forEach((quokka) => {
           if (
-            data[key]['caracteristicas_adicionales']['amigos'].includes(quokka)
+            data[key]["caracteristicas_adicionales"]["amigos"].includes(quokka)
           ) {
             quokkasAmigos[quokka]++;
           }
@@ -364,31 +364,31 @@ $(document).ready(() => {
       }, 0);
 
       // parrafo con el quokka con más amigos y la cantidad de amigos que tiene
-      const parrafoQuokkaMasAmigos = $('<p></p>').text(
+      const parrafoQuokkaMasAmigos = $("<p></p>").text(
         `${quokkaMasAmigos[0]} es el quokka con más amigos, tiene ${quokkaMasAmigos2} amigos`
       );
-      $('#contenidoJQuery').append(parrafoQuokkaMasAmigos);
+      $("#contenidoJQuery").append(parrafoQuokkaMasAmigos);
 
       // set con las comidas favoritas
       const setComidas = new Set();
       for (const key in data) {
-        data[key]['caracteristicas_adicionales']['comida_favorita'].forEach(
-          comida => {
+        data[key]["caracteristicas_adicionales"]["comida_favorita"].forEach(
+          (comida) => {
             setComidas.add(comida);
           }
         );
       }
 
       // parrafo con la comida que mas gusta
-      let parrafoComidaMasGusta = $('<p></p>');
+      let parrafoComidaMasGusta = $("<p></p>");
       let contadorComidas = 0;
-      let comidaMasGusta = '';
-      setComidas.forEach(comida => {
+      let comidaMasGusta = "";
+      setComidas.forEach((comida) => {
         let contador = 0;
         for (const key in data) {
           if (
-            data[key]['caracteristicas_adicionales'][
-              'comida_favorita'
+            data[key]["caracteristicas_adicionales"][
+              "comida_favorita"
             ].includes(comida)
           ) {
             contador++;
@@ -404,20 +404,20 @@ $(document).ready(() => {
       parrafoComidaMasGusta.text(
         `La comida que más gusta es ${comidaMasGusta}, le gusta a ${cantidadComidaMasGusta} quokkas`
       );
-      $('#contenidoJQuery').append(parrafoComidaMasGusta);
+      $("#contenidoJQuery").append(parrafoComidaMasGusta);
 
       // set con los colores de los quokkas
       const setColores = new Set();
       for (const key in data) {
-        setColores.add(data[key]['color'].split(' y ')[0]);
+        setColores.add(data[key]["color"].split(" y ")[0]);
       }
-      let parrafoColorMasPopular = $('<p></p>');
+      let parrafoColorMasPopular = $("<p></p>");
       let contadorColores = 0;
-      let colorMasPopular = '';
-      setColores.forEach(color => {
+      let colorMasPopular = "";
+      setColores.forEach((color) => {
         let contador = 0;
         for (const key in data) {
-          data[key]['color'].split(' y ').forEach(colorQuokka => {
+          data[key]["color"].split(" y ").forEach((colorQuokka) => {
             if (colorQuokka === color) {
               contador++;
             }
@@ -434,12 +434,12 @@ $(document).ready(() => {
       parrafoColorMasPopular.text(
         `El color más popular es ${colorMasPopular}, lo tienen ${contadorColores} quokkas`
       );
-      $('#contenidoJQuery').append(parrafoColorMasPopular);
+      $("#contenidoJQuery").append(parrafoColorMasPopular);
     })
-      .fail(error =>
+      .fail((error) =>
         console.error(
-          'Error al obtener los datos.',
-          'Código de error:',
+          "Error al obtener los datos.",
+          "Código de error:",
           error.status,
           error.statusText
         )
@@ -447,7 +447,7 @@ $(document).ready(() => {
       .always(() => {
         console.warn(`La consulta ha finalizado`);
         // quito la imagen de carga
-        $('#imagenCarga').remove();
+        $("#imagenCarga").remove();
       });
   });
 });

@@ -1,0 +1,45 @@
+{
+    "tema": "Sistemas de Inteligencia Artificial para Programadores",
+    "sistemas": [
+        {
+            "nombre": "GitHub Copilot",
+            "tipo": "Asistente de programación",
+            "creador": "GitHub (Microsoft)",
+            "funcionalidades": [
+                "Autocompletado",
+                "Predicción",
+                "Corrección",
+                "Testeo"
+            ]
+        },
+        {
+            "nombre": "TabNine",
+            "tipo": "Asistente de escritura de código",
+            "creador": "TabNine, Inc.",
+            "funcionalidades": [
+                "Autocompletado",
+                "Predición"
+            ]
+        },
+        {
+            "nombre": "Kite",
+            "tipo": "Complemento de Inteligencia Artificial para Programadores",
+            "creador": "Kite",
+            "funcionalidades": [
+                "Autocompletado",
+                "Predicción",
+                "Documentación"
+            ]
+        },
+        {
+            "nombre": "DeepCode",
+            "tipo": "Análisis de código",
+            "creador": "DeepCode AG",
+            "funcionalidades": [
+                "Corrección",
+                "Optimización",
+                "Prevención"
+            ]
+        }
+    ]
+}

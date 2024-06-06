@@ -1,14 +1,14 @@
-const tabla = document.querySelector('table tbody');
-const rutaArchivoJson = './usuarios.json';
+const tabla = document.querySelector("table tbody");
+const rutaArchivoJson = "./usuarios.json";
 
-document.getElementById('botonFetch').addEventListener('click', () => {
+document.getElementById("botonFetch").addEventListener("click", () => {
   cargarUsuariosFetch(rutaArchivoJson);
 });
 
-$('#botonJquery').on('click', () => {
+$("#botonJquery").on("click", () => {
   $.ajax(rutaArchivoJson, {
     success: function (data) {
-      data.forEach(usuario => {
+      data.forEach((usuario) => {
         const row = $(`
   <tr>
     <td>${usuario.name}</td>
@@ -17,28 +17,28 @@ $('#botonJquery').on('click', () => {
   </tr>
 `);
 
-        $('table tbody').append(row);
+        $("table tbody").append(row);
       });
     },
     error: function (error) {
-      console.log('Error al obtener los datos', error);
+      console.log("Error al obtener los datos", error);
     },
   });
 });
 
-document.getElementById('botonLimpiar').addEventListener('click', () => {
+document.getElementById("botonLimpiar").addEventListener("click", () => {
   //let elements = document.querySelector('table tbody').children;
   //Array.from(elements).forEach(element => element.remove());
   //[...elements].forEach(element => element.remove());
-  $('table tbody').empty();
+  $("table tbody").empty();
 });
 
 function cargarUsuariosFetch($pathArchivoJson) {
   fetch($pathArchivoJson)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(usuario => {
-        const row = document.createElement('tr');
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((usuario) => {
+        const row = document.createElement("tr");
         row.innerHTML += `
         <td>${usuario.name}</td>
         <td>${usuario.address.street}, ${usuario.address.suite} - ${usuario.address.city}</td>
@@ -47,5 +47,5 @@ function cargarUsuariosFetch($pathArchivoJson) {
         tabla.append(row);
       });
     })
-    .catch(error => console.log(error.message));
+    .catch((error) => console.log(error.message));
 }

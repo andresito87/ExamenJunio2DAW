@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>SuperAgente86</title>
+    <!--JQuery-->
+    <!--CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+
+    <style>
+    form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: grid;
+      row-gap: 10px;
+      background: linear-gradient(to right, #f5f5f5, #ddd);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      padding: 5px;
+    }
+
+    #imagenOculta {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .error {
+      border: solid 2px #ff0000;
+    }
+
+    body,
+    div {
+      text-align: center;
+    }
+  </style>
+
+  </head>
+
+  <body>
+    <h1> Acceso al sistema de Control para espías super secretos </h1>
+    <p>
+      Debes introducir tu código de agente secreto.
+    </p>
+
+    <form id="SuperAgenteForm">
+
+      <label for="codigoAgente">Código Agente:</label><br>
+      <input type="text" id="codigoAgente"><br>
+
+      <label for="mostrarSecreto">Mostrar Secreto</label><br>
+      <input type="checkbox" id="mostrarSecreto" value="mostrarSecreto">
+      <br>
+
+      <input type="submit" id="enviar" value="Enviar">
+
+    </form>
+    <br>
+    <div id="salidaSecreta">Aquí debe aparecer la imagen si es correcta</div>
+    <div id="resultado"> Aquí los mensajes de correcto e incorrecto. </div>
+
+    <script src="miApp.js"></script>
+  </body>
+
+</html>
