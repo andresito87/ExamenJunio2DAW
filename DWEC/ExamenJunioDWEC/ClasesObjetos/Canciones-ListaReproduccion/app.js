@@ -32,7 +32,6 @@ let miListaReproduccion;
 try {
   miListaReproduccion = new ListaReproduccion("Wake Up Gently");
   anadirCanciones(miListaReproduccion);
-  console.log(miListaReproduccion.toString());
 } catch (error) {
   console.error("Error" + error.message);
 }
@@ -54,8 +53,6 @@ function obtenerListaHTML(canciones) {
   return resultado;
 }
 
-console.log(obtenerListaHTML(miListaReproduccion.canciones));
-
 let tituloLista = document.getElementById("nombre-lista");
 tituloLista.innerHTML = miListaReproduccion.nombre;
 
@@ -73,3 +70,12 @@ for (let cancion of miListaReproduccion.canciones) {
 
 let cancionesMegusta = document.getElementById("canciones-aumento-megusta");
 cancionesMegusta.innerHTML = obtenerListaHTML(miListaReproduccion.canciones);
+
+let cancionMasMegusta = document.getElementById("canciones-mas-megusta");
+let canciones = miListaReproduccion.canciones;
+
+canciones.sort(
+  (cancion1, cancion2) => cancion2.numMeGusta - cancion1.numMeGusta
+);
+
+cancionMasMegusta.innerHTML = obtenerListaHTML(canciones.slice(0, 1));

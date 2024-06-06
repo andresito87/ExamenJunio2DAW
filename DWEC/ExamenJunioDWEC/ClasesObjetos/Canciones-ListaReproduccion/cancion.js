@@ -2,13 +2,13 @@ class Cancion {
   #_titulo;
   #_artista;
   #_numMeGusta;
-  #_esPremium;
+  _esPremium;
 
   constructor(titulo, artista) {
     this.titulo = titulo;
     this.artista = artista;
     this.numMeGusta = 0;
-    this.#_esPremium = false;
+    this._esPremium = false;
   }
 
   get titulo() {
@@ -45,14 +45,14 @@ class Cancion {
   }
 
   get esPremium() {
-    return this.#_esPremium;
+    return this._esPremium;
   }
 
   set esPremium(nuevoEsPremium) {
     if (typeof nuevoEsPremium != true && typeof nuevoEsPremium != false) {
       throw new Error("Error en el numero de me gusta");
     }
-    this.#_esPremium = nuevoEsPremium;
+    this._esPremium = nuevoEsPremium;
   }
 
   darMegusta() {
